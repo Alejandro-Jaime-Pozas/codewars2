@@ -1,3 +1,67 @@
+
+
+
+
+
+// const a = 10
+
+// function f(){
+//     console.log(a)
+// }
+// f()
+// console.log(a)
+
+
+    // let a = 10
+ 
+    // // It is not allowed
+    // let a = 8
+ 
+    // // It is allowed
+    // a = 10
+
+
+    // function f() {
+ 
+    //     // It can be accessible any
+    //     // where within this function
+    //     var a = 10;
+    //     console.log(a)
+    // }
+    // f();
+ 
+    // // A cannot be accessible
+    // // outside of function
+    // console.log(a);
+
+
+// Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
+
+// The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
+
+// Mind the input validation.
+
+// Example
+// { 6, 2, 1, 8, 10 } => 16
+// { 1, 1, 11, 2, 3 } => 6
+// Input validation
+// If an empty value ( null, None, Nothing etc. ) is given instead of an array, or the given array is an empty list or a list with only 1 element, return 0.
+
+
+// function sumArray(array) {
+//     // const compareNums = (a, b) => a - b
+//     // console.log(Math.min(...array), Math.max(...array))
+//     counter = 0
+//     for (let num of array){
+//         num !== Math.min(...array) && num !== Math.max(...array) ? counter += num : console.log(`${num} is not being added`)
+//     }
+//     return counter
+//     // return array.sort(compareNums)
+// }
+
+// console.log(sumArray([6, 2, 1, 8, 10]))
+
+
 // You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.
 // If it is a square, return its area. If it is a rectangle, return its perimeter.
 
@@ -7,9 +71,9 @@
 // 3, 3 --> 9
 // Note: for the purposes of this kata you will assume that it is a square if its length and width are equal, otherwise it is a rectangle.
 
-const areaOrPerimeter = (l , w) => l === w ? l * w : (l*2) + (w*2)
+// const areaOrPerimeter = (l , w) => l === w ? l * w : (l*2) + (w*2)
 
-console.log(areaOrPerimeter(3, 3))
+// console.log(areaOrPerimeter(3, 3))
 
 // Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
 
