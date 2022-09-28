@@ -1,7 +1,16 @@
 
 
+// function removeExclamationMarks(s) {
+//     // let noEx = ''
+//     // for (let c of s){
+//     //     c !== '!' ? noEx += c : null
+//     // }
+//     // return noEx
+//     // let sArr = s.split('')
+//     return s.split('').filter((c) => c !== '!').join('')
+//   }
 
-
+// console.log(removeExclamationMarks('!!hell??!!o world!!'))
 
 // const a = 10
 
