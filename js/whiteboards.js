@@ -1,0 +1,159 @@
+// You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.
+// If it is a square, return its area. If it is a rectangle, return its perimeter.
+
+// Example(Input1, Input2 --> Output):
+
+// 6, 10 --> 32
+// 3, 3 --> 9
+// Note: for the purposes of this kata you will assume that it is a square if its length and width are equal, otherwise it is a rectangle.
+
+const areaOrPerimeter = (l , w) => l === w ? l * w : (l*2) + (w*2)
+
+console.log(areaOrPerimeter(3, 3))
+
+// Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+
+// For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.
+
+// const quarterOf = (month) => {
+//     if (month % 3 === 0){
+//         return month / 3
+//     } else {
+//         return Math.floor(month / 3) + 1
+//     }
+// }
+
+// console.log(quarterOf(10))
+
+// Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+
+// Return your answer as a number.
+
+// function sumMix(x){
+//   return x.reduce((prev, curr) => Number(prev) + Number(curr))
+// } 
+
+// console.log(sumMix([9, 3, '7', '3']))
+
+// function sumMix2(x){
+//   return x.map((num, i) => parseInt(num) + i)
+// } 
+
+// console.log(sumMix2([9, -3, '-7', '-3']))
+
+
+// I'm new to coding and now I want to get the sum of two arrays... Actually the sum of all their elements. I'll appreciate for your help.
+
+// P.S. Each array includes only integer numbers. Output is a number too.
+
+// function arrayPlusArray(arr1, arr2, arr3) {
+//     return arr1.concat(arr2, arr3).reduce((prev, curr) => prev + curr) // this automatically takes the first prev value as 0 if nothing input
+// }
+// console.log(arrayPlusArray([1,2,3], [4,5,6], [3,4,7]))
+// console.log(([1,2,3] + [4,5,6]))
+
+
+// Our football team finished the championship. The result of each match look like "x:y". Results of all matches are recorded in the collection.
+
+// For example: ["3:1", "2:2", "0:1", ...]
+
+// Write a function that takes such collection and counts the points of our team in the championship. Rules for counting points for each match:
+
+// if x > y: 3 points
+// if x < y: 0 point
+// if x = y: 1 point
+
+// function points(games) {
+//     let counter = 0;
+//     for (let result of games){
+//         let score = result.split(':');
+//         // console.log(score)
+//         (score[0] > score[1]) ? counter += 3 : (score[0] === score[1]) ? counter += 1 : 'nini';
+//     }
+//     return 'counter'
+// }
+
+// points(["3:1", "2:2", "0:1"])
+
+// Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+
+// It should remove all values from list a, which are present in list b keeping their order.
+
+// array_diff([1,2],[1]) == [2]
+// If a value is present in b, all of its occurrences must be removed from the other:
+
+// array_diff([1,2,2,2,3],[2]) == [1,3]
+
+
+
+
+
+
+
+
+// Given a binary array called nums, return the maximum number of consecutive 1's in the array.
+// Input: nums = [1,1,0,1,1,1]
+// Output: 3
+// Explanation: The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.
+
+// Example 2:
+// Input: nums = [1,0,1,1,0,1]
+// Output: 2
+
+// function maxOnes(arr){
+    
+// }
+
+
+
+
+// // Sum Numbers
+
+// function sum (numbers) {
+//     let total = 0;
+//     for (num of numbers){
+//       total += num
+//     }
+//     return total
+//   }
+
+// console.log(sum([4,3]))
+
+
+// // Make a program that filters a list of strings and returns a list with only your friends name in it.
+
+// // If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! 
+// // Otherwise, you can be sure he's not...
+
+// // Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
+
+// // i.e.
+
+// // friend = ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"]
+
+
+// let input = ["Ryan", "Kieran", "Jason", "Yous"]
+
+// function friend(names){
+//     return names.filter(element => element.length === 4);
+// };
+
+// console.log(friend(input));
+
+
+
+// // 2
+// // need to check each iterable of string, check if it is capital letter, 
+// // push capital letters to new array
+// function ord_str(word){
+//     let capitals = []
+//     for (let index in word){
+//         if (word[index] == word[index].toUpperCase()){
+//             capitals.push(Number(index))
+//         }
+//     }
+//     return capitals
+// };
+
+// console.log(ord_str('CodEWaRs'));
+
