@@ -1,3 +1,36 @@
+// Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+// Examples input/output:
+
+// XO("ooxx") => true
+// XO("xooxx") => false
+// XO("ooxXm") => true
+// XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+// XO("zzoo") => false
+
+// checking for o or O if == to x or X total amount...
+// if string is odd, then false
+// then check for every character if is equal to any of 4 options
+
+function XO(s){
+    let counterX = 0
+    let counterO = 0
+    for (let c of s){
+        // if (c.toLowerCase() === 'x'){
+        //     counterX += 1
+        // } else if (c.toLowerCase() === 'o'){
+        //     counterO += 1
+        // }
+        c.toLowerCase() === 'x' ? counterX += 1 : c.toLowerCase() === 'o' ? counterO += 1 : null
+    }
+    return counterX === counterO
+}
+
+console.log(XO("ooxx"))
+console.log(XO("xooxx"))
+console.log(XO("ooxXm"))
+console.log(XO("zpzpzpp"))
+console.log(XO("zzoo"))
 
 
 // function removeExclamationMarks(s) {
