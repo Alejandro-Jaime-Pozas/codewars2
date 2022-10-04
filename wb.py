@@ -1,3 +1,24 @@
+def first_non_repeating_letter(string):
+    # logic: check the entire string for chars, count them, look for first non-repeating
+    # lower same as upper, but return accordingly
+    # i'm thinking a for loop to create a dict of chars, then another for loop afterwards to check dict items vs non-dict
+    # chars = {}
+    # for c in string:
+    #     if c.lower() in chars:
+    #         chars[c.lower()] = chars[c.lower()] + 1
+    #     else:
+    #         chars[c.lower()] = 1
+    
+    # for c in string:
+    #     if chars[c.lower()] == 1:
+    #         return c
+    # return ''
+    for c in string:
+        print(string.index(c))
+
+print(first_non_repeating_letter([1, 2, 3, 2, 4, 2, 5, 2]))
+print(first_non_repeating_letter('sTreSS'))
+
 # Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
 
 # * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
@@ -5,7 +26,7 @@
 # * url = "https://www.cnet.com"                -> domain name = cnet"
 
 
-def domain_name(string):
+# def domain_name(string):
     # need to check if '.' on either side to indicate start/finish of domain name
     # need to check if before '.' there is http:// or www
     #  can check if string before is '/' then take whatever is after until there is a '.'
@@ -38,12 +59,12 @@ def domain_name(string):
     #         else:
     #             domain += c
     # return domain
-    return string.split('www.')
+#     return string.split('www.')
 
 
-print(domain_name("https://youtube.com"))
-print(domain_name("https://www.you-tube.com"))
-print(domain_name("www.you-tube.com"))
+# print(domain_name("https://youtube.com"))
+# print(domain_name("https://www.you-tube.com"))
+# print(domain_name("www.you-tube.com"))
 
 # ROT13 is a simple letter substitution cipher that replaces a letter with the letter 13 letters after it in the alphabet. ROT13 is an example of the Caesar cipher.
 
