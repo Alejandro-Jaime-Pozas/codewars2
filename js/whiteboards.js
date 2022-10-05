@@ -1,3 +1,33 @@
+function isIsogram(str){
+    // for (i in str){
+    //     for (j in str){
+    //         if (j != i){
+    //             if (str[j].toLowerCase() === str[i].toLowerCase()){
+    //                 return false
+    //             }
+    //         }
+    //     }
+    // }
+    // return true
+    return new Set(str.toLowerCase()).size === str.length
+  }
+
+console.log(isIsogram('MoOse'))
+console.log(isIsogram('abrujmklP'))
+
+// let x = new Set('ababababa')
+// console.log(x)
+
+
+// function filter_list(l) {
+//     // Return a new array with the strings filtered out
+//     return l.filter((item) => typeof (item) !== 'string')
+//   }
+
+// console.log(filter_list([1,2,'a','b']))
+
+
+
 // Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
 
 // Examples input/output:
@@ -12,25 +42,25 @@
 // if string is odd, then false
 // then check for every character if is equal to any of 4 options
 
-function XO(s){
-    let counterX = 0
-    let counterO = 0
-    for (let c of s){
-        // if (c.toLowerCase() === 'x'){
-        //     counterX += 1
-        // } else if (c.toLowerCase() === 'o'){
-        //     counterO += 1
-        // }
-        c.toLowerCase() === 'x' ? counterX += 1 : c.toLowerCase() === 'o' ? counterO += 1 : null
-    }
-    return counterX === counterO
-}
+// function XO(s){
+//     let counterX = 0
+//     let counterO = 0
+//     for (let c of s){
+//         // if (c.toLowerCase() === 'x'){
+//         //     counterX += 1
+//         // } else if (c.toLowerCase() === 'o'){
+//         //     counterO += 1
+//         // }
+//         c.toLowerCase() === 'x' ? counterX += 1 : c.toLowerCase() === 'o' ? counterO += 1 : null
+//     }
+//     return counterX === counterO
+// }
 
-console.log(XO("ooxx"))
-console.log(XO("xooxx"))
-console.log(XO("ooxXm"))
-console.log(XO("zpzpzpp"))
-console.log(XO("zzoo"))
+// console.log(XO("ooxx"))
+// console.log(XO("xooxx"))
+// console.log(XO("ooxXm"))
+// console.log(XO("zpzpzpp"))
+// console.log(XO("zzoo"))
 
 
 // function removeExclamationMarks(s) {
