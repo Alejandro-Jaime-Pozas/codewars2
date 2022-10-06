@@ -1,19 +1,35 @@
-function isIsogram(str){
-    // for (i in str){
-    //     for (j in str){
-    //         if (j != i){
-    //             if (str[j].toLowerCase() === str[i].toLowerCase()){
-    //                 return false
-    //             }
-    //         }
-    //     }
-    // }
-    // return true
-    return new Set(str.toLowerCase()).size === str.length
-  }
+// String.prototype.toJadenCase = function () {
+//   //   split the string by spaces
+//   //   once split, for loop for every word, capitalize word[0]
+//   //   
+//     splitStr = str.split(" ");
+//     newStr = []
+//     for (word of splitStr){
+//         newStr.push(word[0].toUpperCase() + word.slice(1))
+//     }
+//     return newStr.join(" ")
+//   };
 
-console.log(isIsogram('MoOse'))
-console.log(isIsogram('abrujmklP'))
+// var str = "How can mirrors be real if our eyes aren't real";
+// console.log(str.toJadenCase())
+// str.toJadenCase(), "How Can Mirrors Be Real If Our Eyes Aren't Real";
+
+// function isIsogram(str){
+//     // for (i in str){
+//     //     for (j in str){
+//     //         if (j != i){
+//     //             if (str[j].toLowerCase() === str[i].toLowerCase()){
+//     //                 return false
+//     //             }
+//     //         }
+//     //     }
+//     // }
+//     // return true
+//     return new Set(str.toLowerCase()).size === str.length
+//   }
+
+// console.log(isIsogram('MoOse'))
+// console.log(isIsogram('abrujmklP'))
 
 // let x = new Set('ababababa')
 // console.log(x)
