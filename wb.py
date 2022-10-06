@@ -1,23 +1,57 @@
-def first_non_repeating_letter(string):
-    # logic: check the entire string for chars, count them, look for first non-repeating
-    # lower same as upper, but return accordingly
-    # i'm thinking a for loop to create a dict of chars, then another for loop afterwards to check dict items vs non-dict
-    # chars = {}
-    # for c in string:
-    #     if c.lower() in chars:
-    #         chars[c.lower()] = chars[c.lower()] + 1
-    #     else:
-    #         chars[c.lower()] = 1
-    
-    # for c in string:
-    #     if chars[c.lower()] == 1:
-    #         return c
-    # return ''
-    for c in string:
-        print(string.index(c))
+# def scramble(s1, s2):
+#     # do a dict approach
+#     chars = {}
+#     for c in set(s1):
+#         chars[c] = s1.count(c)
+#     for c in s2:
+#         if c in chars:
+#             chars[c] -= 1
+#         else:
+#             return False
+#         if chars[c] < 0:
+#             return False
+#     return True
 
-print(first_non_repeating_letter([1, 2, 3, 2, 4, 2, 5, 2]))
-print(first_non_repeating_letter('sTreSS'))
+# print(scramble('cedewaraaossoqqyt', 'codewars'))
+
+
+# def zeros(n):
+#     # factorial:
+#     # need to multiply successive integers up to given number input
+#     # zeros(3) = 1 * 2 * 3 = 6 -> zero 0s
+#     # order doesn't matter, can go from up to down
+#     # start with n, then go down n-1 until that == 1
+#     # need to multiply each n * n-1...
+#     if n == 1:
+#         print('n is at end: 1')
+#         return prod
+#     else:
+#         print(f'n is {n}')
+#         prod = n * zeros(n-1)
+
+# print(zeros(6))
+
+
+# def first_non_repeating_letter(string):
+#     # logic: check the entire string for chars, count them, look for first non-repeating
+#     # lower same as upper, but return accordingly
+#     # i'm thinking a for loop to create a dict of chars, then another for loop afterwards to check dict items vs non-dict
+#     # chars = {}
+#     # for c in string:
+#     #     if c.lower() in chars:
+#     #         chars[c.lower()] = chars[c.lower()] + 1
+#     #     else:
+#     #         chars[c.lower()] = 1
+    
+#     # for c in string:
+#     #     if chars[c.lower()] == 1:
+#     #         return c
+#     # return ''
+#     for c in string:
+#         print(string.index(c))
+
+# print(first_non_repeating_letter([1, 2, 3, 2, 4, 2, 5, 2]))
+# print(first_non_repeating_letter('sTreSS'))
 
 # Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
 
