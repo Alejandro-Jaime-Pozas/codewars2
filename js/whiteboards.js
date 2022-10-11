@@ -1,3 +1,10 @@
+// function addBinary(a,b){
+//     return (a+b).toString(2)
+//   }
+
+// console.log(addBinary(9, 5))
+
+
 // String.prototype.toJadenCase = function () {
 //   //   split the string by spaces
 //   //   once split, for loop for every word, capitalize word[0]
