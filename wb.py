@@ -1,3 +1,59 @@
+# Your job is to write a function which increments a string, to create a new string.
+
+# If the string already ends with a number, the number should be incremented by 1.
+# If the string does not end with a number. the number 1 should be appended to the new string.
+# Examples:
+
+# foo -> foo1
+
+# foobar23 -> foobar24
+
+# foo0042 -> foo0043
+
+# foo9 -> foo10
+
+# foo099 -> foo100
+
+# Attention: If the number has leading zeros the amount of digits should be considered.
+
+
+# def increment_string(string):
+#     # okay, so take the string, iterate to check if c is letter, add to letters list, number to numbers list
+#     # once you have a numbers list, join numbers, add + 1 to that number (but what if 0's before?)
+#         # leading 0s Not Permitted. So will have to add leading 0s to strings list or split from numbers list...could do a count to check for 0s, if 0 after letter, change count to 1, if no longer 0, change count to 2
+#     # NUMBERS COULD BE BETWEEN LETTERS, ONLY COUNT CONSECUTIVE LAST NUMBERS
+#     # IF 099, THEN + 1 WOULD BE 100 NOT 0100
+#     # ALSO, 000 SHOULD EQUAL 001 NOT 0001
+#     count = 0
+#     letters = ''
+#     numbers = ''
+#     for i, c in enumerate(string[::-1]):
+#         if c.isnumeric() and count == 0:
+#             numbers += c
+#         else:
+#             count = 1
+#             letters += c
+#     # need to check if numbers starts with 0s,
+#     letters = letters[::-1] 
+#     numbers = numbers[::-1]
+#     if not numbers:
+#         numbers = '1'
+#     else:
+#         plus_one = str(int(numbers) + 1) # this removes leading 0s
+#         if len(numbers) <= len(plus_one):
+#             numbers = plus_one
+#         else:
+#             numbers = numbers[0:(len(numbers)-len(plus_one))] + plus_one
+#     return ''.join(letters + numbers)
+
+# print(increment_string('foo'))
+# print(increment_string('foobar23'))
+# print(increment_string('foo0042'))
+# print(increment_string('fo99o099'))
+# print(increment_string('fo99o0099'))
+# print(increment_string('fo99o009899'))
+
+
 # def scramble(s1, s2):
 #     # do a dict approach
 #     chars = {}
