@@ -1,3 +1,100 @@
+# def done_or_not(board):
+#     for i in range(0, 9):
+#       (l, c, b) = (set(), set(), set())
+#       for j in range(0, 9):
+#           c.add(board[i][j]) 
+#           l.add(board[j][i])
+#           b.add(board[0 + j // 3][((i * 3) % 9) + j % 3])
+#       if len(l)!=9 or len(c)!=9 or len(b)!=9:
+#           return 'Try again!'
+#     return "Finished!"
+
+
+# print(done_or_not([  [1, 3, 2, 5, 7, 9, 4, 6, 8]
+#                         ,[4, 9, 8, 2, 6, 1, 3, 7, 5]
+#                         ,[7, 5, 6, 3, 8, 4, 2, 1, 9]
+#                         ,[6, 4, 3, 1, 5, 8, 7, 9, 2]
+#                         ,[5, 2, 1, 7, 9, 3, 8, 4, 6]
+#                         ,[9, 8, 7, 4, 2, 6, 5, 3, 1]
+#                         ,[2, 1, 4, 9, 3, 5, 6, 8, 7]
+#                         ,[3, 6, 5, 8, 1, 7, 9, 2, 4]
+#                         ,[8, 7, 9, 6, 4, 2, 1, 5, 3]]))
+
+# def done_or_not(board): #board[i][j]
+#     # okay. rows are easy just create a set for each row to check for duplicates..
+#     # n is a number
+#     # if n at position 1, n cannot be in that row, nor that column, nor in the range of variable 3x3 grid
+#     # we could create a set for each row, each column, and each 3x3. that would check if all are unique values...
+#     # row set...for each list, check if set(list) has length of 9 to continue
+#     for i, row in enumerate(board):
+#         if len(set(row)) != 9:
+#             return 'Try again!'
+#     # col set...for each row at row[index], check if num not in set to add to set and continue
+#     for i in range(len(board)):
+#         cols = set()
+#         for j in range(len(board)):
+#             if board[j][i] in cols:
+#                 return 'Try again!'
+#             cols.add(board[j][i])
+#             # print(cols)
+#     # 3x3 set...for each row, if row[index] in range 0:3,3:6,6:9, check row numbers in that range, and two above/below rows as well at same range, check if num not in 3x3 set to add to set and continue
+#     grid = set()
+#     for i in range(len(board)):
+#         for j in range(len(board)):
+#             if i in range(0,3):
+#                 if j in range(0,3):
+#                     if board[i][j] in grid:
+#                         return 'Try again!'
+#                     grid.add(board[i][j])
+#                 elif j in range(3,6):
+#                     if board[i][j] in grid:
+#                         return 'Try again!'
+#                     grid.add(board[i][j])
+#                 elif j in range(6,9):
+#                     if board[i][j] in grid:
+#                         return 'Try again!'
+#                     grid.add(board[i][j])
+#             grid = set()
+#             if i in range(3,6):
+#                 if j in range(0,3):
+#                     if board[i][j] in grid:
+#                         return 'Try again!'
+#                     grid.add(board[i][j])
+#                 elif j in range(3,6):
+#                     if board[i][j] in grid:
+#                         return 'Try again!'
+#                     grid.add(board[i][j])
+#                 elif j in range(6,9):
+#                     if board[i][j] in grid:
+#                         return 'Try again!'
+#                     grid.add(board[i][j])
+#             grid = set()
+#             if i in range(6,9):
+#                 if j in range(0,3):
+#                     if board[i][j] in grid:
+#                         return 'Try again!'
+#                     grid.add(board[i][j])
+#                 elif j in range(3,6):
+#                     if board[i][j] in grid:
+#                         return 'Try again!'
+#                     grid.add(board[i][j])
+#                 elif j in range(6,9):
+#                     if board[i][j] in grid:
+#                         return 'Try again!'
+#                     grid.add(board[i][j])
+
+#     return 'Finished!'
+
+# print(done_or_not([  [1, 3, 2, 5, 7, 9, 4, 6, 8]
+#                         ,[4, 9, 8, 2, 6, 1, 3, 7, 5]
+#                         ,[7, 5, 6, 3, 8, 4, 2, 1, 9]
+#                         ,[6, 4, 3, 1, 5, 8, 7, 9, 2]
+#                         ,[5, 2, 1, 7, 9, 3, 8, 4, 6]
+#                         ,[9, 8, 7, 4, 2, 6, 5, 3, 1]
+#                         ,[2, 1, 4, 9, 3, 5, 6, 8, 7]
+#                         ,[3, 6, 5, 8, 1, 7, 9, 2, 4]
+#                         ,[8, 7, 9, 6, 4, 2, 1, 5, 3]]))
+
 # Your job is to write a function which increments a string, to create a new string.
 
 # If the string already ends with a number, the number should be incremented by 1.

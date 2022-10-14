@@ -1,3 +1,27 @@
+
+
+// function findNextSquare(sq) {
+//     // Return the next square if sq is a perfect square, -1 otherwise
+//     sqrt = Math.sqrt(sq)
+//     return sqrt % 2 === 1 || sqrt % 2 === 0 ? (sqrt + 1) ** 2 : -1
+//   }
+
+// console.log(findNextSquare(121))
+// console.log(findNextSquare(64))
+// console.log(findNextSquare(121))
+
+
+// function validatePIN (pin) {
+//     return Number(pin) && (pin.length == 4 || pin.length == 6) ? true : false
+//   }
+
+// console.log(validatePIN('1234a'))
+// console.log(validatePIN('0000'))
+// console.log(validatePIN('12345'))
+// console.log(validatePIN('123456'))
+// console.log(validatePIN('12345a'))
+
+
 // function addBinary(a,b){
 //     return (a+b).toString(2)
 //   }
