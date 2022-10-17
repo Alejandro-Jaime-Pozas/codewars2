@@ -1,3 +1,24 @@
+
+
+
+# # You need to write regex that will validate a password to make sure it meets the following criteria:
+
+# # At least six characters long
+# # contains a lowercase letter
+# # contains an uppercase letter
+# # contains a digit
+# # only contains alphanumeric characters (note that '_' is not alphanumeric)
+
+# import re
+# # pattern = re.compile(r'')
+# # creo que ya tengo todo lo que necesito para cumplir..
+
+# test = re.search(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*_)(?!.*\W).{6,}', '2Aabcdf')
+# print(test)
+# # test2 = re.search(r'\w{9}', '2Aabcdf__\t')
+# # print(test2)
+
+
 # def done_or_not(board):
 #     for i in range(0, 9):
 #       (l, c, b) = (set(), set(), set())
