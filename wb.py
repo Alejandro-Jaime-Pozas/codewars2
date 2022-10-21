@@ -1,4 +1,35 @@
+def steps(num):
+    steps = 0
+    while num > 0:
+        if num % 2 == 0:
+            num /= 2
+        else:
+            num -= 1
+        steps += 1
+    return steps
 
+print(steps(4))
+
+
+
+# def richest(xlist):
+#     for i, customer in enumerate(xlist):
+#         xlist[i] = sum(customer)
+#     return max(xlist)
+
+# print(richest([[7,1,3],[2,8,7],[1,9,5]]))
+
+
+# def running_sum(nums):
+#     # nums is a list
+#     count = 0
+#     running_list = []
+#     for num in nums:
+#         count += num
+#         running_list.append(count)
+#     return running_list
+
+# print(running_sum([3,1,2,10,1]))
 
 
 # # You need to write regex that will validate a password to make sure it meets the following criteria:
