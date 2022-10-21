@@ -1,14 +1,14 @@
-def steps(num):
-    steps = 0
-    while num > 0:
-        if num % 2 == 0:
-            num /= 2
-        else:
-            num -= 1
-        steps += 1
-    return steps
+# def steps(num):
+#     steps = 0
+#     while num > 0:
+#         if num % 2 == 0:
+#             num /= 2
+#         else:
+#             num -= 1
+#         steps += 1
+#     return steps
 
-print(steps(4))
+# print(steps(4))
 
 
 
