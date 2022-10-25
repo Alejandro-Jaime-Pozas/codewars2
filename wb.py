@@ -1,3 +1,20 @@
+# def calc():
+#     # there is a pattern here: 2^n always follows 2, 4, 8, 6, 2, 4, 8, 6, etc
+#     for num in range(12, 16):
+#         for exp in range(1, 16):
+#             print(num, 'to the', exp, f"Result is {num**exp}")
+#     return pow(3, 3) % 7
+
+# print(calc())
+
+
+# def strings(word1, word2):
+#     return ''.join(word1) == ''.join(word2)
+
+
+# print(strings(['ab', 'c'], ['a', 'bc']))
+
+
 # def steps(num):
 #     steps = 0
 #     while num > 0:
@@ -9,7 +26,6 @@
 #     return steps
 
 # print(steps(4))
-
 
 
 # def richest(xlist):
