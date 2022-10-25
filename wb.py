@@ -3,7 +3,7 @@
 #     for num in range(12, 16):
 #         for exp in range(1, 16):
 #             print(num, 'to the', exp, f"Result is {num**exp}")
-#     return pow(3, 3) % 7
+#     return pow(3, 3, 7) % 7
 
 # print(calc())
 
