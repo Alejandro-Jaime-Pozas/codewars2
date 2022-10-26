@@ -1,3 +1,70 @@
+# def order_weight(string):
+#     # input: string of numbers separated by spaces
+#     # output: string of numbers separated by spaces
+#     # need to separate strings by whitespace, change each string to integer for comparison, sort smallest to largest integer, if same integer sort by their string form, when finished sorting, return string of joined integers
+#     str_list = string.split(' ')
+#     sums_list = []
+#     for weight in str_list:
+#         dsum = 0
+#         for d in weight:
+#             dsum += int(d)
+#         sums_list.append(dsum)
+#     return (sums_list)
+    # return sorted(int_list)
+
+def order_weight(_str):
+    return ' '.join(sorted((_str.split(' ')), key=lambda x: sum([int(c) for c in x])))
+    # return (int(c) for c in _str.split())
+    # return sum([1,2,3,4,5])
+    # return sum(1,2,3,4,5)
+
+print(order_weight("56 65 74 100 99 68 86 180 90")) # "100 180 90 56 65 74 68 86 99"
+
+
+# A single die can only be counted once in each roll. For example, a given "5" can only count as part of a triplet (contributing to the 500 points) or as a single 50 points, but not both in the same roll.
+
+# Example scoring
+#  Throw       Score
+#  ---------   ------------------
+#  5 1 3 4 1   250:  50 (for the 5) + 2 * 100 (for the 1s)
+#  1 1 1 3 1   1100: 1000 (for three 1s) + 100 (for the other 1)
+#  2 4 4 5 4   450:  400 (for three 4s) + 50 (for the 5)
+
+# def score(dice):
+#     # input: array of 5 numbers from 1-6 random
+#     # output: integer of total points
+#     # if a number is contained exactly 3 times in array, sum those special points
+#     # elif for every 1 or 5 in array, sum 100 or 50 points
+#     # esta mucho mas complicado de lo que pensaba...
+#     # me la estoy complicando siento
+#     points = 0
+#     dnums = {}
+#     for num in set(dice):
+#         dnums[num] = dice.count(num)
+#         if dnums[num] >= 3:
+#             if num == 1:
+#                 points += num * 1000
+#                 dnums[num] -= 3
+#                 points += dnums[num] * 100
+#             elif num == 5:
+#                 points += num * 100
+#                 dnums[num] -= 3
+#                 points += dnums[num] * 100
+#             else:
+#                 points += num * 100
+#         else:
+#             if num == 1:
+#                 points += dnums[num] * 100
+#             elif num == 5:
+#                 points += dnums[num] * 50
+#     return points
+
+# print(score([5,1,3,4,1]))
+# print(score([1,1,1,1,1]))
+# print(score([1,1,1,1,3]))
+# print(score([2,4,4,5,4]))
+
+
 # def calc():
 #     # there is a pattern here: 2^n always follows 2, 4, 8, 6, 2, 4, 8, 6, etc
 #     for num in range(12, 16):
