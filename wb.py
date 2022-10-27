@@ -1,4 +1,39 @@
+
+
+
+# def narcissistic(value):
+#     exp = len(str(value))
+#     numbers = [int(d)**exp for d in (str(value))]
+#     return sum(numbers) == value
+
+# print(narcissistic(153))
+
+
+
+# def order(sentence):
+#     # code here
+# #   need to split the str, then check if there is an integer in string, and place that word or insert in its right position in new array
+#     def int_order(word):
+#         # list_sentence = sentence.split()
+#         # for word in (list_sentence):
+#         for c in word:
+#             if c.isnumeric():
+#                 # need to modify original list...so pop word at its index, and insert that popped word at new index...
+#                 return int(c)
+
+#     return ' '.join(sorted(sentence.split(), key=int_order))
+
+# print(order('4of Fo1r pe6ople g3ood th5e the2'))
+
+
+# def sort_by_length(arr):
+#     # need to sort array from small to largest in length...
+#     return sorted(arr, key=len)
+
+# print(sort_by_length(["Telescopes", "Glasses", "Eyes", "Monocles"]))
+
 # def remove_url_anchor(url):
+
 #     # TODO: complete
 #     # need to look at url, see 1st instance of '#' symbol, and only return whatever is before that symbol
 #     return url.partition('#')
