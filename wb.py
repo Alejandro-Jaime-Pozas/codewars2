@@ -1,3 +1,16 @@
+
+
+
+# def sequence_sum(begin_number, end_number, step):
+#     # input three numbers as integers
+#     # output one integer
+#     total = 0
+#     for num in range(begin_number, end_number+1, step):
+#         total += num
+#     return total
+
+# print(sequence_sum(1,5,1))
+
 # def order_weight(string):
 #     # input: string of numbers separated by spaces
 #     # output: string of numbers separated by spaces
@@ -12,13 +25,13 @@
 #     return (sums_list)
     # return sorted(int_list)
 
-def order_weight(_str):
-    return ' '.join(sorted((_str.split(' ')), key=lambda x: sum([int(c) for c in x])))
-    # return (int(c) for c in _str.split())
-    # return sum([1,2,3,4,5])
-    # return sum(1,2,3,4,5)
+# def order_weight(_str):
+#     return ' '.join(sorted((_str.split(' ')), key=lambda x: sum([int(c) for c in x])))
+#     # return (int(c) for c in _str.split())
+#     # return sum([1,2,3,4,5])
+#     # return sum(1,2,3,4,5)
 
-print(order_weight("56 65 74 100 99 68 86 180 90")) # "100 180 90 56 65 74 68 86 99"
+# print(order_weight("56 65 74 100 99 68 86 180 90")) # "100 180 90 56 65 74 68 86 99"
 
 
 # A single die can only be counted once in each roll. For example, a given "5" can only count as part of a triplet (contributing to the 500 points) or as a single 50 points, but not both in the same roll.
