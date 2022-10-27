@@ -1,4 +1,18 @@
+# def remove_url_anchor(url):
+#     # TODO: complete
+#     # need to look at url, see 1st instance of '#' symbol, and only return whatever is before that symbol
+#     return url.partition('#')
 
+# print(remove_url_anchor("www.codewars.com#about#me"))
+# print(remove_url_anchor("www.codewars.com?page=1"))
+
+
+# write the function is_anagram
+# def is_anagram(test, original):
+#     # so if we can compare letters by re-arraning w a fn, should solve problem, taking sentence case into acct
+#     return sorted(test.lower()) == sorted(original.lower())
+
+# print(is_anagram("foefeT", "toffee"))
 
 
 # def sequence_sum(begin_number, end_number, step):
