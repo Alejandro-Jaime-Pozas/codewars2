@@ -1,3 +1,40 @@
+# Your Task
+# You will be given a wishlist (array), containing all possible items. Each item is in the format: {name: "toy car", size: "medium", clatters: "a bit", weight: "medium"} (Ruby version has an analog hash structure, see example below)
+
+# You also get a list of presents (array), you see under the christmas tree, which have the following format each: {size: "small", clatters: "no", weight: "light"}
+
+# Your task is to return the names of all wishlisted presents that you might have gotten.
+
+# Rules
+# Possible values for size: "small", "medium", "large"
+# Possible values for clatters: "no", "a bit", "yes"
+# Possible values for weight: "light", "medium", "heavy"
+# Don't add any item more than once to the result
+# The order of names in the output doesn't matter
+# It's possible, that multiple items from your wish list have the same attribute values. If they match the attributes of one of the presents, add all of them.
+# Example
+wishlist = [{'name': "mini puzzle", 'size': "small", 'clatters': "yes", 'weight': "light"},
+            {'name': "toy car", 'size': "medium", 'clatters': "a bit", 'weight': "medium"},
+            {'name': "card game", 'size': "small", 'clatters': "no", 'weight': "light"}]
+presents = [{'size': "medium", 'clatters': "a bit", 'weight': "medium"},
+            {'size': "small", 'clatters': "yes", 'weight': "light"}]
+# guess_gifts(wishlist, presents) # => must return ["Toy Car", "Mini Puzzle"]
+
+def guess_gifts(wishlist, presents): 
+    # input: 2 lists, each with multiple dictionaries with string attr
+    # output: list with string attr
+    # check for every present, if all of its 3 attributes match w 1 or multiple items in wishlist
+    possible = []
+    for i, present in enumerate(presents):
+        # print(i, present['weight'])
+        for j, wishlist_p in enumerate(wishlist):
+            if present['weight'] == wishlist_p['weight'] and present['size'] == wishlist_p['size'] and present['clatters'] == wishlist_p['clatters']:
+                possible.append(wishlist_p['name'])
+    return list(set(possible))
+
+print(guess_gifts(wishlist, presents))
+
+
 # def zero(): #your code here
 # def one(): #your code here
 # def two(): #your code here
