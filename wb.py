@@ -1,3 +1,33 @@
+# Write a class that, when given a string, will return an uppercase string with each letter shifted forward in the alphabet by however many spots the cipher was initialized to.
+
+# For example:
+
+# c = CaesarCipher(5); # creates a CipherHelper with a shift of five
+# c.encode('Codewars') # returns 'HTIJBFWX'
+# c.decode('BFKKQJX') # returns 'WAFFLES'
+# If something in the string is not in the alphabet (e.g. punctuation, spaces), simply leave it as is.
+# The shift will always be in range of [1, 26].
+
+class CaesarCipher(object):
+    # need to lowercase the string, then for each alpha character move forward if encode or backward if decode
+    # range in shift will be within 1, 26
+    # need formula to do if c after shift is < 1 or > 26, then subtract accordingly or something
+    def __init__(self, shift):
+        pass
+
+    def encode(self, st):
+        # returns + int
+        pass
+        
+    def decode(self, st):
+        # returns - int
+        pass
+
+c = CaesarCipher(5)
+print(c.encode('Codewars'))
+print(c.decode('BFKKQJX'))
+
+
 # Your Task
 # You will be given a wishlist (array), containing all possible items. Each item is in the format: {name: "toy car", size: "medium", clatters: "a bit", weight: "medium"} (Ruby version has an analog hash structure, see example below)
 
@@ -13,26 +43,26 @@
 # The order of names in the output doesn't matter
 # It's possible, that multiple items from your wish list have the same attribute values. If they match the attributes of one of the presents, add all of them.
 # Example
-wishlist = [{'name': "mini puzzle", 'size': "small", 'clatters': "yes", 'weight': "light"},
-            {'name': "toy car", 'size': "medium", 'clatters': "a bit", 'weight': "medium"},
-            {'name': "card game", 'size': "small", 'clatters': "no", 'weight': "light"}]
-presents = [{'size': "medium", 'clatters': "a bit", 'weight': "medium"},
-            {'size': "small", 'clatters': "yes", 'weight': "light"}]
-# guess_gifts(wishlist, presents) # => must return ["Toy Car", "Mini Puzzle"]
+# wishlist = [{'name': "mini puzzle", 'size': "small", 'clatters': "yes", 'weight': "light"},
+#             {'name': "toy car", 'size': "medium", 'clatters': "a bit", 'weight': "medium"},
+#             {'name': "card game", 'size': "small", 'clatters': "no", 'weight': "light"}]
+# presents = [{'size': "medium", 'clatters': "a bit", 'weight': "medium"},
+#             {'size': "small", 'clatters': "yes", 'weight': "light"}]
+# # guess_gifts(wishlist, presents) # => must return ["Toy Car", "Mini Puzzle"]
 
-def guess_gifts(wishlist, presents): 
-    # input: 2 lists, each with multiple dictionaries with string attr
-    # output: list with string attr
-    # check for every present, if all of its 3 attributes match w 1 or multiple items in wishlist
-    possible = []
-    for i, present in enumerate(presents):
-        # print(i, present['weight'])
-        for j, wishlist_p in enumerate(wishlist):
-            if present['weight'] == wishlist_p['weight'] and present['size'] == wishlist_p['size'] and present['clatters'] == wishlist_p['clatters']:
-                possible.append(wishlist_p['name'])
-    return list(set(possible))
+# def guess_gifts(wishlist, presents): 
+#     # input: 2 lists, each with multiple dictionaries with string attr
+#     # output: list with string attr
+#     # check for every present, if all of its 3 attributes match w 1 or multiple items in wishlist
+#     possible = []
+#     for i, present in enumerate(presents):
+#         # print(i, present['weight'])
+#         for j, wishlist_p in enumerate(wishlist):
+#             if present['weight'] == wishlist_p['weight'] and present['size'] == wishlist_p['size'] and present['clatters'] == wishlist_p['clatters']:
+#                 possible.append(wishlist_p['name'])
+#     return list(set(possible))
 
-print(guess_gifts(wishlist, presents))
+# print(guess_gifts(wishlist, presents))
 
 
 # def zero(): #your code here
