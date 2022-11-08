@@ -13,18 +13,42 @@ class CaesarCipher(object):
     # range in shift will be within 1, 26
     # need formula to do if c after shift is < 1 or > 26, then subtract accordingly or something
     def __init__(self, shift):
-        pass
+        self.shift = shift
 
-    def encode(self, st):
-        # returns + int
-        pass
+    def encode(self, string):
+        # returns + shift
+        # will change the string in-place not out of place
+        st = list(string.lower())
+        for i, c in enumerate(st):
+            if c.isalpha():
+                # change c by + shift, if out of range, do result - 26 or something
+                new = ord(c) + self.shift # NEED TO GET THE INT OF C HERE
+                # if letter goes over 'z', subtract 26 from ord value
+                if new > 122:
+                    st[i] = chr(new - 26)
+                else:
+                    st[i] = chr(new)
+        return ''.join(st).upper()
+
+        # 97  a
+        # 122 z
         
-    def decode(self, st):
-        # returns - int
-        pass
+    def decode(self, string):
+        # returns - shift
+        st = list(string.lower())
+        for i, c in enumerate(st):
+            if c.isalpha():
+                # change c by + shift, if out of range, do result - 26 or something
+                new = ord(c) - self.shift # NEED TO GET THE INT OF C HERE
+                # if letter goes over 'z', subtract 26 from ord value
+                if new < 97:
+                    st[i] = chr(new + 26)
+                else:
+                    st[i] = chr(new)
+        return ''.join(st).upper()
 
 c = CaesarCipher(5)
-print(c.encode('Codewars'))
+print(c.encode('Code.wars'))
 print(c.decode('BFKKQJX'))
 
 
