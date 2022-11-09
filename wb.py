@@ -1,55 +1,76 @@
-# Write a class that, when given a string, will return an uppercase string with each letter shifted forward in the alphabet by however many spots the cipher was initialized to.
+def pyramid(n):
+# input is integer
+# output is array of arrays
+# cannot be less than 0, if 0 then empty array
+# each array should contain 1 as int inside each index position
+# create initial empty list
+# while loop until 0 reached? insert each new arr at index 0
+# in while loop, create single arr with n length of 1 values
+# after each loop, reduce n by 1
+    final = []
+    while n > 0:
+        # arr = list('1'*n) # need to create [1, 1, 1]
+        arr = [1 for _ in range(n)]
+        final.insert(0, arr)
+        n -= 1
+    # print(10*['i'])
+    return final
 
-# For example:
+print(pyramid(5))
 
-# c = CaesarCipher(5); # creates a CipherHelper with a shift of five
-# c.encode('Codewars') # returns 'HTIJBFWX'
-# c.decode('BFKKQJX') # returns 'WAFFLES'
-# If something in the string is not in the alphabet (e.g. punctuation, spaces), simply leave it as is.
-# The shift will always be in range of [1, 26].
 
-class CaesarCipher(object):
-    # need to lowercase the string, then for each alpha character move forward if encode or backward if decode
-    # range in shift will be within 1, 26
-    # need formula to do if c after shift is < 1 or > 26, then subtract accordingly or something
-    def __init__(self, shift):
-        self.shift = shift
+# # Write a class that, when given a string, will return an uppercase string with each letter shifted forward in the alphabet by however many spots the cipher was initialized to.
 
-    def encode(self, string):
-        # returns + shift
-        # will change the string in-place not out of place
-        st = list(string.lower())
-        for i, c in enumerate(st):
-            if c.isalpha():
-                # change c by + shift, if out of range, do result - 26 or something
-                new = ord(c) + self.shift # NEED TO GET THE INT OF C HERE
-                # if letter goes over 'z', subtract 26 from ord value
-                if new > 122:
-                    st[i] = chr(new - 26)
-                else:
-                    st[i] = chr(new)
-        return ''.join(st).upper()
+# # For example:
 
-        # 97  a
-        # 122 z
+# # c = CaesarCipher(5); # creates a CipherHelper with a shift of five
+# # c.encode('Codewars') # returns 'HTIJBFWX'
+# # c.decode('BFKKQJX') # returns 'WAFFLES'
+# # If something in the string is not in the alphabet (e.g. punctuation, spaces), simply leave it as is.
+# # The shift will always be in range of [1, 26].
+
+# class CaesarCipher(object):
+#     # need to lowercase the string, then for each alpha character move forward if encode or backward if decode
+#     # range in shift will be within 1, 26
+#     # need formula to do if c after shift is < 1 or > 26, then subtract accordingly or something
+#     def __init__(self, shift):
+#         self.shift = shift
+
+#     def encode(self, string):
+#         # returns + shift
+#         # will change the string in-place not out of place
+#         st = list(string.lower())
+#         for i, c in enumerate(st):
+#             if c.isalpha():
+#                 # change c by + shift, if out of range, do result - 26 or something
+#                 new = ord(c) + self.shift # NEED TO GET THE INT OF C HERE
+#                 # if letter goes over 'z', subtract 26 from ord value
+#                 if new > 122:
+#                     st[i] = chr(new - 26)
+#                 else:
+#                     st[i] = chr(new)
+#         return ''.join(st).upper()
+
+#         # 97  a
+#         # 122 z
         
-    def decode(self, string):
-        # returns - shift
-        st = list(string.lower())
-        for i, c in enumerate(st):
-            if c.isalpha():
-                # change c by + shift, if out of range, do result - 26 or something
-                new = ord(c) - self.shift # NEED TO GET THE INT OF C HERE
-                # if letter goes over 'z', subtract 26 from ord value
-                if new < 97:
-                    st[i] = chr(new + 26)
-                else:
-                    st[i] = chr(new)
-        return ''.join(st).upper()
+#     def decode(self, string):
+#         # returns - shift
+#         st = list(string.lower())
+#         for i, c in enumerate(st):
+#             if c.isalpha():
+#                 # change c by + shift, if out of range, do result - 26 or something
+#                 new = ord(c) - self.shift # NEED TO GET THE INT OF C HERE
+#                 # if letter goes over 'z', subtract 26 from ord value
+#                 if new < 97:
+#                     st[i] = chr(new + 26)
+#                 else:
+#                     st[i] = chr(new)
+#         return ''.join(st).upper()
 
-c = CaesarCipher(5)
-print(c.encode('Code.wars'))
-print(c.decode('BFKKQJX'))
+# c = CaesarCipher(5)
+# print(c.encode('Code.wars'))
+# print(c.decode('BFKKQJX'))
 
 
 # Your Task
