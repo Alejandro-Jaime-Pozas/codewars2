@@ -1,4 +1,11 @@
-
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+#         could loop through each elem 
+#         easy solution:
+        for num in nums:
+            if nums.count(num) > 1:
+                return True
+        return False
 
 
 # def solve(string):
