@@ -1,22 +1,67 @@
-def pyramid(n):
-# input is integer
-# output is array of arrays
-# cannot be less than 0, if 0 then empty array
-# each array should contain 1 as int inside each index position
-# create initial empty list
-# while loop until 0 reached? insert each new arr at index 0
-# in while loop, create single arr with n length of 1 values
-# after each loop, reduce n by 1
-    final = []
-    while n > 0:
-        # arr = list('1'*n) # need to create [1, 1, 1]
-        arr = [1 for _ in range(n)]
-        final.insert(0, arr)
-        n -= 1
-    # print(10*['i'])
-    return final
 
-print(pyramid(5))
+
+
+# def solve(string):
+#     # check if char is consonant, then get its value and store it in dict
+#     cons = set('bcdfghjklmnpqrstvwxyz')
+#     values = {}
+#     for c in string:
+#         if c in cons:
+#             values[c] = ord(c) - 96 # 'a' gives 1
+#     # now i have dict of all leters in string with their values..need to now store/compare consecutive consonants in string
+#     # can do a running sum of values IF still consonants, 
+#     is_c_cons = False
+#     tally = 0
+#     for i, c in enumerate(string):
+#         if c in cons:
+#             is_c_cons = True
+#         else:
+#             is_c_cons = False
+#         if is_c_cons:
+#             tally += values[c]
+
+# print(solve('strength'))
+
+
+# def highest_rank(arr):
+#     # return the number w the highest count within the array
+#     # if tie, return the largest number
+#     count = 0
+#     maximum = None
+#     for num in set(arr):
+#         this_num_count = arr.count(num)
+#         if this_num_count > count:
+#             count = this_num_count
+#             maximum = num
+#         elif this_num_count == count:
+#             if num > maximum:
+#                 maximum = num
+#     return maximum
+
+# print(highest_rank([12, 10, 8, 12, 7, 6, 4, 10, 12]))
+# print(highest_rank([12, 10, 8, 12, 7, 6, 4, 10, 12, 10]))
+# print(highest_rank([12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]))
+
+
+# def pyramid(n):
+# # input is integer
+# # output is array of arrays
+# # cannot be less than 0, if 0 then empty array
+# # each array should contain 1 as int inside each index position
+# # create initial empty list
+# # while loop until 0 reached? insert each new arr at index 0
+# # in while loop, create single arr with n length of 1 values
+# # after each loop, reduce n by 1
+#     final = []
+#     while n > 0:
+#         # arr = list('1'*n) # need to create [1, 1, 1]
+#         arr = [1 for _ in range(n)]
+#         final.insert(0, arr)
+#         n -= 1
+#     # print(10*['i'])
+#     return final
+
+# print(pyramid(5))
 
 
 # # Write a class that, when given a string, will return an uppercase string with each letter shifted forward in the alphabet by however many spots the cipher was initialized to.
