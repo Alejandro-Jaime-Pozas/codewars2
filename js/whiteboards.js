@@ -1,4 +1,22 @@
-ksf
+// var palindromeChainLength = function(n) {
+//     // if palindrome from start, then return 0
+//     // if not palindrome, while loop to check whether number reversed added to original returns a palindrome..keep going and add step count until palindrome reached. 
+//     let original = String(n).split('').join('')
+//     let reversed = String(n).split('').reverse().join('')
+//     let steps = 0
+//     while (original !== reversed){
+//         newNum = parseInt(original) + parseInt(reversed)
+//         original = String(newNum).split('').join('')
+//         reversed = String(newNum).split('').reverse().join('')
+//         steps += 1
+//     }
+//     return steps
+//   };
+
+// console.log(palindromeChainLength(87));
+// console.log(palindromeChainLength(878));
+// console.log(palindromeChainLength(1221));
+// console.log(palindromeChainLength(89));
 
 // function myLanguages(results) {
 //     let final = []
