@@ -1,3 +1,25 @@
+ksf
+
+// function myLanguages(results) {
+//     let final = []
+//     for (let i in results){
+//         if (results[i] >= 60){
+//             final.push(results[i])
+//         }
+//     }
+//     final.sort((a, b)=>b-a)
+//     let languages = []
+//     for (let score of final){
+//         languages.push()
+//     }
+//     return final
+// }
+
+// console.log(myLanguages({"Java": 10, "Ruby": 80, "Python": 65}))
+// console.log(myLanguages({"Hindi": 60, "Dutch" : 93, "Greek": 71}))
+// console.log(myLanguages({"C++": 50, "ASM": 10, "Haskell": 20}))
+
+
 // function reverseWords(str) {
 //     // Go for it
 //     return str[0]

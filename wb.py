@@ -1,19 +1,19 @@
-def clean_string(s):
-    # a backspace can be one or more and deletes characters that come before it
-    # basically pop() should delete the last from string
-    backspaced = []
-    for c in s:
-        if c == '#':
-            if not backspaced:
-                continue
-            else:
-                backspaced.pop()
-        else:
-            backspaced.append(c)
-    return ''.join(backspaced)
+# def clean_string(s):
+#     # a backspace can be one or more and deletes characters that come before it
+#     # basically pop() should delete the last from string
+#     backspaced = []
+#     for c in s:
+#         if c == '#':
+#             if not backspaced:
+#                 continue
+#             else:
+#                 backspaced.pop()
+#         else:
+#             backspaced.append(c)
+#     return ''.join(backspaced)
 
-print(clean_string('abc#d##c'))
-print(clean_string('abc##d######'))
+# print(clean_string('abc#d##c'))
+# print(clean_string('abc##d######'))
 
 
 # class Solution:
