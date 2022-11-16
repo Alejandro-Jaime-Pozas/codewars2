@@ -1,3 +1,49 @@
+function capitalize(s){
+    // output arr with two strings
+    let final = []
+    let original = s.split('')
+    let even = []
+    for (let i in original){
+        i%2 === 0 ? even.push(original[i].toUpperCase()) : even.push(original[i])
+        // if (i%2===0){
+            //     even.push(original[i].toUpperCase())
+            // } else {
+                //     even.push(original[i])
+                // }
+    }
+    let odd = []
+    for (let i in original){
+        i%2 === 0 ? odd.push(original[i]) : odd.push(original[i].toUpperCase())
+        // if (i%2!==0){
+        //     odd.push(original[i].toUpperCase())
+        // } else {
+        //     odd.push(original[i])
+        // }
+    }
+
+    return [even.join(''), odd.join('')];
+  };
+
+console.log(capitalize('abcdef'));
+
+
+// function getEvenNumbers(numbersArray){
+//     // filter out the odd numbers
+//         return numbersArray.filter(n => n % 2 === 0)
+//   }
+
+// console.log(getEvenNumbers([2,4,5,6]));
+// console.log(getEvenNumbers([3,5,7]));
+
+
+// // number = 1000
+// {
+//     let number = 10
+//     number = 100000
+//     console.log(number);
+// }
+// console.log(number);
+
 // var palindromeChainLength = function(n) {
 //     // if palindrome from start, then return 0
 //     // if not palindrome, while loop to check whether number reversed added to original returns a palindrome..keep going and add step count until palindrome reached. 
