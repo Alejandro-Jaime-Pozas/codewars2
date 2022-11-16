@@ -1,30 +1,44 @@
-function capitalize(s){
-    // output arr with two strings
-    let final = []
-    let original = s.split('')
-    let even = []
-    for (let i in original){
-        i%2 === 0 ? even.push(original[i].toUpperCase()) : even.push(original[i])
-        // if (i%2===0){
-            //     even.push(original[i].toUpperCase())
-            // } else {
-                //     even.push(original[i])
-                // }
-    }
-    let odd = []
-    for (let i in original){
-        i%2 === 0 ? odd.push(original[i]) : odd.push(original[i].toUpperCase())
-        // if (i%2!==0){
-        //     odd.push(original[i].toUpperCase())
-        // } else {
-        //     odd.push(original[i])
-        // }
-    }
+// function solve(s){
+//     //..lowercase if tie
+//     lower = ''
+//     upper = ''
+//     for (c of s){
+//         c === c.toLowerCase() ? lower += c : upper += c
+//     }
+//     return lower.length >= upper.length ? s.toLowerCase() : s.toUpperCase()
+// }
 
-    return [even.join(''), odd.join('')];
-  };
+// console.log(solve('coDe'));
+// console.log(solve('CODe'));
+// console.log(solve('COde'));
 
-console.log(capitalize('abcdef'));
+// function capitalize(s){
+//     // output arr with two strings
+//     let final = []
+//     let original = s.split('')
+//     let even = []
+//     for (let i in original){
+//         i%2 === 0 ? even.push(original[i].toUpperCase()) : even.push(original[i])
+//         // if (i%2===0){
+//             //     even.push(original[i].toUpperCase())
+//             // } else {
+//                 //     even.push(original[i])
+//                 // }
+//     }
+//     let odd = []
+//     for (let i in original){
+//         i%2 === 0 ? odd.push(original[i]) : odd.push(original[i].toUpperCase())
+//         // if (i%2!==0){
+//         //     odd.push(original[i].toUpperCase())
+//         // } else {
+//         //     odd.push(original[i])
+//         // }
+//     }
+
+//     return [even.join(''), odd.join('')];
+//   };
+
+// console.log(capitalize('abcdef'));
 
 
 // function getEvenNumbers(numbersArray){
