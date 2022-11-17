@@ -1,3 +1,13 @@
+function largestPairSum (numbers) {
+    // get max values, add them
+    numbers.sort((a, b) => b - a)
+    return numbers[0] + numbers[1]
+  }
+
+console.log(largestPairSum([10, 14, 2, 23, 19]));
+console.log(largestPairSum([99, 2, 2, 23, 19]));
+
+
 // function solve(s){
 //     //..lowercase if tie
 //     lower = ''
