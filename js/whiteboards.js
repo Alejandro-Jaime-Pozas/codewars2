@@ -1,11 +1,25 @@
-function largestPairSum (numbers) {
-    // get max values, add them
-    numbers.sort((a, b) => b - a)
-    return numbers[0] + numbers[1]
-  }
+// function switcheroo(x){
+//     // only letters a, b or c included
+//     string = x.split('')
+//     // for (let i in string){
+//     //     string[i] === 'a' ? string[i] = 'b' : string[i] === 'b' ? string[i] = 'a' : string[i] = 'c'
+//     // }
+//     // return string.join('')
+//     return string.map(c => c === 'a' ? c = 'b' : c === 'b' ? c = 'a' : c).join('')
+// }
 
-console.log(largestPairSum([10, 14, 2, 23, 19]));
-console.log(largestPairSum([99, 2, 2, 23, 19]));
+// console.log(switcheroo('aabacbaa'));
+// console.log(switcheroo('acb'));
+
+
+// function largestPairSum (numbers) {
+//     // get max values, add them
+//     numbers.sort((a, b) => b - a)
+//     return numbers[0] + numbers[1]
+//   }
+
+// console.log(largestPairSum([10, 14, 2, 23, 19]));
+// console.log(largestPairSum([99, 2, 2, 23, 19]));
 
 
 // function solve(s){
