@@ -1,3 +1,35 @@
+# Pair of gloves
+# Winter is coming, you must prepare your ski holidays. The objective of this kata is to determine the number of pair of gloves you can constitute from the gloves you have in your drawer.
+
+# Given an array describing the color of each glove, return the number of pairs you can constitute, assuming that only gloves of the same color can form pairs.
+
+# Examples:
+# input = ["red", "green", "red", "blue", "blue"]
+# result = 2 (1 red pair + 1 blue pair)
+
+# input = ["red", "red", "red", "red", "red", "red"]
+# result = 3 (3 red pairs)
+
+def number_of_pairs(gloves):
+    glove_pairs = {}
+    for glove in gloves:
+        glove_pairs[glove] = glove_pairs.get(glove, 0) + 1
+    pairs = 0
+    for value in glove_pairs.values():
+        pairs += value // 2
+    return pairs
+
+print(number_of_pairs(["red", "green", "red", "blue", "blue"]))
+print(number_of_pairs(["red", "red", "red", "red", "red", "red"]))
+
+# def calc(expr):
+#     # need for loop through string..if can be int or float, convert, if operand, need to change its place to 1 index position to its left, if consecutive numbers wo operands, use next operand for all of them
+#     # should i change the string first to have operands in right place?
+#     # can create a list with the numbers if i and i+1 are both numbers to store them, always check i and i+1..if i and i+1 are numbers, store in list? if not, the perform operation
+#     return eval(expr)
+
+# print(calc("5 - 1 + 2 + 4 * + 3"))
+
 # def clean_string(s):
 #     # a backspace can be one or more and deletes characters that come before it
 #     # basically pop() should delete the last from string
