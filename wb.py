@@ -1,3 +1,29 @@
+# matrixAddition(
+#   [ [1, 2, 3],
+#     [3, 2, 1],
+#     [1, 1, 1] ],
+# //      +
+#   [ [2, 2, 1],
+#     [3, 2, 3],
+#     [1, 1, 3] ] )
+
+# // returns:
+#   [ [3, 4, 4],
+#     [6, 4, 4],
+#     [2, 2, 4] ]
+
+def matrix_addition(a, b):
+    # your code here
+    return
+
+print(matrix_addition(
+    [ [1, 2, 3],
+    [3, 2, 1],
+    [1, 1, 1] ], 
+    [ [3, 4, 4],
+    [6, 4, 4],
+    [2, 2, 4] ]))
+
 # Pair of gloves
 # Winter is coming, you must prepare your ski holidays. The objective of this kata is to determine the number of pair of gloves you can constitute from the gloves you have in your drawer.
 
@@ -10,17 +36,17 @@
 # input = ["red", "red", "red", "red", "red", "red"]
 # result = 3 (3 red pairs)
 
-def number_of_pairs(gloves):
-    glove_pairs = {}
-    for glove in gloves:
-        glove_pairs[glove] = glove_pairs.get(glove, 0) + 1
-    pairs = 0
-    for value in glove_pairs.values():
-        pairs += value // 2
-    return pairs
+# def number_of_pairs(gloves):
+#     glove_pairs = {}
+#     for glove in gloves:
+#         glove_pairs[glove] = glove_pairs.get(glove, 0) + 1
+#     pairs = 0
+#     for value in glove_pairs.values():
+#         pairs += value // 2
+#     return pairs
 
-print(number_of_pairs(["red", "green", "red", "blue", "blue"]))
-print(number_of_pairs(["red", "red", "red", "red", "red", "red"]))
+# print(number_of_pairs(["red", "green", "red", "blue", "blue"]))
+# print(number_of_pairs(["red", "red", "red", "red", "red", "red"]))
 
 # def calc(expr):
 #     # need for loop through string..if can be int or float, convert, if operand, need to change its place to 1 index position to its left, if consecutive numbers wo operands, use next operand for all of them
