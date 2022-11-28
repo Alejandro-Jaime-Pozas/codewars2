@@ -1,28 +1,37 @@
-# matrixAddition(
-#   [ [1, 2, 3],
+
+
+
+# # matrixAddition(
+# #   [ [1, 2, 3],
+# #     [3, 2, 1],
+# #     [1, 1, 1] ],
+# # //      +
+# #   [ [2, 2, 1],
+# #     [3, 2, 3],
+# #     [1, 1, 3] ] )
+
+# # // returns:
+# #   [ [3, 4, 4],
+# #     [6, 4, 4],
+# #     [2, 2, 4] ]
+
+# def matrix_addition(a, b):
+#     # your code here
+#     final = []
+#     for i, array in enumerate(a):
+#         chunks = []
+#         for j, num in enumerate(array):
+#             chunks.append(a[i][j] + b[i][j])
+#         final.append(chunks)
+#     return final
+
+# print(matrix_addition(
+#     [ [1, 2, 3],
 #     [3, 2, 1],
-#     [1, 1, 1] ],
-# //      +
-#   [ [2, 2, 1],
+#     [1, 1, 1] ], 
+#     [ [2, 2, 1],
 #     [3, 2, 3],
-#     [1, 1, 3] ] )
-
-# // returns:
-#   [ [3, 4, 4],
-#     [6, 4, 4],
-#     [2, 2, 4] ]
-
-def matrix_addition(a, b):
-    # your code here
-    return
-
-print(matrix_addition(
-    [ [1, 2, 3],
-    [3, 2, 1],
-    [1, 1, 1] ], 
-    [ [3, 4, 4],
-    [6, 4, 4],
-    [2, 2, 4] ]))
+#     [1, 1, 3] ]))
 
 # Pair of gloves
 # Winter is coming, you must prepare your ski holidays. The objective of this kata is to determine the number of pair of gloves you can constitute from the gloves you have in your drawer.
