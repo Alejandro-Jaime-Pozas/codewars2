@@ -1,5 +1,23 @@
-
-
+def sum_consecutives(s):
+    #good luck
+    # for loop. only sum curr num if next num is the same, if different num, add either the num or sum to the list
+    # only append to new list when numbers different, if not, keep adding
+    sum_nums = 0
+    final = []
+    for i in range(len(s)-1):
+        # if number is diff than next and no sum nums, add num
+        if s[i] != s[i+1] and not sum_nums:
+            final.append(s[i])
+        # else if num diff than next but yes sum nums, add num + sumnums
+        elif s[i] != s[i+1]:
+            final.append(sum_nums + s[i])
+        # else if num same than next, sumnums += num
+        else:
+            sum_nums += s[i]
+    return final
+        
+print(sum_consecutives([1,4,4,4,0,4,3,3,1]))
+print(sum_consecutives([1,4,4,4,0,4,3,3,1,1]))
 
 # # matrixAddition(
 # #   [ [1, 2, 3],
