@@ -1,23 +1,47 @@
-def sum_consecutives(s):
-    #good luck
-    # for loop. only sum curr num if next num is the same, if different num, add either the num or sum to the list
-    # only append to new list when numbers different, if not, keep adding
-    sum_nums = 0
-    final = []
-    for i in range(len(s)-1):
-        # if number is diff than next and no sum nums, add num
-        if s[i] != s[i+1] and not sum_nums:
-            final.append(s[i])
-        # else if num diff than next but yes sum nums, add num + sumnums
-        elif s[i] != s[i+1]:
-            final.append(sum_nums + s[i])
-        # else if num same than next, sumnums += num
-        else:
-            sum_nums += s[i]
-    return final
+
+
+
+# def sum_dig_pow(a, b): # range(a, b + 1) will be studied by the function
+#     # your code here
+#     final = []
+#     for n in range(a, b+1):
+#         # for each number, if number  more than 1 digit, separate digits, raise each consecutive digit to power of 1, 2, 3, 4, etc. return sum == number
+#         # now separate number
+#         total = 0
+#         for i in range(len(str(n))):
+#             # this takes '89' and loops through each digit
+#             total += int(str(n)[i]) ** (i + 1) # this takes each digit to power of index starting at 1 and adds to total sum for that number
+#             # check if total = number
+#         if total == n:
+#             final.append(n)
+#     return final
         
-print(sum_consecutives([1,4,4,4,0,4,3,3,1]))
-print(sum_consecutives([1,4,4,4,0,4,3,3,1,1]))
+# print(sum_dig_pow(1,10))
+# print(sum_dig_pow(1,100))
+# print(sum_dig_pow(10,89))
+# print(sum_dig_pow(10,100))
+# print(sum_dig_pow(90,100))
+
+# def sum_consecutives(s):
+#     #good luck
+#     # for loop. only sum curr num if next num is the same, if different num, add either the num or sum to the list
+#     # only append to new list when numbers different, if not, keep adding
+#     sum_nums = 0
+#     final = []
+#     for i in range(len(s)-1):
+#         # if number is diff than next and no sum nums, add num
+#         if s[i] != s[i+1] and not sum_nums:
+#             final.append(s[i])
+#         # else if num diff than next but yes sum nums, add num + sumnums
+#         elif s[i] != s[i+1]:
+#             final.append(sum_nums + s[i])
+#         # else if num same than next, sumnums += num
+#         else:
+#             sum_nums += s[i]
+#     return final
+        
+# print(sum_consecutives([1,4,4,4,0,4,3,3,1]))
+# print(sum_consecutives([1,4,4,4,0,4,3,3,1,1]))
 
 # # matrixAddition(
 # #   [ [1, 2, 3],
