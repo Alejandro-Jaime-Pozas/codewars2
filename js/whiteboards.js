@@ -1,3 +1,20 @@
+
+
+
+// function minValue(values){
+//     //your code here
+//     // need to create a set to remove repeated nums
+//     let nums = Array.from(new Set (values))
+//     // need to sort nums from 1-9 small to large
+//     let sorted = nums.sort((a, b) => a - b)
+//     // need to join all nums once arr is sorted
+//     return Number(sorted.join(""))
+// }
+
+// console.log(minValue([9,5,7,9,5]));
+// console.log(minValue([1,3,1]));
+
+
 // function switcheroo(x){
 //     // only letters a, b or c included
 //     string = x.split('')
