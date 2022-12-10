@@ -1,4 +1,22 @@
+# def some_kwargs(**kwargs):
+#     for k, v in kwargs.items():
+#         print(f'{k}:', v)
 
+# kwargs = {"kwarg_1": "Val", "kwarg_2": "Harper", "kwarg_3": "Remy"}
+# some_kwargs(**kwargs)
+
+
+# def multiply(*args, **kwargs):
+#     z = 1
+#     for num in args:
+#         z *= num
+#     print(z, type(kwargs))
+#     # return (type(args))
+
+# print(multiply(4, 5))
+# print(multiply(10, 9))
+# print(multiply(2, 3, 4))
+# print(multiply(3, 5, 10, 6, john='smith'))
 
 
 # def sum_dig_pow(a, b): # range(a, b + 1) will be studied by the function
