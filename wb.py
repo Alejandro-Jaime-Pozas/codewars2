@@ -1,3 +1,24 @@
+def my_languages(d):
+    # need to get k, v to match them
+    # final = []
+    # for key in d:
+    #     if d[key] >= 60:
+    #         final.append(key)
+    # return final
+    final = sorted(d, key=(lambda k: d[k]), reverse=True)
+    return list(filter(lambda lang: lang if d[lang] >= 60 else None, final))
+
+print(my_languages({"Java": 10, "Ruby": 80, "Python": 65}))
+
+# def explode(s):
+#     # new_string = ''
+#     # for c in s:
+#     #     new_string += int(c) * c
+#     # return new_string
+#     return ''.join(int(c) * c for c in s)
+
+# print(explode('312'))
+
 # def some_kwargs(**kwargs):
 #     for k, v in kwargs.items():
 #         print(f'{k}:', v)
