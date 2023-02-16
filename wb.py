@@ -1,14 +1,21 @@
-def my_languages(d):
-    # need to get k, v to match them
-    # final = []
-    # for key in d:
-    #     if d[key] >= 60:
-    #         final.append(key)
-    # return final
-    final = sorted(d, key=(lambda k: d[k]), reverse=True)
-    return list(filter(lambda lang: lang if d[lang] >= 60 else None, final))
+def area_largest_square(r):
+    # radius is the distance from circle's center to its edge in a straight line
+    return 2*r**2
 
-print(my_languages({"Java": 10, "Ruby": 80, "Python": 65}))
+print(area_largest_square(7))
+
+
+# def my_languages(d):
+#     # need to get k, v to match them
+#     # final = []
+#     # for key in d:
+#     #     if d[key] >= 60:
+#     #         final.append(key)
+#     # return final
+#     final = sorted(d, key=(lambda k: d[k]), reverse=True)
+#     return list(filter(lambda lang: lang if d[lang] >= 60 else None, final))
+
+# print(my_languages({"Java": 10, "Ruby": 80, "Python": 65}))
 
 # def explode(s):
 #     # new_string = ''
