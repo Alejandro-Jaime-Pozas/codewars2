@@ -1,8 +1,12 @@
-def area_largest_square(r):
-    # radius is the distance from circle's center to its edge in a straight line
-    return 2*r**2
+# def has_unique_chars(string):
+#     return len(string) == len(set(string))
 
-print(area_largest_square(7))
+
+# def area_largest_square(r):
+#     # radius is the distance from circle's center to its edge in a straight line
+#     return 2*r**2
+
+# print(area_largest_square(7))
 
 
 # def my_languages(d):
