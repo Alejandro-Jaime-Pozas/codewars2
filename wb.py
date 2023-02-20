@@ -1,3 +1,18 @@
+# def print_kwargs(**kwargs):
+#     # for key, value in kwargs.items():
+#     #     print(f"{key}: {value}")
+#     return kwargs
+
+# print(type(print_kwargs(a=1, b='two', c=True)))
+
+
+
+# def sum_args(*args):
+#     return sum(args)
+#     # return sum(n for n in args)
+
+# print(sum_args(2, 4, 5))
+
 # def has_unique_chars(string):
 #     return len(string) == len(set(string))
 
