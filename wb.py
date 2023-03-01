@@ -1,27 +1,50 @@
-class Fighter(object):
-    def __init__(self, name, health, damage_per_attack):
-        self.name = name
-        self.health = health
-        self.damage_per_attack = damage_per_attack
+def blah(n):
+    return n ** 2 if n > 5 else n
+
+print(blah(5))
+print(blah(10))
+print(blah(15))
+
+
+# def reverse_number(n):
+#     # to reverse an int, need to turn into a str
+#     # account for negative numbers
+#     num = str(n)
+#     x= '0'
+#     if num[0] == '-':
+#         num = num[1:]
+#         x = '-'
+#     return int(x + num[::-1])
+
+# print(reverse_number(123))
+# print(reverse_number(-456))
+# print(reverse_number(1000))
+
+
+# class Fighter(object):
+#     def __init__(self, name, health, damage_per_attack):
+#         self.name = name
+#         self.health = health
+#         self.damage_per_attack = damage_per_attack
         
-    def __str__(self): return "Fighter({}, {}, {})".format(self.name, self.health, self.damage_per_attack)
-    __repr__=__str__
+#     def __str__(self): return "Fighter({}, {}, {})".format(self.name, self.health, self.damage_per_attack)
+#     __repr__=__str__
 
-def declare_winner(fighter1, fighter2, first_attacker):
-    # first\_attacker makes first strike, take his attack to reduce other fighter's health
-    turn = fighter1 if fighter1.name == first_attacker else fighter2
-    while fighter1.health >= 0 and fighter2.health >= 0:
-        if turn == fighter1:
-            fighter2.health -= fighter1.damage_per_attack
-            turn = fighter2
-        else:
-            fighter1.health -= fighter2.damage_per_attack
-            turn = fighter1
-    print(fighter1, fighter2)
-    return fighter1.name if fighter2.health <= 0 else fighter2.name
+# def declare_winner(fighter1, fighter2, first_attacker):
+#     # first\_attacker makes first strike, take his attack to reduce other fighter's health
+#     turn = fighter1 if fighter1.name == first_attacker else fighter2
+#     while fighter1.health >= 0 and fighter2.health >= 0:
+#         if turn == fighter1:
+#             fighter2.health -= fighter1.damage_per_attack
+#             turn = fighter2
+#         else:
+#             fighter1.health -= fighter2.damage_per_attack
+#             turn = fighter1
+#     print(fighter1, fighter2)
+#     return fighter1.name if fighter2.health <= 0 else fighter2.name
 
 
-print(declare_winner(Fighter("susan", 20, 10),Fighter("Thomas", 5, 4), "Thomas"))
+# print(declare_winner(Fighter("susan", 20, 10),Fighter("Thomas", 5, 4), "Thomas"))
 
 # def print_kwargs(**kwargs):
 #     # for key, value in kwargs.items():
