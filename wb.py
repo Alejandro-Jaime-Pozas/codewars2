@@ -1,9 +1,31 @@
-def blah(n):
-    return n ** 2 if n > 5 else n
+# def add(x):
+#     def add_more(y):
+#         print(add, add_more)
+#         return x + y
+#     print(add, add_more)
+#     return add_more
 
-print(blah(5))
-print(blah(10))
-print(blah(15))
+# add_5 = add(5)
+# print(add_5(1)) # Output: 15
+
+
+def multiply_all(lst):
+    def multiply_by(multiplier):
+        return [num * multiplier for num in lst]
+    return multiply_by
+
+print(multiply_all([1, 2, 3])(10))
+
+multiply_all_1 = multiply_all([1, 2, 3])
+print(multiply_all_1(10))
+
+
+# def blah(n):
+#     return n ** 2 if n > 5 else n
+
+# print(blah(5))
+# print(blah(10))
+# print(blah(15))
 
 
 # def reverse_number(n):
