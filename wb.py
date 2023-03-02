@@ -10,14 +10,23 @@
 
 
 def multiply_all(lst):
-    def multiply_by(multiplier):
-        return [num * multiplier for num in lst]
-    return multiply_by
+    return lambda multiplier: [n ** multiplier for n in lst]
+    # def multiply_by(multiplier):
+    #     return [num * multiplier for num in lst]
+    # return multiply_by
 
 print(multiply_all([1, 2, 3])(10))
 
 multiply_all_1 = multiply_all([1, 2, 3])
 print(multiply_all_1(10))
+
+def initial_num(x):
+    def whole_equation(y):
+        # print(x, y)
+        return x ** y
+    return whole_equation
+
+print(initial_num(2)(10))
 
 
 # def blah(n):
