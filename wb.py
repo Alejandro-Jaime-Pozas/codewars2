@@ -1,3 +1,10 @@
+def vaporcode(s):
+    return '  '.join(list(''.join(s.upper().split(' '))))
+                
+
+print(vaporcode("Why isn't my code working?"))
+
+
 # def add(x):
 #     def add_more(y):
 #         print(add, add_more)
@@ -9,24 +16,24 @@
 # print(add_5(1)) # Output: 15
 
 
-def multiply_all(lst):
-    return lambda multiplier: [n ** multiplier for n in lst]
-    # def multiply_by(multiplier):
-    #     return [num * multiplier for num in lst]
-    # return multiply_by
+# def multiply_all(lst):
+#     return lambda multiplier: [n ** multiplier for n in lst]
+#     # def multiply_by(multiplier):
+#     #     return [num * multiplier for num in lst]
+#     # return multiply_by
 
-print(multiply_all([1, 2, 3])(10))
+# print(multiply_all([1, 2, 3])(10))
 
-multiply_all_1 = multiply_all([1, 2, 3])
-print(multiply_all_1(10))
+# multiply_all_1 = multiply_all([1, 2, 3])
+# print(multiply_all_1(10))
 
-def initial_num(x):
-    def whole_equation(y):
-        # print(x, y)
-        return x ** y
-    return whole_equation
+# def initial_num(x):
+#     def whole_equation(y):
+#         # print(x, y)
+#         return x ** y
+#     return whole_equation
 
-print(initial_num(2)(10))
+# print(initial_num(2)(10))
 
 
 # def blah(n):
