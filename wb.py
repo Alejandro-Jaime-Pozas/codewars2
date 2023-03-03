@@ -1,8 +1,23 @@
-def vaporcode(s):
-    return '  '.join(list(''.join(s.upper().split(' '))))
+# def find_digit(num, nth):
+#     #your code here
+#     # grab absolute value of num
+#     # if nth < 0 return -1
+#     # if out of index, return 0
+#     if nth <= 0:
+#         return -1
+#     elif nth > len(str(num)):
+#         return 0
+#     else:
+#         return int(str(abs(num))[::-1][nth-1])
+
+# print(find_digit(5673, 4))
+
+
+# def vaporcode(s):
+#     return '  '.join(list(''.join(s.upper().split(' '))))
                 
 
-print(vaporcode("Why isn't my code working?"))
+# print(vaporcode("Why isn't my code working?"))
 
 
 # def add(x):
