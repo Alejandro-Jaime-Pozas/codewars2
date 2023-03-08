@@ -1,3 +1,13 @@
+def shorter_reverse_longer(a,b):
+    # a + reverse(b) + a
+    if len(a) >= len(b):
+        return f'{b}{a[::-1]}{b}'
+    return f'{a}{b[::-1]}{a}'
+    
+    
+print(shorter_reverse_longer('abcabc', 'longerer'))
+
+
 # def find_digit(num, nth):
 #     #your code here
 #     # grab absolute value of num
@@ -11,6 +21,7 @@
 #         return int(str(abs(num))[::-1][nth-1])
 
 # print(find_digit(5673, 4))
+# print('hello there')
 
 
 # def vaporcode(s):
