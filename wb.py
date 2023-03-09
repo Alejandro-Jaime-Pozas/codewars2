@@ -1,11 +1,25 @@
-def shorter_reverse_longer(a,b):
-    # a + reverse(b) + a
-    if len(a) >= len(b):
-        return f'{b}{a[::-1]}{b}'
-    return f'{a}{b[::-1]}{a}'
+# def sum_of_n(n):
+#     running = 0
+#     lst = []
+#     for i in range(abs(n)+1):
+#         if n > 0:
+#             running += i 
+#         else:
+#             running -= i
+#         lst.append(running)
+#     return lst
+
+# print(sum_of_n(3)) # [0,1,3,6]
+
+
+# def shorter_reverse_longer(a,b):
+#     # a + reverse(b) + a
+#     if len(a) >= len(b):
+#         return f'{b}{a[::-1]}{b}'
+#     return f'{a}{b[::-1]}{a}'
     
     
-print(shorter_reverse_longer('abcabc', 'longerer'))
+# print(shorter_reverse_longer('abcabc', 'longerer'))
 
 
 # def find_digit(num, nth):
