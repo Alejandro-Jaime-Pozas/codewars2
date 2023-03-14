@@ -1,12 +1,19 @@
-function oddOrEven(array) {
-    let sum = 0
-    for (n of array){
-        sum += n 
-    }
-    return sum % 2 === 0 ? 'even' : 'odd'
- }
+function sumDigits(number){
+    return (Math.abs(number).toString().split('')).map(c => Number(c)).reduce((a, b) => a + b)
+    // return (Math.abs(number).toString().split('')).reduce((a, b) => +a + +b)
+}
 
- console.log(oddOrEven([0, -1, 5]));
+console.log(sumDigits(-99));
+
+// function oddOrEven(array) {
+//     let sum = 0
+//     for (n of array){
+//         sum += n 
+//     }
+//     return sum % 2 === 0 ? 'even' : 'odd'
+//  }
+
+//  console.log(oddOrEven([0, -1, 5]));
 
 // Make a program that filters a list of strings and returns a list with only your friends name in it.
 

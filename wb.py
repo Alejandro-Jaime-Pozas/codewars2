@@ -1,15 +1,18 @@
-def is_pangram(s):
-    # grab alpha only and lowercase. how to check for all leters?
-    # can start by looping through
-    letters = list('abcdefghijklmnopqrstuvwxyz')
-    for c in s.lower():
-        if c in letters:
-            letters.remove(c)
-        if len(letters) == 0:
-            return True
-    return False 
 
-print(is_pangram("The quick, brown fox jumps over the lazy dog!"))
+
+
+# def is_pangram(s):
+#     # grab alpha only and lowercase. how to check for all leters?
+#     # can start by looping through
+#     letters = list('abcdefghijklmnopqrstuvwxyz')
+#     for c in s.lower():
+#         if c in letters:
+#             letters.remove(c)
+#         if len(letters) == 0:
+#             return True
+#     return False 
+
+# print(is_pangram("The quick, brown fox jumps over the lazy dog!"))
 
 
 # def adjacent_element_product(array):
