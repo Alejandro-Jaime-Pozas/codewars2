@@ -1,13 +1,27 @@
-def adjacent_element_product(array):
-    # the other way is to run through entire list...which is needed since you need to check ALL pairs in order to determine you have the max..
-    max = None 
-    for i in range(len(array)-1):
-        # take the first num and adjacent to the right
-        if max == None or array[i] * array[i+1] > max:
-            max = array[i] * array[i+1]
-    return max 
+def is_pangram(s):
+    # grab alpha only and lowercase. how to check for all leters?
+    # can start by looping through
+    letters = list('abcdefghijklmnopqrstuvwxyz')
+    for c in s.lower():
+        if c in letters:
+            letters.remove(c)
+        if len(letters) == 0:
+            return True
+    return False 
 
-print(adjacent_element_product([-23, 4, -5, 99, -27, 329, -2, 7, -921]))
+print(is_pangram("The quick, brown fox jumps over the lazy dog!"))
+
+
+# def adjacent_element_product(array):
+#     # the other way is to run through entire list...which is needed since you need to check ALL pairs in order to determine you have the max..
+#     max = None 
+#     for i in range(len(array)-1):
+#         # take the first num and adjacent to the right
+#         if max == None or array[i] * array[i+1] > max:
+#             max = array[i] * array[i+1]
+#     return max 
+
+# print(adjacent_element_product([-23, 4, -5, 99, -27, 329, -2, 7, -921]))
 
 
 # def sum_of_n(n):
