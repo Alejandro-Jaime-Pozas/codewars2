@@ -1,4 +1,13 @@
+def solution(s):
+    # split a string in pairs. if odd, then last c paired w "_"
+    if len(s) % 2 != 0:
+        s += "_"
+    final = []
+    for i in range(0, len(s), 2):
+        final.append(s[i:i+2])
+    return final 
 
+print(solution("asdfadsfg"))
 
 
 # def is_pangram(s):
