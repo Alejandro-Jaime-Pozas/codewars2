@@ -1,9 +1,19 @@
-function sumDigits(number){
-    return (Math.abs(number).toString().split('')).map(c => Number(c)).reduce((a, b) => a + b)
-    // return (Math.abs(number).toString().split('')).reduce((a, b) => +a + +b)
-}
+function removeDuplicateWords(s){
+    // your perfect code...
+    // to remove words, need to separate by white spaces first into a list outside for loop
+    // in for loop, check if current word in 
+    return [...(new Set(s.split(" ")))].join(" ")
+  }
 
-console.log(sumDigits(-99));
+console.log(removeDuplicateWords("alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"))
+
+
+// function sumDigits(number){
+//     return (Math.abs(number).toString().split('')).map(c => Number(c)).reduce((a, b) => a + b)
+//     // return (Math.abs(number).toString().split('')).reduce((a, b) => +a + +b)
+// }
+
+// console.log(sumDigits(-99));
 
 // function oddOrEven(array) {
 //     let sum = 0
