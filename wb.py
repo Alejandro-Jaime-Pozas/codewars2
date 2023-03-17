@@ -1,13 +1,26 @@
-def solution(s):
-    # split a string in pairs. if odd, then last c paired w "_"
-    if len(s) % 2 != 0:
-        s += "_"
-    final = []
-    for i in range(0, len(s), 2):
-        final.append(s[i:i+2])
-    return final 
+def dig_pow(n, p):
+    # your code
+    # a bit confusing, 
+    # find the sum of all digits to power of second number first, and check if entirely divisible by the first number, if so, return that number that it is divisible by
+    total = 0
+    for num in list(str(n)):
+        total += int(num) ** p
+        p += 1 
+    return total // n if total % n == 0 else -1
 
-print(solution("asdfadsfg"))
+print(dig_pow(46288, 3))
+
+
+# def solution(s):
+#     # split a string in pairs. if odd, then last c paired w "_"
+#     if len(s) % 2 != 0:
+#         s += "_"
+#     final = []
+#     for i in range(0, len(s), 2):
+#         final.append(s[i:i+2])
+#     return final 
+
+# print(solution("asdfadsfg"))
 
 
 # def is_pangram(s):
