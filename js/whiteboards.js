@@ -1,11 +1,17 @@
-function removeDuplicateWords(s){
-    // your perfect code...
-    // to remove words, need to separate by white spaces first into a list outside for loop
-    // in for loop, check if current word in 
-    return [...(new Set(s.split(" ")))].join(" ")
-  }
+function sortGiftCode(code){
+  return code.split('').sort().join('')
+}
 
-console.log(removeDuplicateWords("alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"))
+console.log(sortGiftCode('zyxwvutsrqponmlkjihgfedcba'));
+
+// function removeDuplicateWords(s){
+//     // your perfect code...
+//     // to remove words, need to separate by white spaces first into a list outside for loop
+//     // in for loop, check if current word in 
+//     return [...(new Set(s.split(" ")))].join(" ")
+//   }
+
+// console.log(removeDuplicateWords("alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"))
 
 
 // function sumDigits(number){
