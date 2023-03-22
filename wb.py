@@ -1,14 +1,25 @@
-def dig_pow(n, p):
-    # your code
-    # a bit confusing, 
-    # find the sum of all digits to power of second number first, and check if entirely divisible by the first number, if so, return that number that it is divisible by
-    total = 0
-    for num in list(str(n)):
-        total += int(num) ** p
-        p += 1 
-    return total // n if total % n == 0 else -1
+def find_even_index(arr):
+    #your code here
+    # will for loop through each index, compare all numbers prev and after that index, excluding index and starting at index 0, left side is 0 (as well as last index right side = 0)
+    for i, n in enumerate(arr):
+        if sum(arr[:i]) == sum(arr[i+1:]):
+            return i 
+    return -1
 
-print(dig_pow(46288, 3))
+print(find_even_index([20,10,-80,10,10,15,35]))
+
+
+# def dig_pow(n, p):
+#     # your code
+#     # a bit confusing, 
+#     # find the sum of all digits to power of second number first, and check if entirely divisible by the first number, if so, return that number that it is divisible by
+#     total = 0
+#     for num in list(str(n)):
+#         total += int(num) ** p
+#         p += 1 
+#     return total // n if total % n == 0 else -1
+
+# print(dig_pow(46288, 3))
 
 
 # def solution(s):
