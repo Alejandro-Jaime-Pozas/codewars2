@@ -1,8 +1,15 @@
-function sortGiftCode(code){
-  return code.split('').sort().join('')
-}
+// function digitize(n) {
+//   return [...n.toString()].map(Number)
+// }
 
-console.log(sortGiftCode('zyxwvutsrqponmlkjihgfedcba'));
+// console.log(digitize(8675309));
+
+
+// function sortGiftCode(code){
+//   return code.split('').sort().join('')
+// }
+
+// console.log(sortGiftCode('zyxwvutsrqponmlkjihgfedcba'));
 
 // function removeDuplicateWords(s){
 //     // your perfect code...

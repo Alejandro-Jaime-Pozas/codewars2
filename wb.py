@@ -1,12 +1,12 @@
-def find_even_index(arr):
-    #your code here
-    # will for loop through each index, compare all numbers prev and after that index, excluding index and starting at index 0, left side is 0 (as well as last index right side = 0)
-    for i, n in enumerate(arr):
-        if sum(arr[:i]) == sum(arr[i+1:]):
-            return i 
-    return -1
+# def find_even_index(arr):
+#     #your code here
+#     # will for loop through each index, compare all numbers prev and after that index, excluding index and starting at index 0, left side is 0 (as well as last index right side = 0)
+#     for i, n in enumerate(arr):
+#         if sum(arr[:i]) == sum(arr[i+1:]):
+#             return i 
+#     return -1
 
-print(find_even_index([20,10,-80,10,10,15,35]))
+# print(find_even_index([20,10,-80,10,10,15,35]))
 
 
 # def dig_pow(n, p):
