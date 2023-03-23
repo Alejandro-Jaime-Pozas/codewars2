@@ -1,3 +1,17 @@
+def find_uniq(arr):
+    # best case need to check 3 nums. as long as check 3 nums and 1 is repeat, return the other...
+    # create a set?
+    # can also sort. will need to sort. bc combinations could be limitless.
+    # after sort, check if index 0 = 1, if true then last value unique, else first value unique
+    arr.sort()
+    if arr[0] == arr[1]:
+        return arr[-1]
+    else:
+        return arr[0]
+
+print(find_uniq([ 2, 1, 1, 1, 1, 1 ]))
+
+
 # def find_even_index(arr):
 #     #your code here
 #     # will for loop through each index, compare all numbers prev and after that index, excluding index and starting at index 0, left side is 0 (as well as last index right side = 0)
