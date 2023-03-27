@@ -1,15 +1,26 @@
-def find_uniq(arr):
-    # best case need to check 3 nums. as long as check 3 nums and 1 is repeat, return the other...
-    # create a set?
-    # can also sort. will need to sort. bc combinations could be limitless.
-    # after sort, check if index 0 = 1, if true then last value unique, else first value unique
-    arr.sort()
-    if arr[0] == arr[1]:
-        return arr[-1]
-    else:
-        return arr[0]
+def encrypt_this(text):
+    # space separated words w mix oc upper/lower case
+    # first letter of each word convert to ascii number
+    # second letter switch w last letter
+    final = ''
+    split = text.split(' ')
+    
 
-print(find_uniq([ 2, 1, 1, 1, 1, 1 ]))
+print(encrypt_this("hello world i am alex"))
+
+
+# def find_uniq(arr):
+#     # best case need to check 3 nums. as long as check 3 nums and 1 is repeat, return the other...
+#     # create a set?
+#     # can also sort. will need to sort. bc combinations could be limitless.
+#     # after sort, check if index 0 = 1, if true then last value unique, else first value unique
+#     arr.sort()
+#     if arr[0] == arr[1]:
+#         return arr[-1]
+#     else:
+#         return arr[0]
+
+# print(find_uniq([ 2, 1, 1, 1, 1, 1 ]))
 
 
 # def find_even_index(arr):
