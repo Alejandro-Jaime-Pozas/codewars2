@@ -1,10 +1,31 @@
+# chatgpt
 def encrypt_this(text):
-    # space separated words w mix oc upper/lower case
-    # first letter of each word convert to ascii number
-    # second letter switch w last letter
-    final = ''
-    split = text.split(' ')
+    # Split the text into a list of words
+    words = text.split()
     
+    # Loop through each word and apply encryption rules
+    encrypted_words = []
+    for word in words:
+        # Convert first letter to ASCII code
+        first_letter_code = str(ord(word[0]))
+        
+        # Switch second and last letter (if word has more than one letter)
+        if len(word) > 2:
+            second_letter = word[1]
+            last_letter = word[-1]
+            encrypted_letters = last_letter + word[2:-1] + second_letter
+        else:
+            encrypted_letters = word[1:]
+        
+        # Add encrypted word to the list
+        encrypted_word = first_letter_code + encrypted_letters
+        encrypted_words.append(encrypted_word)
+    
+    # Join encrypted words back into a string
+    encrypted_text = " ".join(encrypted_words)
+    return encrypted_text
+
+
 
 print(encrypt_this("hello world i am alex"))
 
