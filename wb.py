@@ -1,33 +1,45 @@
-# chatgpt
-def encrypt_this(text):
-    # Split the text into a list of words
-    words = text.split()
+def meeting(s):
+    # makes this string uppercase
+    # gives it sorted in alphabetical order by last name.
+    # When the last names are the same, sort them by first name. Last name and first name of a guest come in the result between parentheses separated by a comma. (last, first)
+    u = s.upper()
+    # need to separate each first:last individually. 
+    names = u.split(';') # this gives list of first:last
+    for i, name in enumerate(names):
+        names[i] = (name.split(':')[-1], name.split(':')[0])
+    return names    
+
+print(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
+
+
+# # chatgpt
+# def encrypt_this(text):
+#     # Split the text into a list of words
+#     words = text.split()
     
-    # Loop through each word and apply encryption rules
-    encrypted_words = []
-    for word in words:
-        # Convert first letter to ASCII code
-        first_letter_code = str(ord(word[0]))
+#     # Loop through each word and apply encryption rules
+#     encrypted_words = []
+#     for word in words:
+#         # Convert first letter to ASCII code
+#         first_letter_code = str(ord(word[0]))
         
-        # Switch second and last letter (if word has more than one letter)
-        if len(word) > 2:
-            second_letter = word[1]
-            last_letter = word[-1]
-            encrypted_letters = last_letter + word[2:-1] + second_letter
-        else:
-            encrypted_letters = word[1:]
+#         # Switch second and last letter (if word has more than one letter)
+#         if len(word) > 2:
+#             second_letter = word[1]
+#             last_letter = word[-1]
+#             encrypted_letters = last_letter + word[2:-1] + second_letter
+#         else:
+#             encrypted_letters = word[1:]
         
-        # Add encrypted word to the list
-        encrypted_word = first_letter_code + encrypted_letters
-        encrypted_words.append(encrypted_word)
+#         # Add encrypted word to the list
+#         encrypted_word = first_letter_code + encrypted_letters
+#         encrypted_words.append(encrypted_word)
     
-    # Join encrypted words back into a string
-    encrypted_text = " ".join(encrypted_words)
-    return encrypted_text
+#     # Join encrypted words back into a string
+#     encrypted_text = " ".join(encrypted_words)
+#     return encrypted_text
 
-
-
-print(encrypt_this("hello world i am alex"))
+# print(encrypt_this("hello world i am alex"))
 
 
 # def find_uniq(arr):
