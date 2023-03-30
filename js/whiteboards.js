@@ -2,9 +2,13 @@ function add(n) {
   return function addAlso(m) {
     return n+m;
   }
+  // function also(m){
+  //   return n + m
+  // }
+  // return also 
 }
 
-console.log(add(5)(4));
+console.log(add(5)(2));
 
 
 // // function solve(s){
