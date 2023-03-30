@@ -1,28 +1,31 @@
-// function solve(s){
-//     // upper: 65-90
-//     // lower: 97-122
-//     // numbers: 30-39
-//     // special: all others
-//     let upper = 0
-//     let lower = 0
-//     let number = 0
-//     let special = 0
-//     for (let i in s){
-//         let x = s.charCodeAt(i)
-//         x>=65 && x<=90 ? upper += 1 : x>=97 && x<=122 ? lower += 1 : x>=49 && x<=58 ? number += 1 : special += 1
-//     }
-//     return [upper, lower, number, special]
-// }
 
-const solve = x => {
-    let u = x.match(/[A-Z]/g)||[]
-    let d = x.match(/[a-z]/g)||[]
-    let n = x.match(/[0-9]/g)||[]
-    let s = x.match(/[^A-Z0-9]/gi)||[]
-    return [u.length, d.length, n.length, s.length]
-  }
 
-console.log(solve("*'&ABCDabcde12345"));
+
+// // function solve(s){
+// //     // upper: 65-90
+// //     // lower: 97-122
+// //     // numbers: 30-39
+// //     // special: all others
+// //     let upper = 0
+// //     let lower = 0
+// //     let number = 0
+// //     let special = 0
+// //     for (let i in s){
+// //         let x = s.charCodeAt(i)
+// //         x>=65 && x<=90 ? upper += 1 : x>=97 && x<=122 ? lower += 1 : x>=49 && x<=58 ? number += 1 : special += 1
+// //     }
+// //     return [upper, lower, number, special]
+// // }
+
+// const solve = x => {
+//     let u = x.match(/[A-Za-z0-9*]/g)||[]
+//     let d = x.match(/[a-z]/g)||[]
+//     let n = x.match(/[0-9]/g)||[]
+//     let s = x.match(/[^A-Z0-9]/gi)||[]
+//     return [u, d.length, n.length, s.length]
+//   }
+
+// console.log(solve("*'&ABCDabcde12345"));
 
 
 // function digitize(n) {

@@ -1,15 +1,28 @@
-def meeting(s):
-    # makes this string uppercase
-    # gives it sorted in alphabetical order by last name.
-    # When the last names are the same, sort them by first name. Last name and first name of a guest come in the result between parentheses separated by a comma. (last, first)
-    u = s.upper()
-    # need to separate each first:last individually. 
-    names = u.split(';') # this gives list of first:last
-    for i, name in enumerate(names):
-        names[i] = (name.split(':')[-1], name.split(':')[0])
-    return names    
+def solution(s):
+    final = ""
+    # each time the code sees an uppercase, need to input space before it
+    for c in s:
+        if c.isupper():
+            final += f" {c}"
+        else:
+            final += c 
+    return final 
 
-print(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
+print(solution("camelCasing"))
+
+
+# def meeting(s):
+#     # makes this string uppercase
+#     # gives it sorted in alphabetical order by last name.
+#     # When the last names are the same, sort them by first name. Last name and first name of a guest come in the result between parentheses separated by a comma. (last, first)
+#     u = s.upper()
+#     # need to separate each first:last individually. 
+#     names = u.split(';') # this gives list of first:last
+#     for i, name in enumerate(names):
+#         names[i] = (name.split(':')[-1], name.split(':')[0])
+#     return names    
+
+# print(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
 
 
 # # chatgpt
