@@ -1,14 +1,22 @@
-def solution(s):
-    final = ""
-    # each time the code sees an uppercase, need to input space before it
-    for c in s:
-        if c.isupper():
-            final += f" {c}"
-        else:
-            final += c 
-    return final 
+def add(n):
+    def adder(x):
+        return x + n
+    return adder
 
-print(solution("camelCasing"))
+print(add(5))
+
+
+# def solution(s):
+#     final = ""
+#     # each time the code sees an uppercase, need to input space before it
+#     for c in s:
+#         if c.isupper():
+#             final += f" {c}"
+#         else:
+#             final += c 
+#     return final 
+
+# print(solution("camelCasing"))
 
 
 # def meeting(s):

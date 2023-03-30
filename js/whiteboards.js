@@ -1,4 +1,10 @@
+function add(n) {
+  return function addAlso(m) {
+    return n+m;
+  }
+}
 
+console.log(add(5)(4));
 
 
 // // function solve(s){
