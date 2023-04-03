@@ -1,9 +1,25 @@
-def add(n):
-    def adder(x):
-        return x + n
-    return adder
+def sort_array(source_array):
+    # Return a sorted array.
+    # in theory, need to know odds positions in original. create new odds only list. 
+    odds = []
+    for num in source_array:
+        if num % 2 != 0:
+            odds.append(num)
+    odds.sort()
+    for i, num in enumerate(source_array):
+        if num % 2 != 0:
+            source_array[i] = odds.pop(0)
+    return source_array
 
-print(add(5))
+print(sort_array([5, 8, 6, 3, 4]))
+
+
+# def add(n):
+#     def adder(x):
+#         return x + n
+#     return adder
+
+# print(add(5)(6))
 
 
 # def solution(s):
