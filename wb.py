@@ -1,17 +1,37 @@
-def sort_array(source_array):
-    # Return a sorted array.
-    # in theory, need to know odds positions in original. create new odds only list. 
-    odds = []
-    for num in source_array:
-        if num % 2 != 0:
-            odds.append(num)
-    odds.sort()
-    for i, num in enumerate(source_array):
-        if num % 2 != 0:
-            source_array[i] = odds.pop(0)
-    return source_array
+def encode(s):
+    bp = {'a': '1', 'e': '2', 'i': '3', 'o': '4', 'u': '5'}
+    slist = list(s)
+    for i, c in enumerate(slist):
+        if c in bp.keys():
+            slist[i] = bp[c]
+    return ''.join(slist)
+    
+def decode(s):
+    bp = {'1': 'a', '2': 'e', '3': 'i', '4': 'o', '5': 'u'}
+    slist = list(s)
+    for i, c in enumerate(slist):
+        if c in bp.keys():
+            slist[i] = bp[c]
+    return ''.join(slist)
 
-print(sort_array([5, 8, 6, 3, 4]))
+print(encode("hi there"))
+print(decode("h3 th2r2"))
+
+
+# def sort_array(source_array):
+#     # Return a sorted array.
+#     # in theory, need to know odds positions in original. create new odds only list. 
+#     odds = []
+#     for num in source_array:
+#         if num % 2 != 0:
+#             odds.append(num)
+#     odds.sort()
+#     for i, num in enumerate(source_array):
+#         if num % 2 != 0:
+#             source_array[i] = odds.pop(0)
+#     return source_array
+
+# print(sort_array([5, 8, 6, 3, 4]))
 
 
 # def add(n):
