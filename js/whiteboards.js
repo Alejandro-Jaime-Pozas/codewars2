@@ -1,13 +1,27 @@
-function divCon(x){
-    let plus = 0
-    let minus = 0
-    for (num of x){
-        console.log(typeof num);
+function vowelIndices(word) {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    const indices = [];
+    for (let i = 0; i < word.length; i++) {
+      if (vowels.includes(word[i])) {
+        indices.push(i + 1);
+      }
     }
-    return plus
-}
+    return indices;
+  }
+  
 
-console.log(divCon([9, 3, '7', '3']));
+console.log(vowelIndices('apple'));
+
+// function divCon(x){
+//     let plus = 0
+//     let minus = 0
+//     for (num of x){
+//         console.log(typeof num);
+//     }
+//     return plus
+// }
+
+// console.log(divCon([9, 3, '7', '3']));
 
 
 // function add(n) {
