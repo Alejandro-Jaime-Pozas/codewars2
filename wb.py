@@ -1,21 +1,43 @@
-def encode(s):
-    bp = {'a': '1', 'e': '2', 'i': '3', 'o': '4', 'u': '5'}
-    slist = list(s)
-    for i, c in enumerate(slist):
-        if c in bp.keys():
-            slist[i] = bp[c]
-    return ''.join(slist)
-    
-def decode(s):
-    bp = {'1': 'a', '2': 'e', '3': 'i', '4': 'o', '5': 'u'}
-    slist = list(s)
-    for i, c in enumerate(slist):
-        if c in bp.keys():
-            slist[i] = bp[c]
-    return ''.join(slist)
+def triple_double(num1, num2):
+    #code me ^^
+    # store each digit num1
+    # for next digit num1, if digit == stored digit, also store, repeat once more
+    # if stored digits = len(3), do the same for num2 but digit == num1 triple digit and stored digits = len(2)
+    # if all tests passed, return 1 else 0
+    num1, num2 = list(str(num1)), list(str(num2))
+    number = None 
+    for i in range(len(num1)-2):
+        if num1[i] == num1[i+1] == num1[i+2]:
+            number = num1[i]
+            break 
+    if number:
+        for i in range(len(num2)-1):
+            if number == num2[i] == num2[i+1]:
+                return 1
+    return 0
 
-print(encode("hi there"))
-print(decode("h3 th2r2"))
+
+print(triple_double(451999277, 41177722899)) # 1
+
+
+# def encode(s):
+#     bp = {'a': '1', 'e': '2', 'i': '3', 'o': '4', 'u': '5'}
+#     slist = list(s)
+#     for i, c in enumerate(slist):
+#         if c in bp.keys():
+#             slist[i] = bp[c]
+#     return ''.join(slist)
+    
+# def decode(s):
+#     bp = {'1': 'a', '2': 'e', '3': 'i', '4': 'o', '5': 'u'}
+#     slist = list(s)
+#     for i, c in enumerate(slist):
+#         if c in bp.keys():
+#             slist[i] = bp[c]
+#     return ''.join(slist)
+
+# print(encode("hi there"))
+# print(decode("h3 th2r2"))
 
 
 # def sort_array(source_array):

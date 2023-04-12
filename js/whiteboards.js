@@ -1,3 +1,15 @@
+function divCon(x){
+    let plus = 0
+    let minus = 0
+    for (num of x){
+        console.log(typeof num);
+    }
+    return plus
+}
+
+console.log(divCon([9, 3, '7', '3']));
+
+
 // function add(n) {
 //   return function addAlso(m) {
 //     return n+m;
