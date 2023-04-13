@@ -1,16 +1,23 @@
-function vowelIndices(word) {
-    const vowels = ['a', 'e', 'i', 'o', 'u'];
-    const indices = [];
-    for (let i = 0; i < word.length; i++) {
-      if (vowels.includes(word[i])) {
-        indices.push(i + 1);
-      }
-    }
-    return indices;
-  }
+// return the two oldest/oldest ages within the array of ages passed in.
+function twoOldestAges(ages){
+  return ages.sort((a,b) => a-b).slice(-2)
+}
+
+console.log(twoOldestAges([1, 5, 87, 45, 8, 8]));
+
+// function vowelIndices(word) {
+//     const vowels = ['a', 'e', 'i', 'o', 'u'];
+//     const indices = [];
+//     for (let i = 0; i < word.length; i++) {
+//       if (vowels.includes(word[i])) {
+//         indices.push(i + 1);
+//       }
+//     }
+//     return indices;
+//   }
   
 
-console.log(vowelIndices('apple'));
+// console.log(vowelIndices('apple'));
 
 // function divCon(x){
 //     let plus = 0
