@@ -1,23 +1,32 @@
-def triple_double(num1, num2):
-    #code me ^^
-    # store each digit num1
-    # for next digit num1, if digit == stored digit, also store, repeat once more
-    # if stored digits = len(3), do the same for num2 but digit == num1 triple digit and stored digits = len(2)
-    # if all tests passed, return 1 else 0
-    num1, num2 = list(str(num1)), list(str(num2))
-    number = None 
-    for i in range(len(num1)-2):
-        if num1[i] == num1[i+1] == num1[i+2]:
-            number = num1[i]
-            break 
-    if number:
-        for i in range(len(num2)-1):
-            if number == num2[i] == num2[i+1]:
-                return 1
-    return 0
+def find_missing_letter(chars):
+    for i in range(len(chars)-1):
+        if ord(chars[i+1]) - ord(chars[i]) != 1:
+            return chr(ord(chars[i])+1)
 
 
-print(triple_double(451999277, 41177722899)) # 1
+print(find_missing_letter(['a','b','c','d','f']))
+
+
+# def triple_double(num1, num2):
+#     #code me ^^
+#     # store each digit num1
+#     # for next digit num1, if digit == stored digit, also store, repeat once more
+#     # if stored digits = len(3), do the same for num2 but digit == num1 triple digit and stored digits = len(2)
+#     # if all tests passed, return 1 else 0
+#     num1, num2 = list(str(num1)), list(str(num2))
+#     number = None 
+#     for i in range(len(num1)-2):
+#         if num1[i] == num1[i+1] == num1[i+2]:
+#             number = num1[i]
+#             break 
+#     if number:
+#         for i in range(len(num2)-1):
+#             if number == num2[i] == num2[i+1]:
+#                 return 1
+#     return 0
+
+
+# print(triple_double(451999277, 41177722899)) # 1
 
 
 # def encode(s):
