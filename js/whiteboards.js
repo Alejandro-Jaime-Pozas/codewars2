@@ -1,9 +1,14 @@
-// return the two oldest/oldest ages within the array of ages passed in.
-function twoOldestAges(ages){
-  return ages.sort((a,b) => a-b).slice(-2)
-}
+const bump = x => x.split("").filter(char => char === 'n').length > 15 ? 'Car Dead' : 'Woohoo!'
 
-console.log(twoOldestAges([1, 5, 87, 45, 8, 8]));
+console.log(bump("_nnnnnnn_n__n______nn__nn_nn"));
+
+
+// // return the two oldest/oldest ages within the array of ages passed in.
+// function twoOldestAges(ages){
+//   return ages.sort((a,b) => a-b).slice(-2)
+// }
+
+// console.log(twoOldestAges([1, 5, 87, 45, 8, 8]));
 
 // function vowelIndices(word) {
 //     const vowels = ['a', 'e', 'i', 'o', 'u'];
