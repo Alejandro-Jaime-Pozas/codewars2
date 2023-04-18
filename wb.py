@@ -1,10 +1,48 @@
-def find_missing_letter(chars):
-    for i in range(len(chars)-1):
-        if ord(chars[i+1]) - ord(chars[i]) != 1:
-            return chr(ord(chars[i])+1)
+def tower_builder(n_floors):
+    # as you go down pyramid
+        # numbers increase and always start with -> 1,3,5,7,etc
+        # need to insert n_floors -1 whitespaces with each round of additional levels
+    # empty list
+    # start value to include whitespaces
+    # for loop that adds '*' char x n_floors, and reduces start value to reduce whitespaces each turn
+    pyramid = []
+    remaining = n_floors - 1
+    for i in range(1, n_floors+1):
+        prev = i - 1
+        width = i + prev
+        pyramid.append(" " * remaining + "*" * width + " " * remaining)
+        remaining -= 1
+    return pyramid
+
+print(tower_builder(3))
 
 
-print(find_missing_letter(['a','b','c','d','f']))
+# def beggars(values, n):
+#     # need for loop
+#     # need to do steps of n
+#     beggars_take = []
+#     for beggar in range(n):
+#         # print(beggars_take)
+#         total = 0
+#         if beggar >= n:
+#             beggars_take.append(0)
+#         else:
+#             for take in range(values[beggar], len(values)+1, n):
+#                 total += take
+#                 # print(take)
+#         beggars_take.append(total)
+#     return beggars_take
+
+# print(beggars([1,2,3,4,5],7))
+
+
+# def find_missing_letter(chars):
+#     for i in range(len(chars)-1):
+#         if ord(chars[i+1]) - ord(chars[i]) != 1:
+#             return chr(ord(chars[i])+1)
+
+
+# print(find_missing_letter(['a','b','c','d','f']))
 
 
 # def triple_double(num1, num2):
