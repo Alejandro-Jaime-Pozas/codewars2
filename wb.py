@@ -1,20 +1,36 @@
-def tower_builder(n_floors):
-    # as you go down pyramid
-        # numbers increase and always start with -> 1,3,5,7,etc
-        # need to insert n_floors -1 whitespaces with each round of additional levels
-    # empty list
-    # start value to include whitespaces
-    # for loop that adds '*' char x n_floors, and reduces start value to reduce whitespaces each turn
-    pyramid = []
-    remaining = n_floors - 1
-    for i in range(1, n_floors+1):
-        prev = i - 1
-        width = i + prev
-        pyramid.append(" " * remaining + "*" * width + " " * remaining)
-        remaining -= 1
-    return pyramid
+def high(x):
+    # Code here
+    final = ''
+    highest = 0
+    for word in x.split(' '):
+        score = 0
+        for c in word:
+            score += ord(c)-ord('a')+1
+        if score > highest:
+            highest = score
+            final = word 
+    return final 
 
-print(tower_builder(3))
+print(high('man i need a taxi up to ubud'))
+
+
+# def tower_builder(n_floors):
+#     # as you go down pyramid
+#         # numbers increase and always start with -> 1,3,5,7,etc
+#         # need to insert n_floors -1 whitespaces with each round of additional levels
+#     # empty list
+#     # start value to include whitespaces
+#     # for loop that adds '*' char x n_floors, and reduces start value to reduce whitespaces each turn
+#     pyramid = []
+#     remaining = n_floors - 1
+#     for i in range(1, n_floors+1):
+#         prev = i - 1
+#         width = i + prev
+#         pyramid.append(" " * remaining + "*" * width + " " * remaining)
+#         remaining -= 1
+#     return pyramid
+
+# print(tower_builder(3))
 
 
 # def beggars(values, n):
