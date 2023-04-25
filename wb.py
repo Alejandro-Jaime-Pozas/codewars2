@@ -1,17 +1,30 @@
-def high(x):
-    # Code here
-    final = ''
-    highest = 0
-    for word in x.split(' '):
-        score = 0
-        for c in word:
-            score += ord(c)-ord('a')+1
-        if score > highest:
-            highest = score
-            final = word 
+def delete_nth(order,max_e):
+    # need to iterate through list
+    # need to count number of each number
+    final = []
+    for num in order:
+        if final.count(num) < max_e:
+            final.append(num)
     return final 
+    # return [num for num in order if ]
 
-print(high('man i need a taxi up to ubud'))
+print(delete_nth([20,37,20,21], 1))
+
+
+# def high(x):
+#     # Code here
+#     final = ''
+#     highest = 0
+#     for word in x.split(' '):
+#         score = 0
+#         for c in word:
+#             score += ord(c)-ord('a')+1
+#         if score > highest:
+#             highest = score
+#             final = word 
+#     return final 
+
+# print(high('man i need a taxi up to ubud'))
 
 
 # def tower_builder(n_floors):
