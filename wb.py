@@ -1,14 +1,25 @@
-def delete_nth(order,max_e):
-    # need to iterate through list
-    # need to count number of each number
-    final = []
-    for num in order:
-        if final.count(num) < max_e:
-            final.append(num)
-    return final 
-    # return [num for num in order if ]
+def deep_count(a):
+    count = 0
+    for obj in a:
+        count += 1
+        if type(obj) is list:
+            count += deep_count(obj)
+    return count
 
-print(delete_nth([20,37,20,21], 1))
+print(deep_count([1, 2, [3, 4, [5]]])) # 7
+
+
+# def delete_nth(order,max_e):
+#     # need to iterate through list
+#     # need to count number of each number
+#     final = []
+#     for num in order:
+#         if final.count(num) < max_e:
+#             final.append(num)
+#     return final 
+#     # return [num for num in order if ]
+
+# print(delete_nth([20,37,20,21], 1))
 
 
 # def high(x):
