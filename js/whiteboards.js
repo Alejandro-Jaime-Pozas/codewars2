@@ -1,6 +1,40 @@
-const bump = x => x.split("").filter(char => char === 'n').length > 15 ? 'Car Dead' : 'Woohoo!'
 
-console.log(bump("_nnnnnnn_n__n______nn__nn_nn"));
+
+
+// function alphabetWar(fight){
+//     let left = {'w': 4, 'p': 3, 'b': 2, 's': 1}
+//     let right = {'m': 4, 'q': 3, 'd': 2, 'z': 1}
+//     let lt = 0
+//     let rt = 0
+//     for (let c of fight){
+//         c in left ? lt += left.c : c in right ? rt += right.c : null 
+//         console.log(rt, lt )
+//     } 
+//     return lt, rt 
+//     // return lt > rt ? 'Left side wins!' : rt > lt ? 'Right side wins!' : `Let's fight again`
+//     // return "Let's fight again!";
+// }
+
+// console.log(alphabetWar('zdqmwpbs'));
+
+
+// function sumTriangularNumbers(n) {
+//     // need to sum ...
+//     let count = 0
+//     let final = 0
+//     for (let i=1; i<n+1; i++){
+//         count += i
+//         final += count 
+//     }
+//     return final 
+//   }
+
+// console.log(sumTriangularNumbers(6));
+
+
+// const bump = x => x.split("").filter(char => char === 'n').length > 15 ? 'Car Dead' : 'Woohoo!'
+
+// console.log(bump("_nnnnnnn_n__n______nn__nn_nn"));
 
 
 // // return the two oldest/oldest ages within the array of ages passed in.
