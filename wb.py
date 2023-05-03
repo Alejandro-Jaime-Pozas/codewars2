@@ -1,12 +1,37 @@
-def deep_count(a):
-    count = 0
-    for obj in a:
-        count += 1
-        if type(obj) is list:
-            count += deep_count(obj)
-    return count
+def abbreviate(s):
+    words = []
+    word = ""
 
-print(deep_count([1, 2, [3, 4, [5]]])) # 7
+    for char in s:
+        if char.isalpha():
+            word += char
+        else:
+            if word:
+                words.append(word)
+                word = ""
+            words.append(char)
+
+    if word:
+        words.append(word)
+
+    for i, word in enumerate(words):
+        if len(word) > 3:
+            words[i] = f'{word[0]}{len(word)-2}{word[-1]}'
+
+    return ''.join(words)
+
+print(abbreviate("elephant-ride goes !! round"))
+
+
+# def deep_count(a):
+#     count = 0
+#     for obj in a:
+#         count += 1
+#         if type(obj) is list:
+#             count += deep_count(obj)
+#     return count
+
+# print(deep_count([1, 2, [3, 4, [5]]])) # 7
 
 
 # def delete_nth(order,max_e):
