@@ -1,26 +1,37 @@
-def abbreviate(s):
-    words = []
-    word = ""
+def tribonacci(signature, n):
+    #  you need to create a fibonacci function that given a signature array/list, returns the first n elements - signature included of the so seeded sequence.
+    # Signature will always contain 3 numbers; n will always be a non-negative number; if n == 0, then return an empty array
+    # will always be taking prev 3 numbers from list..find way to add 
+    for _ in range(n-3):
+        signature.append(sum(signature[-3:]))
+    return signature[:n]
 
-    for char in s:
-        if char.isalpha():
-            word += char
-        else:
-            if word:
-                words.append(word)
-                word = ""
-            words.append(char)
+print(tribonacci([0, 0, 1], 10))
 
-    if word:
-        words.append(word)
 
-    for i, word in enumerate(words):
-        if len(word) > 3:
-            words[i] = f'{word[0]}{len(word)-2}{word[-1]}'
+# def abbreviate(s):
+#     words = []
+#     word = ""
 
-    return ''.join(words)
+#     for char in s:
+#         if char.isalpha():
+#             word += char
+#         else:
+#             if word:
+#                 words.append(word)
+#                 word = ""
+#             words.append(char)
 
-print(abbreviate("elephant-ride goes !! round"))
+#     if word:
+#         words.append(word)
+
+#     for i, word in enumerate(words):
+#         if len(word) > 3:
+#             words[i] = f'{word[0]}{len(word)-2}{word[-1]}'
+
+#     return ''.join(words)
+
+# print(abbreviate("elephant-ride goes !! round"))
 
 
 # def deep_count(a):
