@@ -1,12 +1,15 @@
-def tribonacci(signature, n):
-    #  you need to create a fibonacci function that given a signature array/list, returns the first n elements - signature included of the so seeded sequence.
-    # Signature will always contain 3 numbers; n will always be a non-negative number; if n == 0, then return an empty array
-    # will always be taking prev 3 numbers from list..find way to add 
-    for _ in range(n-3):
-        signature.append(sum(signature[-3:]))
-    return signature[:n]
 
-print(tribonacci([0, 0, 1], 10))
+
+
+# def tribonacci(signature, n):
+#     #  you need to create a fibonacci function that given a signature array/list, returns the first n elements - signature included of the so seeded sequence.
+#     # Signature will always contain 3 numbers; n will always be a non-negative number; if n == 0, then return an empty array
+#     # will always be taking prev 3 numbers from list..find way to add 
+#     for _ in range(n-3):
+#         signature.append(sum(signature[-3:]))
+#     return signature[:n]
+
+# print(tribonacci([0, 0, 1], 10))
 
 
 # def abbreviate(s):

@@ -1,4 +1,30 @@
+function solution(digits){
+//   for loop that takes in current iter digit and 4 following digits, update a var if number > var
+    let max = 0
+    for (i=0; i <= digits.length-4; i++){
+        let num = parseInt(digits.substring(i, i+5))
+        if (num > max){
+            max = num 
+        }
+    }
+    return max 
+}
 
+// function solution(number) {
+//     let greatestSequence = 0;
+    
+//     for (let i = 0; i < number.length - 4; i++) {
+//       const sequence = parseInt(number.substring(i, i + 5));
+//       if (sequence > greatestSequence) {
+//         greatestSequence = sequence;
+//       }
+//     }
+    
+//     return greatestSequence;
+//   }
+  
+
+console.log(solution('731674765'));
 
 
 // function alphabetWar(fight){
