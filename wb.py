@@ -1,12 +1,39 @@
-def is_prime(num):
-    if num < 2:
-        return False
-    for n in range(2, num//2+1):
-        if num % n == 0:
-            return False 
-    return True
+def count_smileys(arr):
+    eyes = ':;'
+    nose = '-~'
+    mouth = ')D'
+    counter = 0
+    for smiley in arr:
+        if len(smiley)==3 and smiley[0] in eyes and smiley[1] in nose and smiley[2] in mouth:
+            counter += 1
+        elif len(smiley)==2 and smiley[0] in eyes and smiley[1] in mouth:
+            counter += 1
+    return counter 
 
-print(is_prime(31))
+print(count_smileys([':)',':(',':D',':O',':;']))
+
+
+# def comp(array1, array2):
+#     if not array1 and array2:
+#         return False 
+#     array1.sort(), array2.sort()
+#     for i, n in enumerate(array1):
+#         if n**2 != array2[i]:
+#             return False 
+#     return True 
+
+# print(comp([121, 144, 19, 161, 19, 144, 19, 11], [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]))
+
+
+# def is_prime(num):
+#     if num < 2:
+#         return False
+#     for n in range(2, num//2+1):
+#         if num % n == 0:
+#             return False 
+#     return True
+
+# print(is_prime(31))
 
 
 # def tribonacci(signature, n):
