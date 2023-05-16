@@ -1,16 +1,28 @@
-def count_smileys(arr):
-    eyes = ':;'
-    nose = '-~'
-    mouth = ')D'
-    counter = 0
-    for smiley in arr:
-        if len(smiley)==3 and smiley[0] in eyes and smiley[1] in nose and smiley[2] in mouth:
-            counter += 1
-        elif len(smiley)==2 and smiley[0] in eyes and smiley[1] in mouth:
-            counter += 1
-    return counter 
+def find_nb(m):
+    # recursive fn
+    total = 0
+    n = 1
+    while total < m:
+        total += n**3
+        n += 1
+    return n-1 if total == m else -1
 
-print(count_smileys([':)',':(',':D',':O',':;']))
+print(find_nb(135440716410000)) # 3
+
+
+# def count_smileys(arr):
+#     eyes = ':;'
+#     nose = '-~'
+#     mouth = ')D'
+#     counter = 0
+#     for smiley in arr:
+#         if len(smiley)==3 and smiley[0] in eyes and smiley[1] in nose and smiley[2] in mouth:
+#             counter += 1
+#         elif len(smiley)==2 and smiley[0] in eyes and smiley[1] in mouth:
+#             counter += 1
+#     return counter 
+
+# print(count_smileys([':)',':(',':D',':O',':;']))
 
 
 # def comp(array1, array2):
