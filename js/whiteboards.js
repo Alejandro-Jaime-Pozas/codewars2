@@ -1,14 +1,33 @@
-function solution(digits){
-//   for loop that takes in current iter digit and 4 following digits, update a var if number > var
-    let max = 0
-    for (i=0; i <= digits.length-4; i++){
-        let num = parseInt(digits.substring(i, i+5))
-        if (num > max){
-            max = num 
-        }
-    }
-    return max 
-}
+
+
+
+// function findLongest(array){
+//     // need to count num of digits in each number in array
+//     let largest = array[0]
+//     for (let n of array){
+//         n.toString().length > largest.toString().length ? largest = n : null
+//         // console.log(n.toString().length)
+//         // console.log(n)
+//     }
+//     return largest 
+//   }
+
+// console.log(findLongest([8, 900, 500]));
+
+
+// function solution(digits){
+// //   for loop that takes in current iter digit and 4 following digits, update a var if number > var
+//     let max = 0
+//     for (i=0; i <= digits.length-4; i++){
+//         let num = parseInt(digits.substring(i, i+5))
+//         if (num > max){
+//             max = num 
+//         }
+//     }
+//     return max 
+// }
+
+// console.log(solution('731674765'));
 
 // function solution(number) {
 //     let greatestSequence = 0;
@@ -24,7 +43,6 @@ function solution(digits){
 //   }
   
 
-console.log(solution('731674765'));
 
 
 // function alphabetWar(fight){
