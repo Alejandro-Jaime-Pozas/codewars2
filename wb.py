@@ -1,3 +1,19 @@
+def multiplication_table(size):
+    # need to return a list of lists which goes up to the number 'size'
+        # total num of lists = size, total nums in each list = size
+    # for loop starting at 1 up to size
+    table = []
+    for i in range(1, size+1):
+        row = []
+        for num in range(1, size+1):
+            row.append(i * num)
+        table.append(row)
+    return table 
+
+
+print(multiplication_table(3))
+
+
 # def solution(n):
 #     # between 1 and 3999
 #     # Modern Roman numerals are written by expressing each digit separately starting with the left most digit and skipping any digit with a value of zero. 

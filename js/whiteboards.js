@@ -1,6 +1,14 @@
 
 
 
+// let multiline = `
+//   This is a\
+//   multiline
+//   string.
+// `;
+// console.log(multiline);
+
+
 // function findLongest(array){
 //     // need to count num of digits in each number in array
 //     let largest = array[0]
