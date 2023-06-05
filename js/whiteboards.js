@@ -1,6 +1,12 @@
 
 
 
+// function toNumberArray(stringarray){
+//   return stringarray.map(a => Number(a))
+// }
+
+// console.log(toNumberArray(["1","2.2","3.3"]));
+
 // let multiline = `
 //   This is a\
 //   multiline
