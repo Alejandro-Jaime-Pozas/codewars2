@@ -1,3 +1,6 @@
+
+
+
 # def up_array(arr):
 #     # only positive int, only one digit int
 #     # only issue is when num is a 9

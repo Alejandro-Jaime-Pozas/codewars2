@@ -1,6 +1,18 @@
 
 
 
+// function solve(arr) {
+//     let unique = []
+//     for (i=arr.length-1; i>=0; i--){
+//         unique.includes(arr[i]) ? null : unique.push(arr[i])
+//     }
+//     return unique.reverse()
+//   }
+
+  
+//   console.log(solve([3,4,4,3,6,3]));
+
+
 // function toNumberArray(stringarray){
 //   return stringarray.map(a => Number(a))
 // }
