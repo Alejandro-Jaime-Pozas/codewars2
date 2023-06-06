@@ -1,4 +1,18 @@
+# def up_array(arr):
+#     # only positive int, only one digit int
+#     # only issue is when num is a 9
+#         # need to convert that value to 0, and add 1 to left num
+#     # could join all ints into str, then add 1 to that num, then split at every digit...
+#     joined_num = ''
+#     for d in arr:
+#         joined_num += str(d)
+#     joined_num = str(int(joined_num) + 1)
+#     # final = []
+#     # for d in joined_num:
+#     #     final.append(int(d))
+#     return [int(d) for d in joined_num] 
 
+# print(up_array([9,9,9,9]))
 
 
 # def multiplication_table(size):
