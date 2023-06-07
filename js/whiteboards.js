@@ -1,4 +1,9 @@
+function largest(n, array) {
+    // Find the n highest elements in a list
+    return array.sort((a,b)=>b-a).slice(0, n).sort((a,b)=>a-b)
+  }
 
+console.log(largest(2, [5,6,7,4,3,2,100]));
 
 
 // function solve(arr) {
