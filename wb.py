@@ -1,6 +1,24 @@
 
 
 
+# def parse(data):
+#     # TODO: your code here
+#     updated = 0
+#     final = []
+#     for c in data:
+#         if c == 'i':
+#             updated += 1
+#         elif c == 'd':
+#             updated -= 1
+#         elif c == 's':
+#             updated **= 2
+#         elif c == 'o':
+#             final.append(updated)
+#     return final 
+
+# print(parse("iiisdoso"))
+
+
 # def up_array(arr):
 #     # only positive int, only one digit int
 #     # only issue is when num is a 9
