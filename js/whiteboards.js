@@ -1,9 +1,32 @@
-function largest(n, array) {
-    // Find the n highest elements in a list
-    return array.sort((a,b)=>b-a).slice(0, n).sort((a,b)=>a-b)
-  }
 
-console.log(largest(2, [5,6,7,4,3,2,100]));
+
+
+// function disemvowel(str) {
+//     // // advanced
+//     // const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+//     // return str
+//     //   .split('')
+//     //   .filter(char => !vowels.includes(char))
+//     //   .join('')
+    
+//     // basic
+//     let vowels = 'aeiouAEIOU'
+//     let final = ''
+//     for (c of str){
+//         !vowels.includes(c) ? final += c : null 
+//     }
+//     return final 
+//   }
+
+// console.log(disemvowel("This website is for losers LOL!"))
+
+
+// function largest(n, array) {
+//     // Find the n highest elements in a list
+//     return array.sort((a,b)=>b-a).slice(0, n).sort((a,b)=>a-b)
+//   }
+
+// console.log(largest(2, [5,6,7,4,3,2,100]));
 
 
 // function solve(arr) {
