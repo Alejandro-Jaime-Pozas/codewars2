@@ -1,6 +1,17 @@
 
 
 
+// function getCount(str) {
+//     let counter = 0
+//     const vowels = 'aeiou'
+//     for (c of str){
+//         vowels.includes(c) ? counter += 1 : null 
+//     }
+//     return counter 
+//   }
+
+// console.log(getCount("abracadabra"))
+
 // function disemvowel(str) {
 //     // // advanced
 //     // const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
