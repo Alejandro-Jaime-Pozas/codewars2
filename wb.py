@@ -1,4 +1,24 @@
+# def good_vs_evil(good, evil):
+#     # good_points = [1,2,3,3,4,10]
+#     evil_points = [1,2,2,2,3,5,10]
+#     # # need to multiply points by string according to index
+#     # good_total = 0
+#     # for i, v in enumerate(good.split(' ')):
+#     #     good_total += int(v) * good_points[i]
+#     # evil_total = 0
+#     # for i, v in enumerate(evil.split(' ')):
+#     #     evil_total += int(v) * evil_points[i]
 
+#     # if good_total > evil_total: 
+#     #     return "Battle Result: Good triumphs over Evil" 
+#     # elif evil_total > good_total: 
+#     #     return "Battle Result: Evil eradicates all trace of Good"
+#     # else: 
+#     #     return "Battle Result: No victor on this battle field"
+#     evil_int = [int(n) for n in evil.split(' ')]
+#     return type(map(lambda p, e: p * e    , evil_points, evil_int))
+
+# print(good_vs_evil('0 0 0 0 0 10', '0 3 1 1 9 0 0'))
 
 
 # def parse(data):
