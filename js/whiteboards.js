@@ -1,6 +1,23 @@
 
 
 
+// function countDevelopers(list) {
+//     let counter = 0
+//     list.forEach(dev => dev.language == 'JavaScript' && dev.continent == 'Europe' ? counter += 1 : 0)
+//     // for (let dev of list){
+//     //     dev.language == 'JavaScript' && dev.continent == 'Europe' ? counter += 1 : 0
+//     // }
+//     return counter 
+//   }
+
+// console.log(countDevelopers([
+//     { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
+//     { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
+//     { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
+//     { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
+//   ]));
+
+
 // function evenNumbers(array, number) {
 //     return array.filter(a => a % 2 == 0).slice(-number)
 //   }
