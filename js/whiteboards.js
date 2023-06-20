@@ -1,6 +1,25 @@
 
 
 
+// function sortMyString(S) {
+//     let even = ''
+//     let odd = ''
+//     for (let i in S){
+//         i % 2 !== 0 ? odd += S[i] : even += S[i]
+//     }
+//     return even + ' ' + odd 
+// }
+
+// console.log(sortMyString('CodeWars'));
+
+
+// function squareDigits(num){
+//     return parseInt(num.toString().split('').map(a=>(a**2).toString()).join(''))
+//   }
+
+// console.log(squareDigits(9212));
+
+
 // function countDevelopers(list) {
 //     let counter = 0
 //     list.forEach(dev => dev.language == 'JavaScript' && dev.continent == 'Europe' ? counter += 1 : 0)
