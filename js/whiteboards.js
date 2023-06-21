@@ -1,6 +1,20 @@
 
 
 
+// function minSum(arr) {
+//     // if order array, can then take first, last int and so forth to multiply and add their sums
+//     arr.sort((a,b)=>a-b)
+//     running_sum = 0
+//     for (i=0; i<Math.floor(arr.length/2-1); i++){
+//         console.log(arr[i], arr.pop())
+//         running_sum += arr[i] * arr.pop()
+//     }
+//     return running_sum
+// }
+
+// console.log(minSum([5,4,2,3]));
+
+
 // function sortMyString(S) {
 //     let even = ''
 //     let odd = ''
