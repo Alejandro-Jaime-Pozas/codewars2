@@ -1,16 +1,40 @@
+function sumOfMinimums(arr) {
+    return arr.map(inArr => (Math.min(...inArr))).reduce((a, b) =>{console.log(a,b); return a + b}, 0)
+}
 
+console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]));
 
 
 // function minSum(arr) {
-//     // if order array, can then take first, last int and so forth to multiply and add their sums
-//     arr.sort((a,b)=>a-b)
-//     running_sum = 0
-//     for (i=0; i<Math.floor(arr.length/2-1); i++){
-//         console.log(arr[i], arr.pop())
-//         running_sum += arr[i] * arr.pop()
+//     arr.sort((a, b) => a - b); // Sort the array in ascending order
+  
+//     let minSum = 0;
+//     for (let i = 0; i < arr.length / 2; i++) {
+//       minSum += arr[i] * arr[arr.length - 1 - i];
 //     }
-//     return running_sum
-// }
+  
+//     return minSum;
+//   }
+  
+//   // Example usage:
+//   const arr = [5, 4, 2, 3];
+//   const result = minSum(arr);
+//   console.log(result); // Output: 22
+  
+
+
+// function minSum(arr) {
+//     arr = arr.sort(function (a, b) {return a - b});
+//     let i = 0;
+//     let j = arr.length - 1;
+//     let sum = 0;
+//     while (i < j ) {
+//       sum += arr[i] * arr[j];
+//       i++;
+//       j--;
+//     }
+//     return sum;
+//   }
 
 // console.log(minSum([5,4,2,3]));
 
