@@ -1,8 +1,16 @@
-function sumOfMinimums(arr) {
-    return arr.map(inArr => (Math.min(...inArr))).reduce((a, b) =>{console.log(a,b); return a + b}, 0)
-}
+function cookingTime(eggs) {
+    // 8 is the max num of eggs in the only pot. so 5mins limit for 8 eggs.
+    return Math.ceil(eggs/8) * 5
+  }
 
-console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]));
+console.log(cookingTime(17));
+
+
+// function sumOfMinimums(arr) {
+//     return arr.map(inArr => (Math.min(...inArr))).reduce((a, b) =>{console.log(a,b); return a + b}, 0)
+// }
+
+// console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]));
 
 
 // function minSum(arr) {
