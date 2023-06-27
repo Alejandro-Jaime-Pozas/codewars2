@@ -1,9 +1,16 @@
-function cookingTime(eggs) {
-    // 8 is the max num of eggs in the only pot. so 5mins limit for 8 eggs.
-    return Math.ceil(eggs/8) * 5
-  }
+var filterString = function(value) {
+  return Number(value.split('').filter(n=>Number(n)).join(''))
+}
 
-console.log(cookingTime(17));
+console.log(filterString("aa1bb2cc3dd"));
+
+
+// function cookingTime(eggs) {
+//     // 8 is the max num of eggs in the only pot. so 5mins limit for 8 eggs.
+//     return Math.ceil(eggs/8) * 5
+//   }
+
+// console.log(cookingTime(17));
 
 
 // function sumOfMinimums(arr) {
