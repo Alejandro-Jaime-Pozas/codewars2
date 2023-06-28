@@ -1,8 +1,21 @@
-var filterString = function(value) {
-  return Number(value.split('').filter(n=>Number(n)).join(''))
-}
 
-console.log(filterString("aa1bb2cc3dd"));
+
+
+// function solution(start, finish) {
+//     // can only jump either to next shelf, or + 3 shelfs, not + 2
+//     return Math.floor((finish - start) / 3) + (finish - start) % 3
+// }
+  
+//   // Example usage
+//   console.log(solution(916,1400)); // Output: 2
+  
+
+
+// var filterString = function(value) {
+//   return Number(value.split('').filter(n=>Number(n)).join(''))
+// }
+
+// console.log(filterString("aa1bb2cc3dd"));
 
 
 // function cookingTime(eggs) {
