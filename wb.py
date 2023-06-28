@@ -1,4 +1,16 @@
+# def bouncing_ball(h, bounce, window):
+#     if h > 0 and bounce > 0 and bounce < 1 and window < h:
+#         # ball only seen if > window, else not seen
+#         times_seen = 1
+#         while h > window:
+#             h = h * bounce 
+#             if h > window:
+#                 times_seen += 2
+#         return times_seen 
+#     else:
+#         return -1
 
+# print(bouncing_ball(3, 0.66, 1.5)) # 3
 
 
 # def good_vs_evil(good, evil):
