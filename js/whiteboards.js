@@ -1,4 +1,16 @@
+const orderedCount = function (text) {
+    let final = []
+    let seen = []
+    for (c of text){
+        if (!seen.includes(c)) {
+            final.push([c, [...text].filter(char => char == c).length])
+            seen.push(c)
+        }
+    }
+    return final 
+  }
 
+console.log(orderedCount('abracadabra'));
 
 
 // function solution(start, finish) {
