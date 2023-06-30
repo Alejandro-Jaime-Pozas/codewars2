@@ -1,16 +1,31 @@
-const orderedCount = function (text) {
-    let final = []
-    let seen = []
-    for (c of text){
-        if (!seen.includes(c)) {
-            final.push([c, [...text].filter(char => char == c).length])
-            seen.push(c)
-        }
-    }
-    return final 
-  }
 
-console.log(orderedCount('abracadabra'));
+
+
+// function getSumOfDigits(integer) {
+//     var sum = 0;
+//     var digits =  integer.toString();
+//     for (var ix = 0; ix < digits.length; ix++) {
+//       sum += Number(digits[ix]);
+//     }
+//     return sum;
+//   }
+
+// console.log(getSumOfDigits(123));
+
+
+// const orderedCount = function (text) {
+//     let final = []
+//     let seen = []
+//     for (c of text){
+//         if (!seen.includes(c)) {
+//             final.push([c, [...text].filter(char => char == c).length])
+//             seen.push(c)
+//         }
+//     }
+//     return final 
+//   }
+
+// console.log(orderedCount('abracadabra'));
 
 
 // function solution(start, finish) {
