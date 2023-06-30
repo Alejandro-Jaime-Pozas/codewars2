@@ -1,4 +1,10 @@
+function killer(suspectInfo, dead) {
+    for (suspect of suspectInfo) {
+        console.log(suspectInfo[suspect]);
+    }
+  }
 
+console.log(killer({'James': ['Jacob', 'Bill', 'Lucas'], 'Johnny': ['David', 'Kyle', 'Lucas'], 'Peter': ['Lucy', 'Kyle']}, ['Lucas', 'Bill']));
 
 
 // function getSumOfDigits(integer) {
