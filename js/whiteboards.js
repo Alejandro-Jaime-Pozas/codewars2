@@ -1,9 +1,16 @@
-function countRedBeads(n) {
-  // start 1 blue bead. for every addtl blue bead, there's 2 red beads
-  return n < 2 ? 0 : (n-1) * 2
-}
+// var flatten = function (array){
+//   return array.flat(3)
+// }
 
-console.log(countRedBeads(5));
+// console.log(flatten([[1,2,3],["a","b","c"],[1,2,3]]));
+
+
+// function countRedBeads(n) {
+//   // start 1 blue bead. for every addtl blue bead, there's 2 red beads
+//   return n < 2 ? 0 : (n-1) * 2
+// }
+
+// console.log(countRedBeads(5));
 
 
 // function killer(suspectInfo, dead) {
