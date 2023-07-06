@@ -1,4 +1,9 @@
+function countRedBeads(n) {
+  // start 1 blue bead. for every addtl blue bead, there's 2 red beads
+  return n < 2 ? 0 : (n-1) * 2
+}
 
+console.log(countRedBeads(5));
 
 
 // function killer(suspectInfo, dead) {
