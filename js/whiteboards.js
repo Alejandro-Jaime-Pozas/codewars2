@@ -1,3 +1,20 @@
+
+
+
+// function growingPlant(upSpeed, downSpeed, desiredHeight) {
+//     let curr_height = 0
+//     let day = 0
+//     while (curr_height < desiredHeight){
+//         curr_height += upSpeed
+//         day += 1
+//         if (curr_height >= desiredHeight){return day}
+//         curr_height -= downSpeed
+//     }
+//   }
+
+// console.log(growingPlant(10,9,4));
+
+
 // var flatten = function (array){
 //   return array.flat(3)
 // }
