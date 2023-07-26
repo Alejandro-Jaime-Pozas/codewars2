@@ -1,7 +1,20 @@
-function balancedNum(number)
-{
-    return "Do your magic!"
+function balancedNum(number) {
+    // need to split string into two sides, left and right. 
+    // if string even, ignore middle 2 nums, if odd, ignore middle num
+    let init = number.toString().length
+    len = init % 2 === 0 ? init/2-1 : Math.floor(init/2) 
+    if (init < 3){return 'Balanced'}
+    if (
+        [...number.toString().slice(0,len)].reduce((a,b)=>parseInt(a)+parseInt(b)) 
+        ===
+        [...number.toString().slice(-3)].reduce((a,b)=>parseInt(a)+parseInt(b))
+    ) {
+        return "Balanced" 
+    }
+    return "Not Balanced"
 }
+
+console.log(balancedNum(562398143)); // balanced
 
 
 // function growingPlant(upSpeed, downSpeed, desiredHeight) {
