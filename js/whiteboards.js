@@ -1,4 +1,7 @@
-
+function balancedNum(number)
+{
+    return "Do your magic!"
+}
 
 
 // function growingPlant(upSpeed, downSpeed, desiredHeight) {
