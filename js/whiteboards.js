@@ -1,9 +1,20 @@
-function alternateCase(s) {
-    let alternate = [...s].map(c => c.toUpperCase() === c ? c.toLowerCase() : c.toLowerCase() === c ? c.toUpperCase() : c)
-    return alternate.join('')
-  }
+function pattern(n){
+    let output = ""
+    for (i=1; i < n+1; i++){
+        i === 1 ? output += `${i}` : output += "\\n" + i.toString()*i
+    } 
+    return output 
+   }
 
-console.log(alternateCase('Hello World'));
+console.log(pattern(5));
+
+
+// function alternateCase(s) {
+//     let alternate = [...s].map(c => c.toUpperCase() === c ? c.toLowerCase() : c.toLowerCase() === c ? c.toUpperCase() : c)
+//     return alternate.join('')
+//   }
+
+// console.log(alternateCase('Hello World'));
 
 
 // function balancedNum(number) {
