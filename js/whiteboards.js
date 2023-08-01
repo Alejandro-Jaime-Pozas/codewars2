@@ -1,12 +1,32 @@
-function pattern(n){
-    let output = ""
-    for (i=1; i < n+1; i++){
-        i === 1 ? output += `${i}` : output += "\\n" + i.toString()*i
-    } 
-    return output 
-   }
+function dataReverse(data) {
+    // need to split array into multiple arrays, then just reverse the orders of the arrays, not their contents
+    let final = []
+    let eightbits = []
+    let counter = 0
+    for (let i=0; i<data.length+1; i++){
+        if (counter === 8) {
+            final.push(eightbits)
+            eightbits = []
+            counter = 0
+        }
+        eightbits.push(data[i])
+        counter += 1
+    }
+    return final.reverse().flat()
+  }
 
-console.log(pattern(5));
+console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]));
+
+
+// function pattern(n){
+//     let output = ""
+//     for (i=1; i < n+1; i++){
+//         i === 1 ? output += `${i}` : output += "\\n" + i.toString()*i
+//     } 
+//     return output 
+//    }
+
+// console.log(pattern(5));
 
 
 // function alternateCase(s) {
