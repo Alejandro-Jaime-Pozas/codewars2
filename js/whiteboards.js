@@ -1,21 +1,30 @@
-function dataReverse(data) {
-    // need to split array into multiple arrays, then just reverse the orders of the arrays, not their contents
-    let final = []
-    let eightbits = []
-    let counter = 0
-    for (let i=0; i<data.length+1; i++){
-        if (counter === 8) {
-            final.push(eightbits)
-            eightbits = []
-            counter = 0
-        }
-        eightbits.push(data[i])
-        counter += 1
-    }
-    return final.reverse().flat()
+function nicknameGenerator(name){
+    const vowels = 'aieou'
+    return name.length < 4 ? 'Error: Name too short' : vowels.includes(name[2]) ? name.slice(0,4) : name.slice(0,3)
   }
 
-console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]));
+console.log(nicknameGenerator("Samantha"));
+console.log(nicknameGenerator("Alex"));
+
+
+// function dataReverse(data) {
+//     // need to split array into multiple arrays, then just reverse the orders of the arrays, not their contents
+//     let final = []
+//     let eightbits = []
+//     let counter = 0
+//     for (let i=0; i<data.length+1; i++){
+//         if (counter === 8) {
+//             final.push(eightbits)
+//             eightbits = []
+//             counter = 0
+//         }
+//         eightbits.push(data[i])
+//         counter += 1
+//     }
+//     return final.reverse().flat()
+//   }
+
+// console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]));
 
 
 // function pattern(n){
