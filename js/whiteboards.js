@@ -1,10 +1,22 @@
-function nicknameGenerator(name){
-    const vowels = 'aieou'
-    return name.length < 4 ? 'Error: Name too short' : vowels.includes(name[2]) ? name.slice(0,4) : name.slice(0,3)
+function partsSums(lst) {
+  let final = []
+  for (i in lst){
+    final.push(lst.slice(i).reduce((a,b)=>a+b))
   }
+  final.push(0)
+  return final
+}
 
-console.log(nicknameGenerator("Samantha"));
-console.log(nicknameGenerator("Alex"));
+console.log(partsSums([0,1,3,6,10]));
+
+
+// function nicknameGenerator(name){
+//     const vowels = 'aieou'
+//     return name.length < 4 ? 'Error: Name too short' : vowels.includes(name[2]) ? name.slice(0,4) : name.slice(0,3)
+//   }
+
+// console.log(nicknameGenerator("Samantha"));
+// console.log(nicknameGenerator("Alex"));
 
 
 // function dataReverse(data) {
