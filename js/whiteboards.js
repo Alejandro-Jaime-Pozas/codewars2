@@ -1,13 +1,16 @@
-function partsSums(lst) {
-  let final = []
-  for (i in lst){
-    final.push(lst.slice(i).reduce((a,b)=>a+b))
-  }
-  final.push(0)
-  return final
-}
 
-console.log(partsSums([0,1,3,6,10]));
+
+
+// function partsSums(lst) {
+//   let final = []
+//   for (i in lst){
+//     final.push(lst.slice(i).reduce((a,b)=>a+b))
+//   }
+//   final.push(0)
+//   return final
+// }
+
+// console.log(partsSums([0,1,3,6,10]));
 
 
 // function nicknameGenerator(name){
