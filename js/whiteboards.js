@@ -1,8 +1,24 @@
-var greet = function(name) {
-  return 'Hello ' + name.slice(0,1).toUpperCase() + name.slice(1).toLowerCase() + '!'
-};
+// function sumCubes(n){
+//   sum = 0
+//   for (let i=1; i<n+1; i++){
+//     sum += i**3
+//   }
+//   return sum 
+// }
 
-console.log(greet('JACK'));
+// console.log(sumCubes(3));
+
+// let array = new Array(20).fill(0);
+
+// console.log(array);
+
+
+
+// var greet = function(name) {
+//   return 'Hello ' + name.slice(0,1).toUpperCase() + name.slice(1).toLowerCase() + '!'
+// };
+
+// console.log(greet('JACK'));
 
 
 // function partsSums(lst) {
