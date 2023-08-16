@@ -1,15 +1,28 @@
-function isLeapYear(year) {
-    // years div by 4 ARE leap yrs EXCEPT IF also div by 100
-    // div by 100 ARE NOT leap years EXCEPT IT yrs div by 400
-    // conc: all years div by 4 are leap yrs EXCEPT if div by 100 EXCEPT IF div by 400
-    // if yr div by 400, LEAP YR
-    // else if yr div by 100, NOT LEAP YR
-    // else if yr dib by 4, LEAP YR
-    // else NOT LEAP YR
-    return year % 400 === 0 ? true : year % 100 === 0 ? false : year % 4 === 0 ? true : false 
-  }
+function isSortedAndHow(array) {
+    let prev = array[0]
+    for (let n of array){
+        if (n >= prev){
+            prev = n 
+        } else break 
+    }
+    return 'sorted asc'
+}
 
-console.log(isLeapYear(504));
+console.log(isSortedAndHow([1,2,100,]));
+
+
+// function isLeapYear(year) {
+//     // years div by 4 ARE leap yrs EXCEPT IF also div by 100
+//     // div by 100 ARE NOT leap years EXCEPT IT yrs div by 400
+//     // conc: all years div by 4 are leap yrs EXCEPT if div by 100 EXCEPT IF div by 400
+//     // if yr div by 400, LEAP YR
+//     // else if yr div by 100, NOT LEAP YR
+//     // else if yr dib by 4, LEAP YR
+//     // else NOT LEAP YR
+//     return year % 400 === 0 ? true : year % 100 === 0 ? false : year % 4 === 0 ? true : false 
+//   }
+
+// console.log(isLeapYear(504));
 
 
 // function sumCubes(n){
