@@ -1,14 +1,27 @@
-function isSortedAndHow(array) {
-    let prev = array[0]
-    for (let n of array){
-        if (n >= prev){
-            prev = n 
-        } else break 
+function vowelOne(s){
+    // string with vowels, for loop to check each char, if in vowels, push '1' to list, else push '0'
+    let final = ''
+    const vowels = 'aeiouAEIOU'
+    for (c of s){
+        vowels.includes(c) ? final += '1' : final += '0'
     }
-    return 'sorted asc'
-}
+    return final 
+  }
 
-console.log(isSortedAndHow([1,2,100,]));
+console.log(vowelOne("aeiou, abc")); // 1111100100
+
+
+// function isSortedAndHow(array) {
+//     let prev = array[0]
+//     for (let n of array){
+//         if (n >= prev){
+//             prev = n 
+//         } else break 
+//     }
+//     return 'sorted asc'
+// }
+
+// console.log(isSortedAndHow([1,2,100,]));
 
 
 // function isLeapYear(year) {
