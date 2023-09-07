@@ -1,14 +1,22 @@
-function vowelOne(s){
-    // string with vowels, for loop to check each char, if in vowels, push '1' to list, else push '0'
-    let final = ''
-    const vowels = 'aeiouAEIOU'
-    for (c of s){
-        vowels.includes(c) ? final += '1' : final += '0'
-    }
-    return final 
-  }
+function perimeterSequence(a,n) {
+  
+  return
+}
 
-console.log(vowelOne("aeiou, abc")); // 1111100100
+console.log(perimeterSequence(1,3));
+
+
+// function vowelOne(s){
+//     // string with vowels, for loop to check each char, if in vowels, push '1' to list, else push '0'
+//     let final = ''
+//     const vowels = 'aeiouAEIOU'
+//     for (c of s){
+//         vowels.includes(c) ? final += '1' : final += '0'
+//     }
+//     return final 
+//   }
+
+// console.log(vowelOne("aeiou, abc")); // 1111100100
 
 
 // function isSortedAndHow(array) {
