@@ -1,9 +1,25 @@
-function perimeterSequence(a,n) {
-  
-  return
-}
+function solve(arr){  
+    const alph = 'abcdefghijklmnopqrstuvwxyz'
 
-console.log(perimeterSequence(1,3));
+    numArr = []
+    for (let word of arr){
+        counter = 0
+        for (let i in word){
+            word[i].toLowerCase() === alph[i] ? counter += 1 : null 
+        }
+        numArr.push(counter)
+    }
+    return numArr
+};
+
+console.log(solve(["abode","ABc","xyzD"]));
+
+// function perimeterSequence(a,n) {
+  
+//   return
+// }
+
+// console.log(perimeterSequence(1,3));
 
 
 // function vowelOne(s){
