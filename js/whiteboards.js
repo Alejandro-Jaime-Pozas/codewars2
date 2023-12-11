@@ -1,18 +1,60 @@
-function solve(arr){  
-    const alph = 'abcdefghijklmnopqrstuvwxyz'
 
-    numArr = []
-    for (let word of arr){
-        counter = 0
-        for (let i in word){
-            word[i].toLowerCase() === alph[i] ? counter += 1 : null 
-        }
-        numArr.push(counter)
-    }
-    return numArr
-};
 
-console.log(solve(["abode","ABc","xyzD"]));
+
+// // count the occurrences of each char in a string
+
+// // {s:3, u:1, etc}
+
+// // object variable required
+// // map key value pairs
+
+// const countingCharacters = (str) => {
+
+//     let charCount = {}
+//     let maxCount = 0
+//     let mostOccuring = {}
+
+//     for (let i=0; i < str.length; i++) {
+
+//         let char = str[i]
+
+//         if (char === ' ') {
+//             continue 
+//         }
+//         if (!charCount[char]) {
+//             charCount[char] = 1
+//         } else {
+//             charCount[char]++
+//         }
+
+//         if (charCount[char] > maxCount) {
+//             maxCount = charCount[char]
+//             mostOccuring = {[char]: char} 
+//         }
+//     }
+
+//     return charCount 
+// }
+
+// console.log(countingCharacters('tomorrow'));
+
+
+
+// function solve(arr){  
+//     const alph = 'abcdefghijklmnopqrstuvwxyz'
+
+//     numArr = []
+//     for (let word of arr){
+//         counter = 0
+//         for (let i in word){
+//             word[i].toLowerCase() === alph[i] ? counter += 1 : null 
+//         }
+//         numArr.push(counter)
+//     }
+//     return numArr
+// };
+
+// console.log(solve(["abode","ABc","xyzD"]));
 
 // function perimeterSequence(a,n) {
   

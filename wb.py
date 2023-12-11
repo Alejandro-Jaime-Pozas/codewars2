@@ -1,3 +1,35 @@
+
+
+
+# def two_count(n):
+#     if n < 2 or n % 2 != 0:
+#         return 0
+    
+#     count = 0
+#     while n % 2 == 0:
+#         n /= 2
+#         count += 1
+#     return count 
+
+# print(two_count(256)) # 4
+
+
+# def count_salutes(hallway):
+#     # if right, will meet with subsequent lefts ONLY
+#     # if left, will meet with previous rights ONLY
+#     # salute only occurs when right meets left. right always first, to salute it needs a left
+#     right = 0
+#     salutes = 0
+#     for c in hallway:
+#         if c == '>':
+#             right += 1
+#         elif c == '<':
+#             salutes += right * 2
+#     return salutes 
+
+# print(count_salutes('<---<--->----<'))
+
+
 # def bouncing_ball(h, bounce, window):
 #     if h > 0 and bounce > 0 and bounce < 1 and window < h:
 #         # ball only seen if > window, else not seen
