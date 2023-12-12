@@ -1,3 +1,10 @@
+# def queue(queuers: list, pos: int) -> int:
+#     # account for position, length of list, nums less than num at position
+#     return queuers[pos] * len(queuers) - sum(queuers[pos] - num for num in queuers if queuers[pos] > num) - len(queuers) - pos + 1
+
+# print(queue([2, 5, 3, 6, 4], 1)) # 12
+
+
 # def boredom(staff: dict) -> str:
     
 #     dept_score = {
