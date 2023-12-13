@@ -1,3 +1,25 @@
+
+
+
+# def bin_rota(arr):
+#     # the order of the lists is, if list index is even, leave as is, if odd, reverse list
+#     # can either create new list and append to it, or keep adding to an existing list
+#     final = []
+#     for i, row in enumerate(arr):
+#         if i % 2:
+#             row.reverse()
+#         final.extend(row)
+#     return final
+
+
+# print(bin_rota(
+#     [
+#         ["Bob","Nora"],
+#         ["Ruby","Carl"]
+#     ]
+# ))
+
+
 # def queue(queuers: list, pos: int) -> int:
 #     # account for position, length of list, nums less than num at position
 #     return queuers[pos] * len(queuers) - sum(queuers[pos] - num for num in queuers if queuers[pos] > num) - len(queuers) - pos + 1
