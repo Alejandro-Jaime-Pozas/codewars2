@@ -1,8 +1,31 @@
-def alphabetic(s):
-    # 
-    return s == ''.join(sorted(s))
+def squares_to_odd(a: int, b: int) -> str:
+    diff = a**2 - b**2
+    # start_check = diff//2 if diff//2 % 2 == 1 else diff//2 - 1
+    start_check = diff if diff % 2 == 1 else diff - 1
+    for num in range(start_check, -2, -2):
+        total_sum = []
+        print(num)
+        for num2 in range(num, -2, -2):
+            if sum(total_sum) == diff and a-b == len(total_sum):
+                list_str = ''
+                for num in sorted(total_sum):
+                    list_str += f'{num} + '
+                list_str = list_str[:-2] + f'= {diff}'
+                return f'''{a}^2 - {b}^2 = {list_str}'''
+            elif sum(total_sum) > diff:
+                break
+            else:
+                total_sum += [num2]
 
-print(alphabetic('abcd'))
+
+print(squares_to_odd(3, 0))
+
+
+# def alphabetic(s):
+#     # 
+#     return s == ''.join(sorted(s))
+
+# print(alphabetic('abcd'))
 
 
 # # Example 1
