@@ -1,3 +1,19 @@
+def alphabetic(s):
+    # 
+    return s == ''.join(sorted(s))
+
+print(alphabetic('abcd'))
+
+
+# # Example 1
+# num = 42
+# bit_length = num.bit_length()
+# print(f"The bit length of {num} is: {bit_length}")
+
+# # Example 2
+# negative_num = -128
+# bit_length_negative = negative_num.bit_length()
+# print(f"The bit length of {negative_num} is: {bit_length_negative}")
 
 
 
