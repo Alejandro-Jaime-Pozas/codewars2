@@ -1,24 +1,77 @@
-def squares_to_odd(a: int, b: int) -> str:
-    diff = a**2 - b**2
-    # start_check = diff//2 if diff//2 % 2 == 1 else diff//2 - 1
-    start_check = diff if diff % 2 == 1 else diff - 1
-    for num in range(start_check, -2, -2):
-        total_sum = []
-        print(num)
-        for num2 in range(num, -2, -2):
-            if sum(total_sum) == diff and a-b == len(total_sum):
-                list_str = ''
-                for num in sorted(total_sum):
-                    list_str += f'{num} + '
-                list_str = list_str[:-2] + f'= {diff}'
-                return f'''{a}^2 - {b}^2 = {list_str}'''
-            elif sum(total_sum) > diff:
-                break
-            else:
-                total_sum += [num2]
 
 
-print(squares_to_odd(3, 0))
+
+# def locate_entrance(office: list[str]) -> tuple[int, int]:
+#     # only options for office entrance: 
+#     #   first str in array or last str = any '.' char in any of those rows
+#     #   any other str in array = 
+#     #       first or last char is a '.' ignoring any spaces before or after within str
+#     #       if char is '.' and either prev or next row at same index is not '#' or if that prev/next row at same index does not exist
+#     for floor, row in enumerate(office):
+#         #   first str in array or last str = any '.' char in any of those rows
+#         if floor == 0 or floor + 1 == len(office):
+#             if '.' in row:
+#                 return row.index('.'), floor 
+#         #   any other str in array = 
+#         #       first or last char is a '.' ignoring any spaces before or after within str
+#         elif row.strip()[0] == '.':
+#             return row.index('.'), floor
+#         elif row.strip()[-1] == '.':
+#             return len(row) - 1 - row[::-1].index('.'), floor
+#         #       if char is '.' and either prev or next row at same index is not '#' or if that prev/next row at same index does not exist
+#         for i, char in enumerate(row):
+#             if char == '.':
+#                 # if prev/next row is shorter than char index ONLY WORKS FOR RIGHT SIDE, NOT LEFT
+#                 if len(office[floor-1]) >= i: 
+#                     if office[floor-1][i] == ' ':
+#                         return i, floor 
+#                 elif len(office[floor+1]) >= i: 
+#                     if office[floor+1][i] == ' ':
+#                         return i, floor 
+
+# print(locate_entrance(
+#                         [' #####',
+#                         ' #...#',
+#                         ' #...#',
+#                         ' #...#',
+#                         '##.#  ',
+#                         '#..###',
+#                         '######']
+#                     )
+# )
+
+# my_list = ['a', 'b', '.', 'c', '.', 'd', 'e', '.']
+
+# # Reverse the list and find the index of the last '.' character
+# reversed_index = my_list[::-1].index('.')
+# # Convert the reversed index to the original index
+# last_dot_index = len(my_list) - 1 - reversed_index
+
+# print("Index of the last '.' character:", reversed_index)
+
+
+
+# def squares_to_odd(a: int, b: int) -> str:
+#     diff = a**2 - b**2
+#     # start_check = diff//2 if diff//2 % 2 == 1 else diff//2 - 1
+#     start_check = diff if diff % 2 == 1 else diff - 1
+#     for num in range(start_check, -2, -2):
+#         total_sum = []
+#         print(num)
+#         for num2 in range(num, -2, -2):
+#             if sum(total_sum) == diff and a-b == len(total_sum):
+#                 list_str = ''
+#                 for num in sorted(total_sum):
+#                     list_str += f'{num} + '
+#                 list_str = list_str[:-2] + f'= {diff}'
+#                 return f'''{a}^2 - {b}^2 = {list_str}'''
+#             elif sum(total_sum) > diff:
+#                 break
+#             else:
+#                 total_sum += [num2]
+
+
+# print(squares_to_odd(3, 0))
 
 
 # def alphabetic(s):
