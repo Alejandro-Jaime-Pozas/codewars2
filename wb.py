@@ -1,20 +1,39 @@
-def ranks(a):
-    # need to return ranks highest being 1, ties being ties
-    # 1st option to sort numbers, then assign 1,2,3,etc or same number if repeat
-    a_sorted = sorted(a, reverse=True)
-    final = {}
-    # if repeat, can take next rank of non-repeating num by keeping tab of index
-    for i, n in enumerate(a_sorted):
-        # first num is 1
-        if i == 0:
-            final[str(n)] = 1
-        # after first num, check if num equal to last iteration
-        elif n != a_sorted[i-1]:
-            final[str(n)] = i + 1
-    # return [final[str(n)] for n in a]
-    return [x for x in enumerate(final.items())]
+def locate(seq, value): 
+    # seq is list or multiple nested lists
+    # value is a str
+    # need to flatten lists all into one
+    def flatten(seq):
+        flat_list = []
+        for item in seq:
+            if isinstance(item, list): # CHECK FOR TUPLE AS WELL
+                flat_list.extend(flatten(item))
+            else:
+                flat_list.append(item)
+        return flat_list
+    
+    return value in flatten(seq)
 
-print(ranks([3,3,3,3,3,5,1])) # [2,2,2,2,2,1,7]
+print(locate(['a','b',['c','d',['e']]],'c'))
+
+
+
+# def ranks(a):
+#     # need to return ranks highest being 1, ties being ties
+#     # 1st option to sort numbers, then assign 1,2,3,etc or same number if repeat
+#     a_sorted = sorted(a, reverse=True)
+#     final = {}
+#     # if repeat, can take next rank of non-repeating num by keeping tab of index
+#     for i, n in enumerate(a_sorted):
+#         # first num is 1
+#         if i == 0:
+#             final[str(n)] = 1
+#         # after first num, check if num equal to last iteration
+#         elif n != a_sorted[i-1]:
+#             final[str(n)] = i + 1
+#     # return [final[str(n)] for n in a]
+#     return [x for x in enumerate(final.items())]
+
+# print(ranks([3,3,3,3,3,5,1])) # [2,2,2,2,2,1,7]
 
 
 # def locate_entrance(office: list[str]) -> tuple[int, int]:
