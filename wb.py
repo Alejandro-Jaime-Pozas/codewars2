@@ -1,19 +1,58 @@
-def locate(seq, value): 
-    # seq is list or multiple nested lists
-    # value is a str
-    # need to flatten lists all into one
-    def flatten(seq):
-        flat_list = []
-        for item in seq:
-            if isinstance(item, list): # CHECK FOR TUPLE AS WELL
-                flat_list.extend(flatten(item))
-            else:
-                flat_list.append(item)
-        return flat_list
-    
-    return value in flatten(seq)
 
-print(locate(['a','b',['c','d',['e']]],'c'))
+
+
+# def is_possible(arr, target_sum):
+#     def backtrack(index, current_sum):
+#         if index == len(arr):
+#             return current_sum == target_sum
+
+#         # Try adding the current element
+#         if backtrack(index + 1, current_sum + arr[index]):
+#             return True
+
+#         # Try subtracting the current element
+#         if backtrack(index + 1, current_sum - arr[index]):
+#             return True
+
+#         return False
+
+#     return backtrack(1, arr[0])  # Start with the first element
+
+# # Example usage
+# arr = [1, 3, 4, 6, 8]
+# target_sum = -2
+# result = is_possible(arr, target_sum)
+# print(result)
+
+
+# def unpack_sausages(truck):
+#     # input is a list of tuples with different amount of strings per tuple 
+#     # a valid sausage package contains 4 total sausages, and all 4 are the same, and all four are either 
+#     pass
+
+# print(unpack_sausages(
+#     [
+#     ("(-)", "[IIII]", "[))))]"), ("IuI", "[llll]"), ("[@@@@]", "UwU", "[IlII]"), ("IuI", "[))))]", "x"), ()
+#     ]
+#     ))
+
+
+# def locate(seq, value): 
+#     # seq is list or multiple nested lists
+#     # value is a str
+#     # need to flatten lists all into one
+#     def flatten(seq):
+#         flat_list = []
+#         for item in seq:
+#             if isinstance(item, list): # CHECK FOR TUPLE AS WELL
+#                 flat_list.extend(flatten(item))
+#             else:
+#                 flat_list.append(item)
+#         return flat_list
+    
+#     return value in flatten(seq)
+
+# print(locate(['a','b',['c','d',['e']]],'c'))
 
 
 
