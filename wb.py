@@ -1,4 +1,15 @@
+# def digital_root(n):
+#     # need to grab the 'n' which is int and take each of its digits, so turn 'n' to str and split at each number into a list and grab its sum in order to check if sum is one digit. if more than one digit repeat until only one digit left.
+#     # specify condition when n < 10 to return that number
+#     if n < 10:
+#         return n 
+#     else:
+#         total_sum = 0
+#         for num in list(str(n)):
+#             total_sum += int(num)
+#         return digital_root(total_sum) # need return here to be able to use the return data
 
+# print(digital_root(942))
 
 
 # def is_possible(arr, target_sum):
