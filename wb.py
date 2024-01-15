@@ -5,9 +5,10 @@
 #         return n 
 #     else:
 #         total_sum = 0
-#         for num in list(str(n)):
+#         for num in (str(n)):
 #             total_sum += int(num)
 #         return digital_root(total_sum) # need return here to be able to use the return data
+#         # return digital_root(sum([int(num) for num in str(n)]))
 
 # print(digital_root(942))
 
