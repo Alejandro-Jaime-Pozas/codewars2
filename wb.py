@@ -1,6 +1,34 @@
 
 
 
+# def a1_thick_and_hearty(a1, a2):
+#     # first find the set of common elements bw the two arrays
+#     # based on that set, check which two numbers within the set either add or subtract to get a total equal to the length of each list. in the end, should have a 2 - 4 number set
+#     # i will suppose that only two numbers add or subtract to create the final set
+#     matches_set = set()
+#     for num in a1:
+#         if num in a2:
+#             # add matching numbers to set
+#             matches_set.add(num)
+#     # 1,2,4,6
+#     # matches = list(matches_set)
+#     final_set = set()
+#     for i,n in enumerate(matches_set):
+#         for j,n2 in enumerate(matches_set):
+#             # if not same number, add and subtract other numbers
+#             if i != j:
+#                 if n+n2 == len(a1) or n-n2 == len(a1) or n+n2 == len(a2) or n-n2 == len(a2):
+#                     final_set.add(n)
+#                     final_set.add(n2)
+#                     if len(final_set) > 2:
+#                         break 
+#     return final_set
+#     # x = set(filter(lambda n: n in a2, a1))
+#     # return x 
+
+# print(a1_thick_and_hearty([1, 2, 3, 4, 5, 6], [1, 2, 4, 6, 7, 8, 9, 10]))
+
+
 # def sursurungal(string):
 #     # will need to check could be multiple nums + words in the str input
 #     to_list = string.split(' ')
