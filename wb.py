@@ -1,24 +1,26 @@
 
-def sursurungal(string):
-    # will need to check could be multiple nums + words in the str input
-    to_list = string.split(' ')
-    for i in range(1, len(to_list)):
-        # split at spaces and check if number first and word 2nd that works
-        if to_list[i].isalpha() and to_list[i-1].isnumeric():
-            # singular no marker: 0 or 1 and leave as is
-            # prefix bu: 2  and remove 's' end of word
-            if int(to_list[i-1]) == 2:
-                to_list[i] = 'bu' + to_list[i][:-1]
-            # suffix zo: 3 to 9 and remove 's' end of word
-            if 3 <= int(to_list[i-1]) <= 9:
-                to_list[i] = to_list[i][:-1] + 'zo'
-            # both pre/suffix: 10+ and remove 's' end of word
-            if int(to_list[i-1]) > 9:
-                to_list[i] = 'ga' + to_list[i][:-1] + 'ga'
-    return ' '.join(to_list)
+
+
+# def sursurungal(string):
+#     # will need to check could be multiple nums + words in the str input
+#     to_list = string.split(' ')
+#     for i in range(1, len(to_list)):
+#         # split at spaces and check if number first and word 2nd that works
+#         if to_list[i].isalpha() and to_list[i-1].isnumeric():
+#             # singular no marker: 0 or 1 and leave as is
+#             # prefix bu: 2  and remove 's' end of word
+#             if int(to_list[i-1]) == 2:
+#                 to_list[i] = 'bu' + to_list[i][:-1]
+#             # suffix zo: 3 to 9 and remove 's' end of word
+#             if 3 <= int(to_list[i-1]) <= 9:
+#                 to_list[i] = to_list[i][:-1] + 'zo'
+#             # both pre/suffix: 10+ and remove 's' end of word
+#             if int(to_list[i-1]) > 9:
+#                 to_list[i] = 'ga' + to_list[i][:-1] + 'ga'
+#     return ' '.join(to_list)
     
 
-print(sursurungal('5 lions and 15 zebras and 100 elephants'))
+# print(sursurungal('5 lions and 15 zebras and 100 elephants'))
 
 
 # def digital_root(n):
