@@ -1,4 +1,41 @@
+def look_and_say(data, maxlen):
 
+    result_list = []
+
+    for n in range(maxlen):
+        look = result_list[-1] if result_list else data 
+        # grab latest str from result_list and split each int
+        # 111111856222
+        # need to loop through current look, set a variable to check if consecutive of that variable
+        same_count = 0
+        value = look[0]
+        add_to_result_list = ''
+        for num in look:
+            if value == '':
+                value = num 
+                same_count += 1
+                if len(look) == 1:
+                    add_to_result_list += f'{str(same_count)}{value}'
+            elif num == value:
+                # then keep adding count of that number
+                same_count += 1
+            # only update if value is not None
+            else:
+                # then + 1 to same_count, update the add_to_result_list, change the value and reset same_count to 1
+                print(same_count, value)
+                same_count += 1
+                add_to_result_list += f'{str(same_count)}{value}'
+                # resest
+                value = num 
+                same_count = 0
+        if not add_to_result_list:
+            add_to_result_list += f'{str(same_count)}{value}'
+        result_list.append(add_to_result_list)
+        # print(result_list)
+                
+    return result_list 
+
+print(look_and_say('1', 7))
 
 
 # def a1_thick_and_hearty(a1, a2):
