@@ -1,41 +1,63 @@
-def look_and_say(data, maxlen):
+import re 
 
-    result_list = []
+def is_audio(file_name):
+    # at least 1 or more alpha chars, no spaces, before a '.' char
+    # a '.' char
+    # a file extension ending after '.' that matches 1 of 4 options
+    match = re.search(r'[A-Za-z]+\.(mp3|flac|alac|aac)', file_name)
+    if match: 
+        return len(match[0]) == len(file_name)
+    return False 
 
-    for n in range(maxlen):
-        look = result_list[-1] if result_list else data 
-        # grab latest str from result_list and split each int
-        # 111111856222
-        # need to loop through current look, set a variable to check if consecutive of that variable
-        same_count = 0
-        value = look[0]
-        add_to_result_list = ''
-        for num in look:
-            if value == '':
-                value = num 
-                same_count += 1
-                if len(look) == 1:
-                    add_to_result_list += f'{str(same_count)}{value}'
-            elif num == value:
-                # then keep adding count of that number
-                same_count += 1
-            # only update if value is not None
-            else:
-                # then + 1 to same_count, update the add_to_result_list, change the value and reset same_count to 1
-                print(same_count, value)
-                same_count += 1
-                add_to_result_list += f'{str(same_count)}{value}'
-                # resest
-                value = num 
-                same_count = 0
-        if not add_to_result_list:
-            add_to_result_list += f'{str(same_count)}{value}'
-        result_list.append(add_to_result_list)
-        # print(result_list)
+def is_img(file_name):
+    match = re.search(r'[A-Za-z]+\.(jpg|jpeg|png|bmp|gif)', file_name)
+    if match:
+        return len(match[0]) == len(file_name)
+    return False
+
+
+print(is_audio('Nothing else matters.mp3'))
+print(is_audio('DaftPunk.FLAC'))
+
+
+# def look_and_say(data, maxlen):
+
+#     result_list = []
+
+#     for n in range(maxlen):
+#         look = result_list[-1] if result_list else data 
+#         # grab latest str from result_list and split each int
+#         # 111111856222
+#         # need to loop through current look, set a variable to check if consecutive of that variable
+#         same_count = 0
+#         value = look[0]
+#         add_to_result_list = ''
+#         for num in look:
+#             if value == '':
+#                 value = num 
+#                 same_count += 1
+#                 if len(look) == 1:
+#                     add_to_result_list += f'{str(same_count)}{value}'
+#             elif num == value:
+#                 # then keep adding count of that number
+#                 same_count += 1
+#             # only update if value is not None
+#             else:
+#                 # then + 1 to same_count, update the add_to_result_list, change the value and reset same_count to 1
+#                 print(same_count, value)
+#                 same_count += 1
+#                 add_to_result_list += f'{str(same_count)}{value}'
+#                 # resest
+#                 value = num 
+#                 same_count = 0
+#         if not add_to_result_list:
+#             add_to_result_list += f'{str(same_count)}{value}'
+#         result_list.append(add_to_result_list)
+#         # print(result_list)
                 
-    return result_list 
+#     return result_list 
 
-print(look_and_say('1', 7))
+# print(look_and_say('1', 7))
 
 
 # def a1_thick_and_hearty(a1, a2):
