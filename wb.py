@@ -1,6 +1,11 @@
 
 
 
+# some = [10,21,4,2143]
+# for i in range(len(some)):
+#     print(some[i])
+
+
 # def pattern(number: int) -> str:
 #     # will essentially need 2*n-1 lines for this, so for 15 will need 29
 #     # each line's length is the same as rows 2*n-1
