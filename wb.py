@@ -1,23 +1,54 @@
-import re 
-
-def is_audio(file_name):
-    # at least 1 or more alpha chars, no spaces, before a '.' char
-    # a '.' char
-    # a file extension ending after '.' that matches 1 of 4 options
-    match = re.search(r'[A-Za-z]+\.(mp3|flac|alac|aac)', file_name)
-    if match: 
-        return len(match[0]) == len(file_name)
-    return False 
-
-def is_img(file_name):
-    match = re.search(r'[A-Za-z]+\.(jpg|jpeg|png|bmp|gif)', file_name)
-    if match:
-        return len(match[0]) == len(file_name)
-    return False
 
 
-print(is_audio('Nothing else matters.mp3'))
-print(is_audio('DaftPunk.FLAC'))
+
+# def pattern(number: int) -> str:
+#     # will essentially need 2*n-1 lines for this, so for 15 will need 29
+#     # each line's length is the same as rows 2*n-1
+#     # should always start w/whole numbers in chronological order up, base 9 (10==0)
+
+#     line = list(' '*(number*2 - 1))
+#     final = []
+#     left = 0
+#     right = -1 
+#     going_down = number 
+#     for i in range(len(line)):
+#         # should have a pointer on both ends changing right/left each iteration
+#         # change the value at [0] and [-1]
+#         # missing: when reach number (middle) start going down (i-1); 10 should equal 0
+#         line[left] = str(i+1)[-1] if i+1 <= number else str(going_down-1)[-1]
+#         line[right] = str(i+1)[-1] if i+1 <= number else str(going_down-1)[-1]
+#         final.append(''.join(line))
+#         left += 1
+#         right -= 1
+#         if i+1 > number:
+#             going_down -= 1
+#         line = list(' '*(number*2 - 1))
+
+#     return '\n'.join(final)
+
+# print(pattern(0))
+
+
+# import re 
+
+# def is_audio(file_name):
+#     # at least 1 or more alpha chars, no spaces, before a '.' char
+#     # a '.' char
+#     # a file extension ending after '.' that matches 1 of 4 options
+#     match = re.search(r'[A-Za-z]+\.(mp3|flac|alac|aac)', file_name)
+#     if match: 
+#         return len(match[0]) == len(file_name)
+#     return False 
+
+# def is_img(file_name):
+#     match = re.search(r'[A-Za-z]+\.(jpg|jpeg|png|bmp|gif)', file_name)
+#     if match:
+#         return len(match[0]) == len(file_name)
+#     return False
+
+
+# print(is_audio('Nothing else matters.mp3'))
+# print(is_audio('DaftPunk.FLAC'))
 
 
 # def look_and_say(data, maxlen):
