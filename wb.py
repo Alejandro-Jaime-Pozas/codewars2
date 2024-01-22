@@ -1,4 +1,43 @@
+def get_in_line(queue: list[int]) -> int:
+    # if known guest, all places in line swap, except for other known guests and decoys
+    # order of priority = known guest = 1, member = 2, decoys = 3 AND unkown guests = > 3
+    # you are 0 and an unkown guest
+    # for sorting purposes, decoys and unkown guests numbers should stay in same order once known guests and members are pushed in front of the line
 
+    # sort the queue by looping through list and if num > 2 then add to new list, if less than two add to another new list, then sort the 1-2 list and add the other new list to the end of that list to get final sorted
+    priority_list = []
+    non_priority_list = []
+    for num in queue:
+        if num == 1 or num == 2:
+            priority_list.append(num)
+        else:
+            non_priority_list.append(num)
+    final = sorted(priority_list) + non_priority_list 
+    print(final)
+
+    # start consuming queue, though if i loop and pop an item, loop will need to restart at 0
+    # if the popped num == 1, swap will need to occur with rest of list, add popped item to list
+    consumed = []
+    for num in range(len(final)):
+        to_add = final.pop(0)
+        consumed.append(to_add)
+        if to_add == 0:
+            return len(consumed)
+        elif to_add == 1: # do swaps following rules
+            for i in range(len(final)//2): #THIS COULD NOT WORK SINCE DONT KNOW IF FINAL HERE GRABS UPDATED LIST OR JUST THE ORIGINAL FINAL LIST...
+                # if 1 or 3 not on either end, swap
+                if final[i] not in [1,3] or final[len(final)-1-i] not in [1,3]:
+                    final[i], final[len(final)-1-i] = final[len(final)-1-i], final[i]
+        
+
+print(get_in_line([0, 8, 2, 1, 4, 2, 12, 3, 2]))
+
+# def closest_power(n):
+#     # thinking maybe can take square root of num and grab nearest whole number to that square root (5.8 = 6)
+#     # then somehow would need to check instead of sq roots, higher power roots...
+#     return n**(1/2)
+
+# print(closest_power(31))
 
 
 # some = [10,21,4,2143]
