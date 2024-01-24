@@ -1,22 +1,60 @@
-def ride(group, comet):
-    # inputs strings, all capital letters, no spaces
-    # convert each letter from each input to number, multiply each string's resulting numbers
-    # divide the final number % 47 and if the resulting remainder is = to other str, return 'GO' else 'STAY'
-    alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    group_prod = 1
-    for c in group:
-        group_prod *= (alpha.index(c) + 1)
+def infected_zeroes(lst):
+    # if 0 is n number in a list, then both n-1 and n+1 in terms of index become infected if they were not before
+    # need to account for edge cases, so lst[0] and lst[-1]
+    # 2 errors: 1. turns dont update correctly since not taking into acct when a number is converted; 2. time out error    
+    turns = 0
+    while sum(lst) != 0:
+        left_was_1 = False
+        right_was_1 = False
+        for i,num in enumerate(lst):
+            # if first item, just check its right side
+            if i == 0:
+                if num == 0 and lst[i+1] == 1: 
+                    lst[i+1] = 0
+                    right_was_1 = True
+            # if last item, just check its left side
+            elif i == len(lst)-1:
+                if num == 0: 
+                    lst[i-1] = 0
+            # else check both left and right side
+            else:
+                # if this num = 0 but it was 1 in previous iter
+                if num == 0 and right_was_1: 
+                    right_was_1 = False
+                # if num = 0 and not previously 1
+                elif num == 0 and not right_was_1:
+                    lst[i-1] = 0
+                    if lst[i+1] == 1:
+                        lst[i+1] = 0
+                        right_was_1 = True 
 
-    comet_prod = 1
-    for c in comet:
-        comet_prod *= (alpha.index(c) + 1)
+        # end of turn, add 1 to turn
+        turns += 1
 
-    if group_prod % 47 == comet_prod % 47:
-        return 'GO'
-    else:
-        return 'STAY'
+    return turns
 
-print(ride('COMETQ', 'HVNGAT'))
+print(infected_zeroes([0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1]))
+
+
+# def ride(group, comet):
+#     # inputs strings, all capital letters, no spaces
+#     # convert each letter from each input to number, multiply each string's resulting numbers
+#     # divide the final number % 47 and if the resulting remainder is = to other str, return 'GO' else 'STAY'
+#     alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+#     group_prod = 1
+#     for c in group:
+#         group_prod *= (alpha.index(c) + 1)
+
+#     comet_prod = 1
+#     for c in comet:
+#         comet_prod *= (alpha.index(c) + 1)
+
+#     if group_prod % 47 == comet_prod % 47:
+#         return 'GO'
+#     else:
+#         return 'STAY'
+
+# print(ride('COMETQ', 'HVNGAT'))
 
 
 # def get_in_line(queue: list[int]) -> int:
