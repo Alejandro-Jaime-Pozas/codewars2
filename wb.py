@@ -7,7 +7,13 @@ def alphabet_position(text):
     #         final.append(str(ord(c) - 96))
     # return ' '.join(final)
 
-    return ' '.join([str(ord(c) - 96) for c in text.lower() if c.isalpha()])
+    print({{c: str(ord(c) - 96)} for c in text.lower() if c.isalpha()})
+
+    return (str(ord(c) - 96) for c in text.lower() if c.isalpha())
+    sentence = "This is a sample  n sentence."
+    result = sentence.split()
+    print(result)
+
 
 print(alphabet_position("The sunset sets at twelve o' clock."))
 
