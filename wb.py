@@ -1,39 +1,53 @@
-def infected_zeroes(lst):
-    # if 0 is n number in a list, then both n-1 and n+1 in terms of index become infected if they were not before
-    # need to account for edge cases, so lst[0] and lst[-1]
-    # 2 errors: 1. turns dont update correctly since not taking into acct when a number is converted; 2. time out error    
-    turns = 0
-    while sum(lst) != 0:
-        left_was_1 = False
-        right_was_1 = False
-        for i,num in enumerate(lst):
-            # if first item, just check its right side
-            if i == 0:
-                if num == 0 and lst[i+1] == 1: 
-                    lst[i+1] = 0
-                    right_was_1 = True
-            # if last item, just check its left side
-            elif i == len(lst)-1:
-                if num == 0: 
-                    lst[i-1] = 0
-            # else check both left and right side
-            else:
-                # if this num = 0 but it was 1 in previous iter
-                if num == 0 and right_was_1: 
-                    right_was_1 = False
-                # if num = 0 and not previously 1
-                elif num == 0 and not right_was_1:
-                    lst[i-1] = 0
-                    if lst[i+1] == 1:
-                        lst[i+1] = 0
-                        right_was_1 = True 
+def alphabet_position(text):
+    # should take a string and replace each letter with its position int he alphabet
+    # rules: space between each number; only upper and lowercase alpha chars allowed
+    # final = []
+    # for c in text.lower(): # - 96
+    #     if c.isalpha():
+    #         final.append(str(ord(c) - 96))
+    # return ' '.join(final)
 
-        # end of turn, add 1 to turn
-        turns += 1
+    return ' '.join([str(ord(c) - 96) for c in text.lower() if c.isalpha()])
 
-    return turns
+print(alphabet_position("The sunset sets at twelve o' clock."))
 
-print(infected_zeroes([0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1]))
+
+# def infected_zeroes(lst):
+#     # if 0 is n number in a list, then both n-1 and n+1 in terms of index become infected if they were not before
+#     # need to account for edge cases, so lst[0] and lst[-1]
+#     # 2 errors: 1. turns dont update correctly since not taking into acct when a number is converted; 2. time out error    
+#     turns = 0
+#     while sum(lst) != 0:
+#         left_was_1 = False
+#         right_was_1 = False
+#         for i,num in enumerate(lst):
+#             # if first item, just check its right side
+#             if i == 0:
+#                 if num == 0 and lst[i+1] == 1: 
+#                     lst[i+1] = 0
+#                     right_was_1 = True
+#             # if last item, just check its left side
+#             elif i == len(lst)-1:
+#                 if num == 0: 
+#                     lst[i-1] = 0
+#             # else check both left and right side
+#             else:
+#                 # if this num = 0 but it was 1 in previous iter
+#                 if num == 0 and right_was_1: 
+#                     right_was_1 = False
+#                 # if num = 0 and not previously 1
+#                 elif num == 0 and not right_was_1:
+#                     lst[i-1] = 0
+#                     if lst[i+1] == 1:
+#                         lst[i+1] = 0
+#                         right_was_1 = True 
+
+#         # end of turn, add 1 to turn
+#         turns += 1
+
+#     return turns
+
+# print(infected_zeroes([0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1]))
 
 
 # def ride(group, comet):
