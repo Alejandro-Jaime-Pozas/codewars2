@@ -1,21 +1,42 @@
-def alphabet_position(text):
-    # should take a string and replace each letter with its position int he alphabet
-    # rules: space between each number; only upper and lowercase alpha chars allowed
-    # final = []
-    # for c in text.lower(): # - 96
-    #     if c.isalpha():
-    #         final.append(str(ord(c) - 96))
-    # return ' '.join(final)
+def happy_numbers(n):
+    # will need to go n-1 for each round..and for that round's n, calculate if it's a happy number, if so, all numbers in sequence from n to 1 are happy numbers which i could potentially store
+    final_happy_nums = []
+    for i in range(n, 1, -1): # for number from 1 to n in reverse
+        # for number, split its digits, find the sum of the squares of its digits
+        number = i
+        iterations = set()
+        while number != 1 or number not in iterations:
+            digits = list(str(number)) # ['1','0']
+            square_sum = sum(int(d)**2 for d in digits) # 1
+            iterations.add(square_sum) # 1
+            number = square_sum
+            print(number)
+        if number == 1:
+            final_happy_nums.append(number)
+            
+                # if the sum of squares does not equal 1, set sum as new number and repeat until either sum of squares does equal 1, or one of the past iterations of big scope number within this sequence is equal to this iteration's n. In other words, if 89 has already appeared in this sequence before, and sum of squares in this iter is 89, this is NOT a happy number
+    return final_happy_nums # the happy numbers
 
-    print({{c: str(ord(c) - 96)} for c in text.lower() if c.isalpha()})
+print(happy_numbers(10))
 
-    return (str(ord(c) - 96) for c in text.lower() if c.isalpha())
-    sentence = "This is a sample  n sentence."
-    result = sentence.split()
-    print(result)
+# def alphabet_position(text):
+#     # should take a string and replace each letter with its position int he alphabet
+#     # rules: space between each number; only upper and lowercase alpha chars allowed
+#     # final = []
+#     # for c in text.lower(): # - 96
+#     #     if c.isalpha():
+#     #         final.append(str(ord(c) - 96))
+#     # return ' '.join(final)
+
+#     print({{c: str(ord(c) - 96)} for c in text.lower() if c.isalpha()})
+
+#     return (str(ord(c) - 96) for c in text.lower() if c.isalpha())
+#     sentence = "This is a sample  n sentence."
+#     result = sentence.split()
+#     print(result)
 
 
-print(alphabet_position("The sunset sets at twelve o' clock."))
+# print(alphabet_position("The sunset sets at twelve o' clock."))
 
 
 # def infected_zeroes(lst):
