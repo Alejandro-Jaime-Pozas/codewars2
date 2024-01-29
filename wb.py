@@ -1,23 +1,46 @@
-def happy_numbers(n):
-    # will need to go n-1 for each round..and for that round's n, calculate if it's a happy number, if so, all numbers in sequence from n to 1 are happy numbers which i could potentially store
-    final_happy_nums = []
-    for i in range(n, 1, -1): # for number from 1 to n in reverse
-        # for number, split its digits, find the sum of the squares of its digits
-        number = i
-        iterations = set()
-        while number != 1 or number not in iterations:
-            digits = list(str(number)) # ['1','0']
-            square_sum = sum(int(d)**2 for d in digits) # 1
-            iterations.add(square_sum) # 1
-            number = square_sum
-            print(number)
-        if number == 1:
-            final_happy_nums.append(number)
-            
-                # if the sum of squares does not equal 1, set sum as new number and repeat until either sum of squares does equal 1, or one of the past iterations of big scope number within this sequence is equal to this iteration's n. In other words, if 89 has already appeared in this sequence before, and sum of squares in this iter is 89, this is NOT a happy number
-    return final_happy_nums # the happy numbers
+def rearranger(k, *args):
+    # need to return lowest possible number by rearranging args that is divisible by k
+    # if multiple rearrangements of args give the same result, include those multiple options, sort them by lowest ie 2, 32 vs 23, 2
+    # how to rearrange? in theory, last num needs to be div by k. but last num could be part of larger num if concat w other args...
+    # first take the numbers that are div by k (could be concatenated nums)
+    return f"Rearrangement: _ generates: _ divisible by {k}" # single answer
+    return "Rearrangements: " + "_" + " and " + f"generates: _ divisible by {k}" # multiple answers
+    return "There is no possible rearrangement"
 
-print(happy_numbers(10))
+print(rearranger(4, 32, 3, 34, 7, 12)) # 12, 3, 34, 7, 32
+
+
+# def factorial(n):
+#     # will need to multiply number and somehow go backwards from n all the way to 1
+#     if n > 1:
+#         return n * factorial(n-1) # if n > 1, else ?
+#     return 1 # since this is multiplication need a 1
+
+# print(factorial(9)/6)
+
+
+# def happy_numbers(n):
+#     # will need to go n-1 for each round..and for that round's n, calculate if it's a happy number, if so, all numbers in sequence from n to 1 are happy numbers which i could potentially store
+#     final_happy_nums = []
+#     for i in range(n, 1, -1): # for number from 1 to n in reverse
+#         # for number, split its digits, find the sum of the squares of its digits
+#         number = i
+#         iterations = set()
+#         while number != 1 or number not in iterations:
+#             digits = list(str(number)) # ['1','0']
+#             square_sum = sum(int(d)**2 for d in digits) # 1
+#             iterations.add(square_sum) # 1
+#             number = square_sum
+#             print(number)
+#         if number == 1:
+#             final_happy_nums.append(number)
+            
+#                 # if the sum of squares does not equal 1, set sum as new number and repeat until either sum of squares does equal 1, or one of the past iterations of big scope number within this sequence is equal to this iteration's n. In other words, if 89 has already appeared in this sequence before, and sum of squares in this iter is 89, this is NOT a happy number
+#     return final_happy_nums # the happy numbers
+
+
+# print(happy_numbers(10))
+
 
 # def alphabet_position(text):
 #     # should take a string and replace each letter with its position int he alphabet
