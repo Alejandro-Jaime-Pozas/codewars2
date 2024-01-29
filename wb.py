@@ -1,13 +1,31 @@
-def rearranger(k, *args):
-    # need to return lowest possible number by rearranging args that is divisible by k
-    # if multiple rearrangements of args give the same result, include those multiple options, sort them by lowest ie 2, 32 vs 23, 2
-    # how to rearrange? in theory, last num needs to be div by k. but last num could be part of larger num if concat w other args...
-    # first take the numbers that are div by k (could be concatenated nums)
-    return f"Rearrangement: _ generates: _ divisible by {k}" # single answer
-    return "Rearrangements: " + "_" + " and " + f"generates: _ divisible by {k}" # multiple answers
-    return "There is no possible rearrangement"
 
-print(rearranger(4, 32, 3, 34, 7, 12)) # 12, 3, 34, 7, 32
+
+
+# from itertools import permutations
+
+# # Example 1: Permutations of a list
+# my_list = [1, 2, 3, 4]
+# perms_list = permutations(my_list)
+
+# # Displaying permutations
+# count = 0
+# for perm in perms_list:
+#     print(perm)
+#     count += 1
+# print((count))
+
+
+# def rearranger(k, *args):
+#     # need to return lowest possible number by rearranging args that is divisible by k
+#     # if multiple rearrangements of args give the same result, include those multiple options, sort them by lowest ie 2, 32 vs 23, 2
+#     # how to rearrange? in theory, last num needs to be div by k. but last num could be part of larger num if concat w other args...
+#       # solution will be the one that somehow takes all possible short combinations that are div by k, then rest of nums left orders from smallest to largest...
+#     # first take the numbers that are div by k (could be concatenated nums)
+#     return f"Rearrangement: _ generates: _ divisible by {k}" # single answer
+#     return "Rearrangements: " + "_" + " and " + f"generates: _ divisible by {k}" # multiple answers
+#     return "There is no possible rearrangement"
+
+# print(rearranger(4, 32, 3, 34, 7, 12)) # 12, 3, 34, 7, 32
 
 
 # def factorial(n):
