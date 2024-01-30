@@ -1,6 +1,21 @@
 
 
 
+# def convert_to_mixed_numeral(parm):
+#     # both input and output are strings
+#     # will be given improper fraction which can be
+#     numbers = parm.split('/')
+#     num, den = abs(int(numbers[0])), int(numbers[1]) # doubt here unsure if negative sign is taken into acct in int conversion...
+#     # maybe not require conversion (if num < den)
+#     if num < den: return parm
+#     # if can be converted to whole number, then whole number
+#     elif num % den == 0: return (parm[0] if parm[0] =='-' else '') + str(int(num / den))
+#     # negative
+#     return (parm[0] if parm[0] == '-' else '') + str(num // den) + ' ' + str(num % den) + '/' + str(den)
+
+# print(convert_to_mixed_numeral('-43/21'))
+
+
 # from itertools import permutations
 
 # # Example 1: Permutations of a list
