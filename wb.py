@@ -1,60 +1,80 @@
-'''
-need to create the following:
-- an online library where a user can add or remove books from their library. 
-- each book has a title and its content.
-- need to keep track of last page read in any of the user's books in library
-- need to keep track of which is the currently active book, all others are inactive
+def find_the_missing_tree(trees):
+    # could create dict with values as keys and count of that value as values
+    # could also use the count() fn using a set, but would need to traverse list multiple times, one for each number, not the most time efficient
+    counts = {}
 
-
-ignore User class, just think about how a single user would see this online library
-Book class:
-    - id
-    - title
-    - text content
-    - bookmark
-    - active
-
-Library class:
-    - books
-
-'''
-
-class Book:
-    def __init__(self, id: int, title: str, text: str, active: bool=False):
-        self.id = id
-        self.title = title 
-        self.text = text 
-        self.active = active 
-
-    def get_bookmark(self, last_page: int):
-        self.last_page = last_page
-        return last_page
+    # return sorted(trees, key=trees.count)
+    for num in trees:
+        if num in counts.keys():
+            counts[num] += 1
+        else:
+            counts[num] = 1
     
-    def __repr__(self) -> str:
-        return f"<{self.title} | {self.text[:15]}...>"
-    
-class Library:
+    for k,v in counts.items():
+        if v == min(counts.values()):
+            return k 
 
-    def __init__(self, id, name):
-        self.id = id
-        self.name = name
-        self.books = {}
 
-    def add_to_library(self, book):
-        # add the book id as a key, and book object as value into books
-        self.books[book.id] = book 
-        return self.books 
+print(find_the_missing_tree([11, 2, 3, 3, 3, 11, 2, 2]))
+
+
+# '''
+# need to create the following:
+# - an online library where a user can add or remove books from their library. 
+# - each book has a title and its content.
+# - need to keep track of last page read in any of the user's books in library
+# - need to keep track of which is the currently active book, all others are inactive
+
+
+# ignore User class, just think about how a single user would see this online library
+# Book class:
+#     - id
+#     - title
+#     - text content
+#     - bookmark
+#     - active
+
+# Library class:
+#     - books
+
+# '''
+
+# class Book:
+#     def __init__(self, id: int, title: str, text: str, active: bool=False):
+#         self.id = id
+#         self.title = title 
+#         self.text = text 
+#         self.active = active 
+
+#     def get_bookmark(self, last_page: int):
+#         self.last_page = last_page
+#         return last_page
     
-    def remove_from_library(self, id):
-        print(f"REMOVING: {self.books.pop(1)}")
-        return self.books
+#     def __repr__(self) -> str:
+#         return f"<{self.title} | {self.text[:15]}...>"
+    
+# class Library:
+
+#     def __init__(self, id, name):
+#         self.id = id
+#         self.name = name
+#         self.books = {}
+
+#     def add_to_library(self, book):
+#         # add the book id as a key, and book object as value into books
+#         self.books[book.id] = book 
+#         return self.books 
+    
+#     def remove_from_library(self, id):
+#         print(f"REMOVING: {self.books.pop(1)}")
+#         return self.books
     
 
-book = Book(1, 'The Hobbit', 'Chapter 1: In a hole in the ground...')
-l = Library(1, 'fiction')
-print(l.add_to_library(book))
-l2 = Library(2, 'nonfiction')
-print(l2.books)
+# book = Book(1, 'The Hobbit', 'Chapter 1: In a hole in the ground...')
+# l = Library(1, 'fiction')
+# print(l.add_to_library(book))
+# l2 = Library(2, 'nonfiction')
+# print(l2.books)
 
 
 # def convert_to_mixed_numeral(parm):
