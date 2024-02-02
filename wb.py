@@ -1,21 +1,33 @@
-def find_the_missing_tree(trees):
-    # could create dict with values as keys and count of that value as values
-    # could also use the count() fn using a set, but would need to traverse list multiple times, one for each number, not the most time efficient
-    counts = {}
+def calculate_time(p1, p2):
+    # if p1[0] != p2[0] then calculate difference factor within those 5 seconds bw p1, p2 to get total
+    # else, do the same but for p1[1], p2[1]
+    interval = 5
+    if p1[0] != p2[0]:
+        return round((abs(p2[0]) / (abs(p1[0]) - abs(p2[0])) * interval), 3)
+    else:
+        return round((abs(p2[1]) / (abs(p1[1]) - abs(p2[1])) * interval), 3)
 
-    # return sorted(trees, key=trees.count)
-    for num in trees:
-        if num in counts.keys():
-            counts[num] += 1
-        else:
-            counts[num] = 1
+print(calculate_time([50, -100], [47.5, -95]))
+
+
+# def find_the_missing_tree(trees):
+#     # could create dict with values as keys and count of that value as values
+#     # could also use the count() fn using a set, but would need to traverse list multiple times, one for each number, not the most time efficient
+#     counts = {}
+
+#     # return sorted(trees, key=trees.count)
+#     for num in trees:
+#         if num in counts.keys():
+#             counts[num] += 1
+#         else:
+#             counts[num] = 1
     
-    for k,v in counts.items():
-        if v == min(counts.values()):
-            return k 
+#     for k,v in counts.items():
+#         if v == min(counts.values()):
+#             return k 
 
 
-print(find_the_missing_tree([11, 2, 3, 3, 3, 11, 2, 2]))
+# print(find_the_missing_tree([11, 2, 3, 3, 3, 11, 2, 2]))
 
 
 # '''
