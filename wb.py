@@ -1,13 +1,40 @@
-def calculate_time(p1, p2):
-    # if p1[0] != p2[0] then calculate difference factor within those 5 seconds bw p1, p2 to get total
-    # else, do the same but for p1[1], p2[1]
-    interval = 5
-    if p1[0] != p2[0]:
-        return round((abs(p2[0]) / (abs(p1[0]) - abs(p2[0])) * interval), 3)
-    else:
-        return round((abs(p2[1]) / (abs(p1[1]) - abs(p2[1])) * interval), 3)
+def version_compare( version1, version2 ):
+    # from left to right, if number in same decimal position is higher, then that version is greater
+    # input will be 2 strings to compare of maybe equal or different lengths and decimal places
+    # can convert all versions to 5 part versions (just add 0 if none exist) and compare equally
+    version1_test = version1.split('.')
+    version2_test = version2.split('.')
+    if len(version1_test) < 5:
+        # add '.0' for however decimals are missing
+        version1 += '.0' * (5 - len(version1_test))
+    if len(version2_test) < 5:
+        # add '.0' for however decimals are missing
+        version2 += '.0' * (5 - len(version2_test))
+    # have two equal length in terms of decimals strings
+        print(version1)
+        print(version2)
+    version1 = version1.split('.')
+    version2 = version2.split('.')
+    for i, num in enumerate(version1):
+        if int(num) > int(version2[i]):
+            return 1
+        elif int(num) < int(version2[i]):
+            return -1
+    return 0
 
-print(calculate_time([50, -100], [47.5, -95]))
+print(version_compare('2', '2.0'))
+
+
+# def calculate_time(p1, p2):
+#     # if p1[0] != p2[0] then calculate difference factor within those 5 seconds bw p1, p2 to get total
+#     # else, do the same but for p1[1], p2[1]
+#     interval = 5
+#     if p1[0] != p2[0]:
+#         return round((abs(p2[0]) / (abs(p1[0]) - abs(p2[0])) * interval), 3)
+#     else:
+#         return round((abs(p2[1]) / (abs(p1[1]) - abs(p2[1])) * interval), 3)
+
+# print(calculate_time([50, -100], [47.5, -95]))
 
 
 # def find_the_missing_tree(trees):
