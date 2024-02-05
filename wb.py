@@ -1,28 +1,31 @@
-def version_compare( version1, version2 ):
-    # from left to right, if number in same decimal position is higher, then that version is greater
-    # input will be 2 strings to compare of maybe equal or different lengths and decimal places
-    # can convert all versions to 5 part versions (just add 0 if none exist) and compare equally
-    version1_test = version1.split('.')
-    version2_test = version2.split('.')
-    if len(version1_test) < 5:
-        # add '.0' for however decimals are missing
-        version1 += '.0' * (5 - len(version1_test))
-    if len(version2_test) < 5:
-        # add '.0' for however decimals are missing
-        version2 += '.0' * (5 - len(version2_test))
-    # have two equal length in terms of decimals strings
-        print(version1)
-        print(version2)
-    version1 = version1.split('.')
-    version2 = version2.split('.')
-    for i, num in enumerate(version1):
-        if int(num) > int(version2[i]):
-            return 1
-        elif int(num) < int(version2[i]):
-            return -1
-    return 0
 
-print(version_compare('2', '2.0'))
+
+
+# def version_compare( version1, version2 ):
+#     # from left to right, if number in same decimal position is higher, then that version is greater
+#     # input will be 2 strings to compare of maybe equal or different lengths and decimal places
+#     # can convert all versions to 5 part versions (just add 0 if none exist) and compare equally
+#     version1_test = version1.split('.')
+#     version2_test = version2.split('.')
+#     if len(version1_test) < 5:
+#         # add '.0' for however decimals are missing
+#         version1 += '.0' * (5 - len(version1_test))
+#     if len(version2_test) < 5:
+#         # add '.0' for however decimals are missing
+#         version2 += '.0' * (5 - len(version2_test))
+#     # have two equal length in terms of decimals strings
+#         print(version1)
+#         print(version2)
+#     version1 = version1.split('.')
+#     version2 = version2.split('.')
+#     for i, num in enumerate(version1):
+#         if int(num) > int(version2[i]):
+#             return 1
+#         elif int(num) < int(version2[i]):
+#             return -1
+#     return 0
+
+# print(version_compare('2', '2.0'))
 
 
 # def calculate_time(p1, p2):
