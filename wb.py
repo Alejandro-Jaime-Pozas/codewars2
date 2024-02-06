@@ -1,4 +1,11 @@
+# def mirror(data: list[int]) -> list:
+#     # need to get unordered list as input, then order the list both ways and extend/add both lists together except for the first value of desc list (which is the greatest value and should only be in list once)
+#     # asc = sorted(data)
+#     # desc = sorted(data, reverse=True)[1:]
+#     # return asc + desc
+#     return sorted(data) + sorted(data, reverse=True)[1:]
 
+# print(mirror([-5,10,8,10,2,-3,10]))
 
 
 # def version_compare( version1, version2 ):
