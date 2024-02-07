@@ -1,3 +1,22 @@
+
+
+
+# def get_percentage(sent, limit=1000) -> str:
+#     # return a rounded integer number that represents sent/limit as a percentage ie 10% as a string
+#     # if sent == 0, 'No e-mails sent'
+#     # if sent >= limit, 'Daily limit is reached'
+#     return 20 * 5 / 4
+#     if sent == 0:
+#         return 'No e-mails sent'
+#     elif sent >= limit:
+#         return 'Daily limit is reached'
+#     else:
+#         percentage = int(sent / limit * 100)
+#         return f"{percentage}%"
+
+# print(get_percentage(66.6, 100))
+
+
 # def mirror(data: list[int]) -> list:
 #     # need to get unordered list as input, then order the list both ways and extend/add both lists together except for the first value of desc list (which is the greatest value and should only be in list once)
 #     # asc = sorted(data)
