@@ -1,4 +1,36 @@
+def solve(s):
+    # 
+    # if len(s) <= 1:
+    #     return 0
+    # prefixes = []
+    # suffixes = []
+    # for i in range(1,len(s)):
+    #     prefixes.append(s[:i])
+    # for i in range(1,len(s)):
+    #     suffixes.append(s[i:])
+    # greatest = 0
+    # for pre in prefixes:
+    #     if pre in suffixes and len(pre)*2 <= len(s):
+    #         if len(pre) > greatest:
+    #             greatest = len(pre)
+    # return greatest if greatest else 0
 
+    for i in range(1, len(s)//2+1):
+        if s[:i] == s[-i:]:
+            return i
+    return 0
+
+
+print(solve('abcdabcd'))
+
+
+# def hex_word_sum(s):
+#     # if word contains letter that is not A-F or O or S, return 0
+#     # O == 0, S == 5
+
+#     return hex(ord('F'))
+
+# print(hex_word_sum('SAFE'))
 
 
 # def get_percentage(sent, limit=1000) -> str:
