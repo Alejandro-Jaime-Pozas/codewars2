@@ -1,6 +1,33 @@
 
 
 
+# class State:
+#     # Implement the State class here
+#     def __init__(self):
+#         # should initialize as unauthorized, then change if login/logout
+#         self.state = 'unauthorized'
+
+#     def __repr__(self) -> str:
+#         return self.state
+
+
+# def create_paginator(items: list, pageSize: int) -> list:
+#     for i in range(0, len(items), pageSize):
+#         yield items[i:i+pageSize]
+
+
+# print(create_paginator([1,2,3,4,5,6], 2))
+
+
+# def solution(text, ending):
+#     # your code here...
+#     if len(ending) > len(text): return 'Ending cannot be greater than text.'
+#     end_length = len(ending)
+#     return ending in text[-end_length:]
+
+# print(solution('samurai', 'murai'))
+
+
 # def xo(s):
 
 #     xes = 0
