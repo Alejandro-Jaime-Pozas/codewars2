@@ -1,27 +1,44 @@
-def solve(s):
-    # 
-    # if len(s) <= 1:
-    #     return 0
-    # prefixes = []
-    # suffixes = []
-    # for i in range(1,len(s)):
-    #     prefixes.append(s[:i])
-    # for i in range(1,len(s)):
-    #     suffixes.append(s[i:])
-    # greatest = 0
-    # for pre in prefixes:
-    #     if pre in suffixes and len(pre)*2 <= len(s):
-    #         if len(pre) > greatest:
-    #             greatest = len(pre)
-    # return greatest if greatest else 0
-
-    for i in range(1, len(s)//2+1):
-        if s[:i] == s[-i:]:
-            return i
-    return 0
 
 
-print(solve('abcdabcd'))
+
+# def xo(s):
+
+#     xes = 0
+#     oes = 0
+#     for c in s.lower():
+#         if c == 'x': xes += 1
+#         elif c == 'o': oes += 1
+#     return xes == oes 
+#     # return s.count('x') == s.count('o')
+
+# print(xo("xoOxo"))
+
+
+# def solve(s):
+#     # 
+#     # if len(s) <= 1:
+#     #     return 0
+#     # prefixes = []
+#     # suffixes = []
+#     # for i in range(1,len(s)):
+#     #     prefixes.append(s[:i])
+#     # for i in range(1,len(s)):
+#     #     suffixes.append(s[i:])
+#     # greatest = 0
+#     # for pre in prefixes:
+#     #     if pre in suffixes and len(pre)*2 <= len(s):
+#     #         if len(pre) > greatest:
+#     #             greatest = len(pre)
+#     # return greatest if greatest else 0
+
+#     largest = 0
+#     for i in range(1, len(s)//2+1):
+#         if s[:i] == s[-i:]:
+#             largest = i
+#     return largest if largest else 0
+
+
+# print(solve('aaaaaa'))
 
 
 # def hex_word_sum(s):
