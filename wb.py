@@ -1,4 +1,55 @@
+class Game():
 
+    def __init__(self, board):
+        self.board = board
+
+    def play(self):
+        # will need 1 leap for every connected block of 1's.
+        # a connected block of 1's consists of all consecutive 1's which are aligned either horizontally or vertically, not diagonally. 
+        leaps = 0
+        seen = set() # add the i and j as one single value here to check
+        for i, arr in enumerate(self.board):
+            # if first or last iteration, only check bottom/top nums, if first or last num, only check right/left
+            for j, num in enumerate(arr):
+                # will need to check each position for left, right, up, down
+                    # yes, so basically, check this num, if 1 and not in seen set, leaps += 1, add to seen as well as any other adjacent nums
+                if num == 1:
+                    # if any adj num = 1 and seen, don't add to leaps, but add all adj nums that = 1 to seen
+                    if (i,j) not in seen: # so num = 1 and prev seen
+                        seen.add((i,j))
+                        leaps += 1
+                    try:
+                        if self.board[i-1][j] == 1 and self.board[i-1][j] not in seen: 
+                            seen.add((i-1,j)) # up
+                    except: pass
+                    try:
+                        if self.board[i+1][j] == 1 and self.board[i+1][j] not in seen: 
+                            seen.add((i+1,j)) # down
+                    except: pass
+                    try:
+                        if self.board[i][j-1] == 1 and self.board[i][j-1] not in seen: 
+                            seen.add((i,j-1)) # left
+                    except: pass
+                    try:
+                        if self.board[i][j+1] == 1 and self.board[i][j+1] not in seen: 
+                            seen.add((i,j+1)) # right
+                    except: pass
+                # print(seen)
+        print(leaps)
+        return leaps
+
+
+g = Game(
+    [
+        [1,0,0,0,0],
+        [0,0,1,1,0],
+        [1,0,1,0,1],
+        [1,1,1,1,0],
+        [1,1,1,0,1],
+    ]
+) # 4
+
+g.play()
 
 
 # class State:

@@ -1,6 +1,13 @@
 
 
 
+// var isSquare = function(n){
+//     return n ** (1/2)
+//   }
+
+// console.log(isSquare(16))
+
+
 // // count the occurrences of each char in a string
 
 // // {s:3, u:1, etc}
