@@ -1,4 +1,17 @@
+function* generator(a) {
+    let b = 1
+    while (true) {
+        yield `${a} * ${b} = ${a*b}`
+        b += 1
+    }
+}
 
+const iterator = generator(4);
+
+console.log(iterator.next()); // { value: 1, done: false }
+console.log(iterator.next()); // { value: 2, done: false }
+console.log(iterator.next()); // { value: 3, done: false }
+console.log(iterator.next()); // { value: undefined, done: true }  
 
 
 // var isSquare = function(n){
