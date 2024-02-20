@@ -1,15 +1,18 @@
-def maximum_product(arr):
-    # should be a pattern where you account for count of - numbers and + numbers...also acct for 0
-    # if all nums < 0, 
-        # if len(list) is even
-            # return the lowest num
-        # else:
-            # return highest num
-    # if all nums > 0,
-        # return lowest num
-    # 
 
-print(maximum_product([-1, -2, -3, -4]))
+
+
+# def maximum_product(arr):
+#     # should be a pattern where you account for count of - numbers and + numbers...also acct for 0
+#     # if all nums < 0, 
+#         # if len(list) is even
+#             # return the lowest num
+#         # else:
+#             # return highest num
+#     # if all nums > 0,
+#         # return lowest num
+#     # 
+
+# print(maximum_product([-1, -2, -3, -4]))
 
 
 # def ones_counter(inp):
