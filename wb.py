@@ -1,18 +1,66 @@
-# Decorator definition
-def my_decorator(func):
-    def wrapper():
-        print("Something is happening before the function is called.")
-        func()
-        print("Something is happening after the function is called.")
-    return wrapper
+def maximum_product(arr):
+    # should be a pattern where you account for count of - numbers and + numbers...also acct for 0
+    # if all nums < 0, 
+        # if len(list) is even
+            # return the lowest num
+        # else:
+            # return highest num
+    # if all nums > 0,
+        # return lowest num
+    # 
 
-# Applying the decorator
-@my_decorator
-def say_hello():
-    print("Hello!")
+print(maximum_product([-1, -2, -3, -4]))
 
-# Calling the decorated function
-say_hello()
+
+# def ones_counter(inp):
+#     counter = 0
+#     final = []
+#     for i in range(len(inp)):
+#         if inp[i] == 1:
+#             counter += 1
+#             if i+1 == len(inp):
+#                 final.append(counter)
+#         elif inp[i] == 0:
+#             # check if counter > 0, append to final, reset count to 0
+#             if counter > 0:
+#                 final.append(counter)
+#                 counter = 0
+#     return final 
+
+# print(ones_counter([1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1]))
+
+
+# import asyncio
+
+# async def asynchronous_generator():
+#     for i in range(5):
+#         await asyncio.sleep(1)  # Simulate asynchronous operation
+#         yield i
+
+# # Usage
+# async def main():
+#     async for value in asynchronous_generator():
+#         print(value)
+
+# asyncio.run(main())
+
+
+
+# # Decorator definition
+# def my_decorator(func):
+#     def wrapper():
+#         print("Something is happening before the function is called.")
+#         func()
+#         print("Something is happening after the function is called.")
+#     return wrapper
+
+# # Applying the decorator
+# @my_decorator
+# def say_hello():
+#     print("Hello!")
+
+# # Calling the decorated function
+# say_hello()
 
 
 
