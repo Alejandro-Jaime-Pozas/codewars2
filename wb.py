@@ -1,6 +1,25 @@
 
 
 
+# def square_color(file, rank) -> str:
+#     # the specific pattern of 8x8 chessboard is always the same
+#     # a1 is black, an so is every square 2 spaces from it
+#     # combination of file and rank in terms of if they're even or odd should give answer
+#     # looks like all even results for file + rank are black
+#     ordinal = 96
+#     file = ord(file.lower()) - ordinal 
+#     return 'Error' if (file not in range(1,9) or rank < 1 or rank > 8) else 'white' if (file + rank) % 2 else 'black'
+
+
+# print(square_color('g', 0))
+
+
+# def filter_list(l):
+#     return [it for it in l if type(it) is not str ]
+
+# print(filter_list([1,2,'aasf','1','123',123]))
+
+
 # def maximum_product(arr):
 #     # should be a pattern where you account for count of - numbers and + numbers...also acct for 0
 #     # if all nums < 0, 
