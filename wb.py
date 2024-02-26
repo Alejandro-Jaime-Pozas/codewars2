@@ -1,6 +1,19 @@
 
 
 
+# def find_short(s):
+#     # counter = len(s.split()[0] if s else 0)
+#     # for word in s.split():
+#     #     if len(word) < counter:
+#     #         counter = len(word)
+#     # return counter 
+
+#     return min(len(word) for word in s.split())
+
+# print(find_short("bitcoin take over the world maybe who knows perhaps"))
+# # print(find_short(""))
+
+
 # def to_jaden_case(string):
 
 #     return ' '.join(word.capitalize() for word in string.split())
