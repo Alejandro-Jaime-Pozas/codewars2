@@ -1,6 +1,13 @@
 
 
 
+# def to_jaden_case(string):
+
+#     return ' '.join(word.capitalize() for word in string.split())
+
+# print(to_jaden_case("How can mirrors be a real if our eyes aren't real"))
+
+
 # def square_color(file, rank) -> str:
 #     # the specific pattern of 8x8 chessboard is always the same
 #     # a1 is black, an so is every square 2 spaces from it
