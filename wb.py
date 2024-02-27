@@ -1,6 +1,12 @@
 
 
 
+# def candies(lst):
+#     return len(lst) * max(lst) - sum(lst) if len(lst) > 1 else -1
+
+# print(candies([5,8,6,4]))
+
+
 # def find_short(s):
 #     # counter = len(s.split()[0] if s else 0)
 #     # for word in s.split():
