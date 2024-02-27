@@ -1,6 +1,18 @@
 
 
 
+# def dna_strand(dna):
+#     pairs = {
+#         'A': 'T',
+#         'T': 'A',
+#         'C': 'G',
+#         'G': 'C',
+#     }
+#     return ''.join(pairs[c] for c in dna) # should be fine if you pass in iterable
+
+# print(dna_strand("ATTGC"))
+
+
 # def candies(lst):
 #     return len(lst) * max(lst) - sum(lst) if len(lst) > 1 else -1
 
