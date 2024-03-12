@@ -1,16 +1,43 @@
 
 
 
-# def dna_strand(dna):
-#     pairs = {
-#         'A': 'T',
-#         'T': 'A',
-#         'C': 'G',
-#         'G': 'C',
-#     }
-#     return ''.join(pairs[c] for c in dna) # should be fine if you pass in iterable
+# def switch_lights(arr):
+#     # takes too long prev solution find better one
+#     # maybe track the sum and reduce its amount each iteration
+#     remaining_sum = sum(arr)
+#     for i, n in enumerate(arr):
+#         if remaining_sum % 2:
+#             # if remainder, then this number will switch
+#             # remaining sum should be inclusive of this i iteration, change at end
+#             # if n == 1:
+#             #     arr[i] = 0
+#             # else:
+#             #     arr[i] = 1
+#             arr[i] ^= 1 # this is same as arr[i] = arr[i] ^ 1 which is an XOR bit operation that checks if the bit (arr[i]) is 1, switches to 0 and vice versa for arr[i] == 0 turns to 1
+#         remaining_sum -= n 
+#     return arr 
 
-# print(dna_strand("ATTGC"))
+#     # # num at index should change sum(arr[i:]) times, so if that is even, no change, if odd, switch num from 0 to 1 or vice versa
+#     # for i, n in enumerate(arr):
+#     #     if sum(arr[i:]) % 2:
+#     #         # if remainder, means number should change to opposite
+#     #         if n == 1:
+#     #             arr[i] = 0
+#     #         else:
+#     #             arr[i] = 1
+#     # return arr 
+
+# print(switch_lights([0,0,1,0,1]))
+
+
+
+# numbers = [1, 2, 3, 4, 5]
+# square_generator = (x**2 for x in numbers)
+
+# # Accessing values one at a time using iteration
+# for square in square_generator:
+#     print(square)
+# print(square)
 
 
 # def candies(lst):
