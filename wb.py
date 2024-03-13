@@ -1,4 +1,10 @@
+def maskify(cc):
+    # if c not in last 4 iterations, change to '#' char, else leave last 4 chars as is
+    mask_length = len(cc) - 4
+    masked = '#' * mask_length if mask_length > 0 else ''
+    return masked + cc[-4:]
 
+print(maskify('nanananananannana batman!'))
 
 
 # def switch_lights(arr):
