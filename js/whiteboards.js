@@ -1,17 +1,30 @@
-function* generator(a) {
-    let b = 1
-    while (true) {
-        yield `${a} * ${b} = ${a*b}`
-        b += 1
-    }
-}
 
-const iterator = generator(4);
 
-console.log(iterator.next()); // { value: 1, done: false }
-console.log(iterator.next()); // { value: 2, done: false }
-console.log(iterator.next()); // { value: 3, done: false }
-console.log(iterator.next()); // { value: undefined, done: true }  
+
+// function highAndLow(numbers){
+//     // can split at spaces to get each number
+//     // 
+//     let integers = numbers.split(' ').map(Number)
+//     return `${Math.max(...integers)} ${Math.min(...integers)}`
+// }
+
+// console.log(highAndLow("1 2 -3 4 5"));
+
+
+// function* generator(a) {
+//     let b = 1
+//     while (true) {
+//         yield `${a} * ${b} = ${a*b}`
+//         b += 1
+//     }
+// }
+
+// const iterator = generator(4);
+
+// console.log(iterator.next()); // { value: 1, done: false }
+// console.log(iterator.next()); // { value: 2, done: false }
+// console.log(iterator.next()); // { value: 3, done: false }
+// console.log(iterator.next()); // { value: undefined, done: true }  
 
 
 // var isSquare = function(n){
