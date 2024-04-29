@@ -1,10 +1,51 @@
-def maskify(cc):
-    # if c not in last 4 iterations, change to '#' char, else leave last 4 chars as is
-    mask_length = len(cc) - 4
-    masked = '#' * mask_length if mask_length > 0 else ''
-    return masked + cc[-4:]
 
-print(maskify('nanananananannana batman!'))
+
+
+# def corner_fill(square):
+#     # should keep track of which way brush stroke is going
+#     # first part will always go through all numbers in first list left to right
+#     # then down the last index of list through other lists
+#     # then once reaches end, move to index - 1 to the left
+#     # then go up the lists through same index
+#     # then once reach base list, go left through its indexes until list[0]
+#     # then go down same index list[0] but for next list to the right
+#     # PROBLEM DOESNT SAY IF NUMBERS ARE ALL UNIQUE?
+#     # I WILL ASSUME NUMBERS ARE UNIQUE AT FIRST
+#     if not square: return []
+
+#     arr = 0
+#     i = 0 # start at first index
+#     final = []
+
+#     # while the pointer p value is not the last list's first index 0 which is the end value
+#     while arr != square[len(square)-1] and i != 0:
+#         right = True
+#         if right:
+#             # if right then go right and down until last list
+#             pass
+#         else:
+#             # if left then go up and left until reaching a list[0]
+#             pass
+
+#     return final
+
+# print(corner_fill(
+#     [
+#         [4,  1, 10,  5],
+#         [7,  8,  2, 16],
+#         [15, 14, 3,  6],
+#         [11, 9, 13, 12]
+#     ]
+# ))
+
+
+# def maskify(cc):
+#     # if c not in last 4 iterations, change to '#' char, else leave last 4 chars as is
+#     mask_length = len(cc) - 4
+#     masked = '#' * mask_length if mask_length > 0 else ''
+#     return masked + cc[-4:]
+
+# print(maskify('nanananananannana batman!'))
 
 
 # def switch_lights(arr):
@@ -20,8 +61,8 @@ print(maskify('nanananananannana batman!'))
 #             # else:
 #             #     arr[i] = 1
 #             arr[i] ^= 1 # this is same as arr[i] = arr[i] ^ 1 which is an XOR bit operation that checks if the bit (arr[i]) is 1, switches to 0 and vice versa for arr[i] == 0 turns to 1
-#         remaining_sum -= n 
-#     return arr 
+#         remaining_sum -= n
+#     return arr
 
 #     # # num at index should change sum(arr[i:]) times, so if that is even, no change, if odd, switch num from 0 to 1 or vice versa
 #     # for i, n in enumerate(arr):
@@ -31,7 +72,7 @@ print(maskify('nanananananannana batman!'))
 #     #             arr[i] = 0
 #     #         else:
 #     #             arr[i] = 1
-#     # return arr 
+#     # return arr
 
 # print(switch_lights([0,0,1,0,1]))
 
@@ -57,7 +98,7 @@ print(maskify('nanananananannana batman!'))
 #     # for word in s.split():
 #     #     if len(word) < counter:
 #     #         counter = len(word)
-#     # return counter 
+#     # return counter
 
 #     return min(len(word) for word in s.split())
 
@@ -78,7 +119,7 @@ print(maskify('nanananananannana batman!'))
 #     # combination of file and rank in terms of if they're even or odd should give answer
 #     # looks like all even results for file + rank are black
 #     ordinal = 96
-#     file = ord(file.lower()) - ordinal 
+#     file = ord(file.lower()) - ordinal
 #     return 'Error' if (file not in range(1,9) or rank < 1 or rank > 8) else 'white' if (file + rank) % 2 else 'black'
 
 
@@ -93,14 +134,14 @@ print(maskify('nanananananannana batman!'))
 
 # def maximum_product(arr):
 #     # should be a pattern where you account for count of - numbers and + numbers...also acct for 0
-#     # if all nums < 0, 
+#     # if all nums < 0,
 #         # if len(list) is even
 #             # return the lowest num
 #         # else:
 #             # return highest num
 #     # if all nums > 0,
 #         # return lowest num
-#     # 
+#     #
 
 # print(maximum_product([-1, -2, -3, -4]))
 
@@ -118,7 +159,7 @@ print(maskify('nanananananannana batman!'))
 #             if counter > 0:
 #                 final.append(counter)
 #                 counter = 0
-#     return final 
+#     return final
 
 # print(ones_counter([1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1]))
 
@@ -159,14 +200,14 @@ print(maskify('nanananananannana batman!'))
 
 # class HTMLGen():
 #     # how can i automate this as much as possible?
-#     # would need to create 
-  
+#     # would need to create
+
 #     def __getattribute__(self, name):
 #         # return lambda s: f"<{name}>{s}</{name}>"
 #         # def wrapper(s):
 #         #     return f"<{name}>{s}</{name}>" if name != 'comment' else f"<!--{s}-->"
 #         # return wrapper
-#         # return lambda name: name 
+#         # return lambda name: name
 #         return object.__getattribute__(self, name)
 
 # print(HTMLGen().whatever('test here'))
@@ -179,7 +220,7 @@ print(maskify('nanananananannana batman!'))
 
 #     def play(self):
 #         # will need 1 leap for every connected block of 1's.
-#         # a connected block of 1's consists of all consecutive 1's which are aligned either horizontally or vertically, not diagonally. 
+#         # a connected block of 1's consists of all consecutive 1's which are aligned either horizontally or vertically, not diagonally.
 #         leaps = 0
 #         seen = set() # add the i and j as one single value here to check
 #         for i, arr in enumerate(self.board):
@@ -193,19 +234,19 @@ print(maskify('nanananananannana batman!'))
 #                         seen.add((i,j))
 #                         leaps += 1
 #                     try:
-#                         if self.board[i-1][j] == 1 and self.board[i-1][j] not in seen: 
+#                         if self.board[i-1][j] == 1 and self.board[i-1][j] not in seen:
 #                             seen.add((i-1,j)) # up
 #                     except: pass
 #                     try:
-#                         if self.board[i+1][j] == 1 and self.board[i+1][j] not in seen: 
+#                         if self.board[i+1][j] == 1 and self.board[i+1][j] not in seen:
 #                             seen.add((i+1,j)) # down
 #                     except: pass
 #                     try:
-#                         if self.board[i][j-1] == 1 and self.board[i][j-1] not in seen: 
+#                         if self.board[i][j-1] == 1 and self.board[i][j-1] not in seen:
 #                             seen.add((i,j-1)) # left
 #                     except: pass
 #                     try:
-#                         if self.board[i][j+1] == 1 and self.board[i][j+1] not in seen: 
+#                         if self.board[i][j+1] == 1 and self.board[i][j+1] not in seen:
 #                             seen.add((i,j+1)) # right
 #                     except: pass
 #                 # print(seen)
@@ -260,14 +301,14 @@ print(maskify('nanananananannana batman!'))
 #     for c in s.lower():
 #         if c == 'x': xes += 1
 #         elif c == 'o': oes += 1
-#     return xes == oes 
+#     return xes == oes
 #     # return s.count('x') == s.count('o')
 
 # print(xo("xoOxo"))
 
 
 # def solve(s):
-#     # 
+#     #
 #     # if len(s) <= 1:
 #     #     return 0
 #     # prefixes = []
@@ -378,10 +419,10 @@ print(maskify('nanananananannana batman!'))
 #             counts[num] += 1
 #         else:
 #             counts[num] = 1
-    
+
 #     for k,v in counts.items():
 #         if v == min(counts.values()):
-#             return k 
+#             return k
 
 
 # print(find_the_missing_tree([11, 2, 3, 3, 3, 11, 2, 2]))
@@ -389,7 +430,7 @@ print(maskify('nanananananannana batman!'))
 
 # '''
 # need to create the following:
-# - an online library where a user can add or remove books from their library. 
+# - an online library where a user can add or remove books from their library.
 # - each book has a title and its content.
 # - need to keep track of last page read in any of the user's books in library
 # - need to keep track of which is the currently active book, all others are inactive
@@ -411,17 +452,17 @@ print(maskify('nanananananannana batman!'))
 # class Book:
 #     def __init__(self, id: int, title: str, text: str, active: bool=False):
 #         self.id = id
-#         self.title = title 
-#         self.text = text 
-#         self.active = active 
+#         self.title = title
+#         self.text = text
+#         self.active = active
 
 #     def get_bookmark(self, last_page: int):
 #         self.last_page = last_page
 #         return last_page
-    
+
 #     def __repr__(self) -> str:
 #         return f"<{self.title} | {self.text[:15]}...>"
-    
+
 # class Library:
 
 #     def __init__(self, id, name):
@@ -431,13 +472,13 @@ print(maskify('nanananananannana batman!'))
 
 #     def add_to_library(self, book):
 #         # add the book id as a key, and book object as value into books
-#         self.books[book.id] = book 
-#         return self.books 
-    
+#         self.books[book.id] = book
+#         return self.books
+
 #     def remove_from_library(self, id):
 #         print(f"REMOVING: {self.books.pop(1)}")
 #         return self.books
-    
+
 
 # book = Book(1, 'The Hobbit', 'Chapter 1: In a hole in the ground...')
 # l = Library(1, 'fiction')
@@ -512,7 +553,7 @@ print(maskify('nanananananannana batman!'))
 #             print(number)
 #         if number == 1:
 #             final_happy_nums.append(number)
-            
+
 #                 # if the sum of squares does not equal 1, set sum as new number and repeat until either sum of squares does equal 1, or one of the past iterations of big scope number within this sequence is equal to this iteration's n. In other words, if 89 has already appeared in this sequence before, and sum of squares in this iter is 89, this is NOT a happy number
 #     return final_happy_nums # the happy numbers
 
@@ -543,7 +584,7 @@ print(maskify('nanananananannana batman!'))
 # def infected_zeroes(lst):
 #     # if 0 is n number in a list, then both n-1 and n+1 in terms of index become infected if they were not before
 #     # need to account for edge cases, so lst[0] and lst[-1]
-#     # 2 errors: 1. turns dont update correctly since not taking into acct when a number is converted; 2. time out error    
+#     # 2 errors: 1. turns dont update correctly since not taking into acct when a number is converted; 2. time out error
 #     turns = 0
 #     while sum(lst) != 0:
 #         left_was_1 = False
@@ -551,24 +592,24 @@ print(maskify('nanananananannana batman!'))
 #         for i,num in enumerate(lst):
 #             # if first item, just check its right side
 #             if i == 0:
-#                 if num == 0 and lst[i+1] == 1: 
+#                 if num == 0 and lst[i+1] == 1:
 #                     lst[i+1] = 0
 #                     right_was_1 = True
 #             # if last item, just check its left side
 #             elif i == len(lst)-1:
-#                 if num == 0: 
+#                 if num == 0:
 #                     lst[i-1] = 0
 #             # else check both left and right side
 #             else:
 #                 # if this num = 0 but it was 1 in previous iter
-#                 if num == 0 and right_was_1: 
+#                 if num == 0 and right_was_1:
 #                     right_was_1 = False
 #                 # if num = 0 and not previously 1
 #                 elif num == 0 and not right_was_1:
 #                     lst[i-1] = 0
 #                     if lst[i+1] == 1:
 #                         lst[i+1] = 0
-#                         right_was_1 = True 
+#                         right_was_1 = True
 
 #         # end of turn, add 1 to turn
 #         turns += 1
@@ -613,7 +654,7 @@ print(maskify('nanananananannana batman!'))
 #             priority_list.append(num)
 #         else:
 #             non_priority_list.append(num)
-#     final = sorted(priority_list) + non_priority_list 
+#     final = sorted(priority_list) + non_priority_list
 #     print(final)
 
 #     # start consuming queue, though if i loop and pop an item, loop will need to restart at 0
@@ -629,7 +670,7 @@ print(maskify('nanananananannana batman!'))
 #                 # if 1 or 3 not on either end, swap
 #                 if final[i] not in [1,3] or final[len(final)-1-i] not in [1,3]:
 #                     final[i], final[len(final)-1-i] = final[len(final)-1-i], final[i]
-        
+
 
 # print(get_in_line([0, 8, 2, 1, 4, 2, 12, 3, 2]))
 
@@ -654,8 +695,8 @@ print(maskify('nanananananannana batman!'))
 #     line = list(' '*(number*2 - 1))
 #     final = []
 #     left = 0
-#     right = -1 
-#     going_down = number 
+#     right = -1
+#     going_down = number
 #     for i in range(len(line)):
 #         # should have a pointer on both ends changing right/left each iteration
 #         # change the value at [0] and [-1]
@@ -674,16 +715,16 @@ print(maskify('nanananananannana batman!'))
 # print(pattern(0))
 
 
-# import re 
+# import re
 
 # def is_audio(file_name):
 #     # at least 1 or more alpha chars, no spaces, before a '.' char
 #     # a '.' char
 #     # a file extension ending after '.' that matches 1 of 4 options
 #     match = re.search(r'[A-Za-z]+\.(mp3|flac|alac|aac)', file_name)
-#     if match: 
+#     if match:
 #         return len(match[0]) == len(file_name)
-#     return False 
+#     return False
 
 # def is_img(file_name):
 #     match = re.search(r'[A-Za-z]+\.(jpg|jpeg|png|bmp|gif)', file_name)
@@ -701,7 +742,7 @@ print(maskify('nanananananannana batman!'))
 #     result_list = []
 
 #     for n in range(maxlen):
-#         look = result_list[-1] if result_list else data 
+#         look = result_list[-1] if result_list else data
 #         # grab latest str from result_list and split each int
 #         # 111111856222
 #         # need to loop through current look, set a variable to check if consecutive of that variable
@@ -710,7 +751,7 @@ print(maskify('nanananananannana batman!'))
 #         add_to_result_list = ''
 #         for num in look:
 #             if value == '':
-#                 value = num 
+#                 value = num
 #                 same_count += 1
 #                 if len(look) == 1:
 #                     add_to_result_list += f'{str(same_count)}{value}'
@@ -724,14 +765,14 @@ print(maskify('nanananananannana batman!'))
 #                 same_count += 1
 #                 add_to_result_list += f'{str(same_count)}{value}'
 #                 # resest
-#                 value = num 
+#                 value = num
 #                 same_count = 0
 #         if not add_to_result_list:
 #             add_to_result_list += f'{str(same_count)}{value}'
 #         result_list.append(add_to_result_list)
 #         # print(result_list)
-                
-#     return result_list 
+
+#     return result_list
 
 # print(look_and_say('1', 7))
 
@@ -756,10 +797,10 @@ print(maskify('nanananananannana batman!'))
 #                     final_set.add(n)
 #                     final_set.add(n2)
 #                     if len(final_set) > 2:
-#                         break 
+#                         break
 #     return final_set
 #     # x = set(filter(lambda n: n in a2, a1))
-#     # return x 
+#     # return x
 
 # print(a1_thick_and_hearty([1, 2, 3, 4, 5, 6], [1, 2, 4, 6, 7, 8, 9, 10]))
 
@@ -781,7 +822,7 @@ print(maskify('nanananananannana batman!'))
 #             if int(to_list[i-1]) > 9:
 #                 to_list[i] = 'ga' + to_list[i][:-1] + 'ga'
 #     return ' '.join(to_list)
-    
+
 
 # print(sursurungal('5 lions and 15 zebras and 100 elephants'))
 
@@ -790,7 +831,7 @@ print(maskify('nanananananannana batman!'))
 #     # need to grab the 'n' which is int and take each of its digits, so turn 'n' to str and split at each number into a list and grab its sum in order to check if sum is one digit. if more than one digit repeat until only one digit left.
 #     # specify condition when n < 10 to return that number
 #     if n < 10:
-#         return n 
+#         return n
 #     else:
 #         total_sum = 0
 #         for num in (str(n)):
@@ -826,8 +867,8 @@ print(maskify('nanananananannana batman!'))
 
 
 # def unpack_sausages(truck):
-#     # input is a list of tuples with different amount of strings per tuple 
-#     # a valid sausage package contains 4 total sausages, and all 4 are the same, and all four are either 
+#     # input is a list of tuples with different amount of strings per tuple
+#     # a valid sausage package contains 4 total sausages, and all 4 are the same, and all four are either
 #     pass
 
 # print(unpack_sausages(
@@ -837,7 +878,7 @@ print(maskify('nanananananannana batman!'))
 #     ))
 
 
-# def locate(seq, value): 
+# def locate(seq, value):
 #     # seq is list or multiple nested lists
 #     # value is a str
 #     # need to flatten lists all into one
@@ -849,7 +890,7 @@ print(maskify('nanananananannana batman!'))
 #             else:
 #                 flat_list.append(item)
 #         return flat_list
-    
+
 #     return value in flatten(seq)
 
 # print(locate(['a','b',['c','d',['e']]],'c'))
@@ -876,17 +917,17 @@ print(maskify('nanananananannana batman!'))
 
 
 # def locate_entrance(office: list[str]) -> tuple[int, int]:
-#     # only options for office entrance: 
+#     # only options for office entrance:
 #     #   first str in array or last str = any '.' char in any of those rows
-#     #   any other str in array = 
+#     #   any other str in array =
 #     #       first or last char is a '.' ignoring any spaces before or after within str
 #     #       if char is '.' and either prev or next row at same index is not '#' or if that prev/next row at same index does not exist
 #     for floor, row in enumerate(office):
 #         #   first str in array or last str = any '.' char in any of those rows
 #         if floor == 0 or floor + 1 == len(office):
 #             if '.' in row:
-#                 return row.index('.'), floor 
-#         #   any other str in array = 
+#                 return row.index('.'), floor
+#         #   any other str in array =
 #         #       first or last char is a '.' ignoring any spaces before or after within str
 #         elif row.strip()[0] == '.':
 #             return row.index('.'), floor
@@ -896,12 +937,12 @@ print(maskify('nanananananannana batman!'))
 #         for i, char in enumerate(row):
 #             if char == '.':
 #                 # if prev/next row is shorter than char index ONLY WORKS FOR RIGHT SIDE, NOT LEFT
-#                 if len(office[floor-1]) >= i: 
+#                 if len(office[floor-1]) >= i:
 #                     if office[floor-1][i] == ' ':
-#                         return i, floor 
-#                 elif len(office[floor+1]) >= i: 
+#                         return i, floor
+#                 elif len(office[floor+1]) >= i:
 #                     if office[floor+1][i] == ' ':
-#                         return i, floor 
+#                         return i, floor
 
 # print(locate_entrance(
 #                         [' #####',
@@ -949,7 +990,7 @@ print(maskify('nanananananannana batman!'))
 
 
 # def alphabetic(s):
-#     # 
+#     #
 #     return s == ''.join(sorted(s))
 
 # print(alphabetic('abcd'))
@@ -994,7 +1035,7 @@ print(maskify('nanananananannana batman!'))
 
 
 # def boredom(staff: dict) -> str:
-    
+
 #     dept_score = {
 #         "accounts": 1,
 #         "finance": 2,
@@ -1030,12 +1071,12 @@ print(maskify('nanananananannana batman!'))
 # def two_count(n):
 #     if n < 2 or n % 2 != 0:
 #         return 0
-    
+
 #     count = 0
 #     while n % 2 == 0:
 #         n /= 2
 #         count += 1
-#     return count 
+#     return count
 
 # print(two_count(256)) # 4
 
@@ -1051,7 +1092,7 @@ print(maskify('nanananananannana batman!'))
 #             right += 1
 #         elif c == '<':
 #             salutes += right * 2
-#     return salutes 
+#     return salutes
 
 # print(count_salutes('<---<--->----<'))
 
@@ -1061,10 +1102,10 @@ print(maskify('nanananananannana batman!'))
 #         # ball only seen if > window, else not seen
 #         times_seen = 1
 #         while h > window:
-#             h = h * bounce 
+#             h = h * bounce
 #             if h > window:
 #                 times_seen += 2
-#         return times_seen 
+#         return times_seen
 #     else:
 #         return -1
 
@@ -1082,11 +1123,11 @@ print(maskify('nanananananannana batman!'))
 #     # for i, v in enumerate(evil.split(' ')):
 #     #     evil_total += int(v) * evil_points[i]
 
-#     # if good_total > evil_total: 
-#     #     return "Battle Result: Good triumphs over Evil" 
-#     # elif evil_total > good_total: 
+#     # if good_total > evil_total:
+#     #     return "Battle Result: Good triumphs over Evil"
+#     # elif evil_total > good_total:
 #     #     return "Battle Result: Evil eradicates all trace of Good"
-#     # else: 
+#     # else:
 #     #     return "Battle Result: No victor on this battle field"
 #     evil_int = [int(n) for n in evil.split(' ')]
 #     return type(map(lambda p, e: p * e    , evil_points, evil_int))
@@ -1107,7 +1148,7 @@ print(maskify('nanananananannana batman!'))
 #             updated **= 2
 #         elif c == 'o':
 #             final.append(updated)
-#     return final 
+#     return final
 
 # print(parse("iiisdoso"))
 
@@ -1124,7 +1165,7 @@ print(maskify('nanananananannana batman!'))
 #     # final = []
 #     # for d in joined_num:
 #     #     final.append(int(d))
-#     return [int(d) for d in joined_num] 
+#     return [int(d) for d in joined_num]
 
 # print(up_array([9,9,9,9]))
 
@@ -1139,7 +1180,7 @@ print(maskify('nanananananannana batman!'))
 #         for num in range(1, size+1):
 #             row.append(i * num)
 #         table.append(row)
-#     return table 
+#     return table
 
 
 # print(multiplication_table(3))
@@ -1147,7 +1188,7 @@ print(maskify('nanananananannana batman!'))
 
 # def solution(n):
 #     # between 1 and 3999
-#     # Modern Roman numerals are written by expressing each digit separately starting with the left most digit and skipping any digit with a value of zero. 
+#     # Modern Roman numerals are written by expressing each digit separately starting with the left most digit and skipping any digit with a value of zero.
 #     # In Roman numerals 1990 is rendered: 1000=M, 900=CM, 90=XC; resulting in MCMXC. 2008 is written as 2000=MM, 8=VIII; or MMVIII. 1666 uses each Roman symbol in descending order: MDCLXVI.
 
 #     # always checking the highest divisible value first. then go down a level (3999 checks if / 1000)
@@ -1159,7 +1200,7 @@ print(maskify('nanananananannana batman!'))
 #         if calc > 0:
 #             final += calc*romans[i]
 #             n -= calc*v
-#     return final 
+#     return final
 
 # print(solution(1990))
 
@@ -1186,19 +1227,19 @@ print(maskify('nanananananannana batman!'))
 #             counter += 1
 #         elif len(smiley)==2 and smiley[0] in eyes and smiley[1] in mouth:
 #             counter += 1
-#     return counter 
+#     return counter
 
 # print(count_smileys([':)',':(',':D',':O',':;']))
 
 
 # def comp(array1, array2):
 #     if not array1 and array2:
-#         return False 
+#         return False
 #     array1.sort(), array2.sort()
 #     for i, n in enumerate(array1):
 #         if n**2 != array2[i]:
-#             return False 
-#     return True 
+#             return False
+#     return True
 
 # print(comp([121, 144, 19, 161, 19, 144, 19, 11], [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]))
 
@@ -1208,7 +1249,7 @@ print(maskify('nanananananannana batman!'))
 #         return False
 #     for n in range(2, num//2+1):
 #         if num % n == 0:
-#             return False 
+#             return False
 #     return True
 
 # print(is_prime(31))
@@ -1217,7 +1258,7 @@ print(maskify('nanananananannana batman!'))
 # def tribonacci(signature, n):
 #     #  you need to create a fibonacci function that given a signature array/list, returns the first n elements - signature included of the so seeded sequence.
 #     # Signature will always contain 3 numbers; n will always be a non-negative number; if n == 0, then return an empty array
-#     # will always be taking prev 3 numbers from list..find way to add 
+#     # will always be taking prev 3 numbers from list..find way to add
 #     for _ in range(n-3):
 #         signature.append(sum(signature[-3:]))
 #     return signature[:n]
@@ -1268,7 +1309,7 @@ print(maskify('nanananananannana batman!'))
 #     for num in order:
 #         if final.count(num) < max_e:
 #             final.append(num)
-#     return final 
+#     return final
 #     # return [num for num in order if ]
 
 # print(delete_nth([20,37,20,21], 1))
@@ -1284,8 +1325,8 @@ print(maskify('nanananananannana batman!'))
 #             score += ord(c)-ord('a')+1
 #         if score > highest:
 #             highest = score
-#             final = word 
-#     return final 
+#             final = word
+#     return final
 
 # print(high('man i need a taxi up to ubud'))
 
@@ -1344,11 +1385,11 @@ print(maskify('nanananananannana batman!'))
 #     # if stored digits = len(3), do the same for num2 but digit == num1 triple digit and stored digits = len(2)
 #     # if all tests passed, return 1 else 0
 #     num1, num2 = list(str(num1)), list(str(num2))
-#     number = None 
+#     number = None
 #     for i in range(len(num1)-2):
 #         if num1[i] == num1[i+1] == num1[i+2]:
 #             number = num1[i]
-#             break 
+#             break
 #     if number:
 #         for i in range(len(num2)-1):
 #             if number == num2[i] == num2[i+1]:
@@ -1366,7 +1407,7 @@ print(maskify('nanananananannana batman!'))
 #         if c in bp.keys():
 #             slist[i] = bp[c]
 #     return ''.join(slist)
-    
+
 # def decode(s):
 #     bp = {'1': 'a', '2': 'e', '3': 'i', '4': 'o', '5': 'u'}
 #     slist = list(s)
@@ -1381,7 +1422,7 @@ print(maskify('nanananananannana batman!'))
 
 # def sort_array(source_array):
 #     # Return a sorted array.
-#     # in theory, need to know odds positions in original. create new odds only list. 
+#     # in theory, need to know odds positions in original. create new odds only list.
 #     odds = []
 #     for num in source_array:
 #         if num % 2 != 0:
@@ -1410,8 +1451,8 @@ print(maskify('nanananananannana batman!'))
 #         if c.isupper():
 #             final += f" {c}"
 #         else:
-#             final += c 
-#     return final 
+#             final += c
+#     return final
 
 # print(solution("camelCasing"))
 
@@ -1421,11 +1462,11 @@ print(maskify('nanananananannana batman!'))
 #     # gives it sorted in alphabetical order by last name.
 #     # When the last names are the same, sort them by first name. Last name and first name of a guest come in the result between parentheses separated by a comma. (last, first)
 #     u = s.upper()
-#     # need to separate each first:last individually. 
+#     # need to separate each first:last individually.
 #     names = u.split(';') # this gives list of first:last
 #     for i, name in enumerate(names):
 #         names[i] = (name.split(':')[-1], name.split(':')[0])
-#     return names    
+#     return names
 
 # print(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
 
@@ -1434,13 +1475,13 @@ print(maskify('nanananananannana batman!'))
 # def encrypt_this(text):
 #     # Split the text into a list of words
 #     words = text.split()
-    
+
 #     # Loop through each word and apply encryption rules
 #     encrypted_words = []
 #     for word in words:
 #         # Convert first letter to ASCII code
 #         first_letter_code = str(ord(word[0]))
-        
+
 #         # Switch second and last letter (if word has more than one letter)
 #         if len(word) > 2:
 #             second_letter = word[1]
@@ -1448,11 +1489,11 @@ print(maskify('nanananananannana batman!'))
 #             encrypted_letters = last_letter + word[2:-1] + second_letter
 #         else:
 #             encrypted_letters = word[1:]
-        
+
 #         # Add encrypted word to the list
 #         encrypted_word = first_letter_code + encrypted_letters
 #         encrypted_words.append(encrypted_word)
-    
+
 #     # Join encrypted words back into a string
 #     encrypted_text = " ".join(encrypted_words)
 #     return encrypted_text
@@ -1479,7 +1520,7 @@ print(maskify('nanananananannana batman!'))
 #     # will for loop through each index, compare all numbers prev and after that index, excluding index and starting at index 0, left side is 0 (as well as last index right side = 0)
 #     for i, n in enumerate(arr):
 #         if sum(arr[:i]) == sum(arr[i+1:]):
-#             return i 
+#             return i
 #     return -1
 
 # print(find_even_index([20,10,-80,10,10,15,35]))
@@ -1487,12 +1528,12 @@ print(maskify('nanananananannana batman!'))
 
 # def dig_pow(n, p):
 #     # your code
-#     # a bit confusing, 
+#     # a bit confusing,
 #     # find the sum of all digits to power of second number first, and check if entirely divisible by the first number, if so, return that number that it is divisible by
 #     total = 0
 #     for num in list(str(n)):
 #         total += int(num) ** p
-#         p += 1 
+#         p += 1
 #     return total // n if total % n == 0 else -1
 
 # print(dig_pow(46288, 3))
@@ -1505,7 +1546,7 @@ print(maskify('nanananananannana batman!'))
 #     final = []
 #     for i in range(0, len(s), 2):
 #         final.append(s[i:i+2])
-#     return final 
+#     return final
 
 # print(solution("asdfadsfg"))
 
@@ -1519,19 +1560,19 @@ print(maskify('nanananananannana batman!'))
 #             letters.remove(c)
 #         if len(letters) == 0:
 #             return True
-#     return False 
+#     return False
 
 # print(is_pangram("The quick, brown fox jumps over the lazy dog!"))
 
 
 # def adjacent_element_product(array):
 #     # the other way is to run through entire list...which is needed since you need to check ALL pairs in order to determine you have the max..
-#     max = None 
+#     max = None
 #     for i in range(len(array)-1):
 #         # take the first num and adjacent to the right
 #         if max == None or array[i] * array[i+1] > max:
 #             max = array[i] * array[i+1]
-#     return max 
+#     return max
 
 # print(adjacent_element_product([-23, 4, -5, 99, -27, 329, -2, 7, -921]))
 
@@ -1541,7 +1582,7 @@ print(maskify('nanananananannana batman!'))
 #     lst = []
 #     for i in range(abs(n)+1):
 #         if n > 0:
-#             running += i 
+#             running += i
 #         else:
 #             running -= i
 #         lst.append(running)
@@ -1555,8 +1596,8 @@ print(maskify('nanananananannana batman!'))
 #     if len(a) >= len(b):
 #         return f'{b}{a[::-1]}{b}'
 #     return f'{a}{b[::-1]}{a}'
-    
-    
+
+
 # print(shorter_reverse_longer('abcabc', 'longerer'))
 
 
@@ -1578,7 +1619,7 @@ print(maskify('nanananananannana batman!'))
 
 # def vaporcode(s):
 #     return '  '.join(list(''.join(s.upper().split(' '))))
-                
+
 
 # print(vaporcode("Why isn't my code working?"))
 
@@ -1642,7 +1683,7 @@ print(maskify('nanananananannana batman!'))
 #         self.name = name
 #         self.health = health
 #         self.damage_per_attack = damage_per_attack
-        
+
 #     def __str__(self): return "Fighter({}, {}, {})".format(self.name, self.health, self.damage_per_attack)
 #     __repr__=__str__
 
@@ -1744,7 +1785,7 @@ print(maskify('nanananananannana batman!'))
 #         if total == n:
 #             final.append(n)
 #     return final
-        
+
 # print(sum_dig_pow(1,10))
 # print(sum_dig_pow(1,100))
 # print(sum_dig_pow(10,89))
@@ -1768,7 +1809,7 @@ print(maskify('nanananananannana batman!'))
 #         else:
 #             sum_nums += s[i]
 #     return final
-        
+
 # print(sum_consecutives([1,4,4,4,0,4,3,3,1]))
 # print(sum_consecutives([1,4,4,4,0,4,3,3,1,1]))
 
@@ -1799,7 +1840,7 @@ print(maskify('nanananananannana batman!'))
 # print(matrix_addition(
 #     [ [1, 2, 3],
 #     [3, 2, 1],
-#     [1, 1, 1] ], 
+#     [1, 1, 1] ],
 #     [ [2, 2, 1],
 #     [3, 2, 3],
 #     [1, 1, 3] ]))
@@ -1856,7 +1897,7 @@ print(maskify('nanananananannana batman!'))
 
 # class Solution:
 #     def containsDuplicate(self, nums: List[int]) -> bool:
-# #         could loop through each elem 
+# #         could loop through each elem
 # #         easy solution:
 #         for num in nums:
 #             if nums.count(num) > 1:
@@ -1872,7 +1913,7 @@ print(maskify('nanananananannana batman!'))
 #         if c in cons:
 #             values[c] = ord(c) - 96 # 'a' gives 1
 #     # now i have dict of all leters in string with their values..need to now store/compare consecutive consonants in string
-#     # can do a running sum of values IF still consonants, 
+#     # can do a running sum of values IF still consonants,
 #     is_c_cons = False
 #     tally = 0
 #     for i, c in enumerate(string):
@@ -1961,7 +2002,7 @@ print(maskify('nanananananannana batman!'))
 
 #         # 97  a
 #         # 122 z
-        
+
 #     def decode(self, string):
 #         # returns - shift
 #         st = list(string.lower())
@@ -2003,7 +2044,7 @@ print(maskify('nanananananannana batman!'))
 #             {'size': "small", 'clatters': "yes", 'weight': "light"}]
 # # guess_gifts(wishlist, presents) # => must return ["Toy Car", "Mini Puzzle"]
 
-# def guess_gifts(wishlist, presents): 
+# def guess_gifts(wishlist, presents):
 #     # input: 2 lists, each with multiple dictionaries with string attr
 #     # output: list with string attr
 #     # check for every present, if all of its 3 attributes match w 1 or multiple items in wishlist
@@ -2269,7 +2310,7 @@ print(maskify('nanananananannana batman!'))
 #     for i in range(0, 9):
 #       (l, c, b) = (set(), set(), set())
 #       for j in range(0, 9):
-#           c.add(board[i][j]) 
+#           c.add(board[i][j])
 #           l.add(board[j][i])
 #           b.add(board[0 + j // 3][((i * 3) % 9) + j % 3])
 #       if len(l)!=9 or len(c)!=9 or len(b)!=9:
@@ -2398,7 +2439,7 @@ print(maskify('nanananananannana batman!'))
 #             count = 1
 #             letters += c
 #     # need to check if numbers starts with 0s,
-#     letters = letters[::-1] 
+#     letters = letters[::-1]
 #     numbers = numbers[::-1]
 #     if not numbers:
 #         numbers = '1'
@@ -2462,7 +2503,7 @@ print(maskify('nanananananannana batman!'))
 #     #         chars[c.lower()] = chars[c.lower()] + 1
 #     #     else:
 #     #         chars[c.lower()] = 1
-    
+
 #     # for c in string:
 #     #     if chars[c.lower()] == 1:
 #     #         return c
@@ -2525,7 +2566,7 @@ print(maskify('nanananananannana batman!'))
 # Create a function that takes a string and returns the string ciphered with Rot13. If there are numbers or special characters included in the string, they should be returned as they are. Only letters from the latin/english alphabet should be shifted, like in the original Rot13 "implementation".
 
 # def rot13(message):
-#     # need to loop through each 
+#     # need to loop through each
 #     rot = ''
 #     for c in message:
 #         # if c is not a letter, add it to rot
