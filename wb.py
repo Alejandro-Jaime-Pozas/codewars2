@@ -1,6 +1,16 @@
 
 
 
+# def add(*args):
+#     product = []
+#     for i in range(len(args)):
+#         product.append((i+1)*args[i])
+#         print(product)
+#     return sum(product)
+
+# print(add(1,2,3))
+
+
 # def corner_fill(square):
 #     # should keep track of which way brush stroke is going
 #     # first part will always go through all numbers in first list left to right
