@@ -1,4 +1,41 @@
+# class Solution:
+#     def romanToInt(self, s: str) -> int:
+#         # basically, somehow use ranges or % operand to check edge cases
+#         # any letter should represent a number to add, except when an edge case is met, that is the letter's preceding char is I or X or C followed by its respective edge case
+#         edge = {
+#             'V': 'I',
+#             'X': 'I',
+#             'L': 'X',
+#             'C': 'X',
+#             'D': 'C',
+#             'M': 'C',
+#         }
+#         values = {
+#             'I': 1,
+#             'V': 5,
+#             'X': 10,
+#             'L': 50,
+#             'C': 100,
+#             'D': 500,
+#             'M': 1000,
+#         }
+#         total = 0
+#         seen = False
+#         for i in range(1, len(s)):
+#             print(s[i])
+#             if seen:
+#                 seen = False
+#                 continue
+#             if s[i-1] in edge.values() and edge.get(s[i], s[i]) == s[i-1]:
+#                 # then edge case, so add s[i] and subrtact s[i-1]
+#                 total += values[s[i]] - values[s[i-1]]
+#                 seen = True
+#             else:
+#                 total += values[s[i-1]]
+#             print(total)
+#         return total
 
+# print(Solution().romanToInt('MCMXCIV'))
 
 
 # def add(*args):
