@@ -1,3 +1,21 @@
+# Sample dictionary with soccer player data
+soccer_players = {
+    'Messi': {'goals_scored': 700, 'year_started': 2004, 'year_ended': 2024},
+    'Ronaldo': {'goals_scored': 750, 'year_started': 2002, 'year_ended': 2024},
+    'Renaildo': {'goals_scored': 750, 'year_started': 2005, 'year_ended': 2024},
+    'Neymar': {'goals_scored': 300, 'year_started': 2009, 'year_ended': 2024},
+    'Mbappe': {'goals_scored': 200, 'year_started': 2015, 'year_ended': 2024}
+}
+
+# Sorting the dictionary by the number of goals scored
+sorted_players = dict(sorted(soccer_players.items(), key=lambda x: (-x[1]['goals_scored'], -x[1]['year_started'])))
+
+# Displaying the sorted dictionary
+for player, data in sorted_players.items():
+    print(f"{player}: Goals Scored - {data['goals_scored']}, Started Playing - {data['year_started']}, Ended Playing - {data['year_ended']}")
+
+
+
 # class Solution:
 #     def romanToInt(self, s: str) -> int:
 #         # basically, somehow use ranges or % operand to check edge cases
