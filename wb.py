@@ -1,17 +1,41 @@
-# Sample dictionary with soccer player data
-soccer_players = {
-    'Messi': {'goals_scored': 700, 'year_started': 2004, 'year_ended': 2024},
-    'Ronaldo': {'goals_scored': 750, 'year_started': 2002, 'year_ended': 2024},
-    'Neymar': {'goals_scored': 300, 'year_started': 2009, 'year_ended': 2024},
-    'Mbappe': {'goals_scored': 200, 'year_started': 2015, 'year_ended': 2024}
-}
 
-# Sorting the dictionary by the number of goals scored and year started
-sorted_players = sorted(soccer_players.items(), key=lambda y: (y[1]['year_started'], y[1]['goals_scored']))
 
-# Displaying the sorted dictionary
-for data in sorted_players:
-    print(data)
+
+# # Longest common prefix
+# def longestCommonPrefix(strs):
+#     # while index < shortest word length, check each letter in all words if all of them match, then add to prefix, else return prefix
+#     # could use the shortest word as base length to iterate through
+#     shortest_length = min(len(word) for word in strs)
+#     #
+#     index = 0
+#     prefix = ""
+#     # while index is less than shortest word, check if each letter for word[index] for all words is the same and if so, add to prefix
+#     while index < shortest_length:
+#         for i in range(1, len(strs)):
+#             if strs[i][index] != strs[i-1][index]:
+#                 return prefix
+#         prefix += strs[i][index]
+#         index += 1
+#     return prefix
+
+# print(longestCommonPrefix(['flower', 'flight', 'floor', 'fly'])) # fl
+
+
+# # Sample dictionary with soccer player data
+# soccer_players = {
+#     'Messi': {'goals_scored': 700, 'year_started': 2004, 'year_ended': 2024},
+#     'Ronaldo': {'goals_scored': 750, 'year_started': 2002, 'year_ended': 2024},
+#     'Neymar': {'goals_scored': 300, 'year_started': 2009, 'year_ended': 2024},
+#     'Mbappe': {'goals_scored': 200, 'year_started': 2015, 'year_ended': 2024}
+# }
+
+# # Sorting the dictionary by the number of goals scored and year started
+# # sorted_players = sorted(soccer_players.items(), key=lambda y: (y[1]['year_started'], y[1]['goals_scored']))
+# sorted_players = sorted(soccer_players.keys(), key=lambda y: -soccer_players[y]['goals_scored'])
+
+# # Displaying the sorted dictionary
+# for data in sorted_players:
+#     print(data)
 
 
 
