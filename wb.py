@@ -1,4 +1,28 @@
+def strStr(haystack, needle):
+    for i in range(len(haystack)-len(needle)+1):
+        if haystack[i:i+len(needle)] == needle:
+            return i
+    return -1
+    # if len(needle) > len(haystack):
+    #     return -1
+    # for i in range(len(haystack)):
+    #     # if c == c then start checking all needle chars from that point
+    #     if haystack[i] == needle[0]:
+    #         compare = ''
+    #         j = i
+    #         n_i = 0
+    #         while n_i < len(needle) and j < len(haystack): # stop index errors
+    #             if haystack[j] == needle[n_i]:
+    #                 compare += haystack[j]
+    #                 j += 1
+    #                 n_i += 1
+    #             else: # there is no match so reset or break while loop
+    #                 break
+    #         if compare == needle:
+    #             return i
+    # return -1
 
+print(strStr('badsad', 'sad'))
 
 
 # # Longest common prefix
