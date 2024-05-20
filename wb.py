@@ -1,8 +1,44 @@
-def strStr(haystack, needle):
-    for i in range(len(haystack)-len(needle)+1):
-        if haystack[i:i+len(needle)] == needle:
-            return i
-    return -1
+
+
+
+# def lengthOfLastWord(s):
+#     return s.split()
+
+# print(lengthOfLastWord('  Hello World how are you   '))
+
+
+# class Solution:
+#     def searchInsert(self, nums: list[int], target: int) -> int:
+#         # sorted asc and unique values always
+#         # will need to do binary search.
+#         if not nums or target < nums[0]: return 0
+#         elif target > nums[-1]: return len(nums)
+#         l = 0
+#         r = len(nums)-1
+#         while l <= r:
+#             m = l + (r-l)//2  # biased to lower end
+#             print('midpoint is now ', nums[m], ' at index ', m )
+#             if target == nums[m]:
+#                 print('target: ', target, ' equals midpoint: ', nums[m])
+#                 return m
+#             elif target > nums[m]:
+#                 print('target: ', target, ' greater than midpoint: ', nums[m])
+#                 l = m + 1
+#             else:
+#                 print('target: ', target, ' less than midpoint: ', nums[m])
+#                 r = m - 1
+
+#         # if l >= r, means midpoint was not found, return l
+#         return l
+
+# print(Solution().searchInsert([1,3,5,6], 2))
+
+
+# def strStr(haystack, needle):
+#     for i in range(len(haystack)-len(needle)+1):
+#         if haystack[i:i+len(needle)] == needle:
+#             return i
+#     return -1
     # if len(needle) > len(haystack):
     #     return -1
     # for i in range(len(haystack)):
@@ -22,7 +58,7 @@ def strStr(haystack, needle):
     #             return i
     # return -1
 
-print(strStr('badsad', 'sad'))
+# print(strStr('badsad', 'sad'))
 
 
 # # Longest common prefix
