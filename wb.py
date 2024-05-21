@@ -1,4 +1,11 @@
+def plusOne(digits):
+    # 1st approach is to convert the digits array to an int, add + 1 to that integer, then separate that new integer back into an array...
+    # to implement this, would need to turn into str at some point?
+    num_str = ''.join(str(num) for num in digits)  #
+    new_num_str = str(int(num_str) + 1)
+    return [int(num) for num in new_num_str]
 
+print(plusOne([9,9,9,9]))
 
 
 # def lengthOfLastWord(s):
