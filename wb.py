@@ -1,6 +1,24 @@
 
 
 
+# def mySqrt(x):
+#     # return sqrt rounded down to the nearest integer. so 2.8 would be 2
+#     # 9, 16, 25
+#     left=0
+#     right=x
+#     while left<=right:
+#         mid=left+(right-left)//2
+#         if x==mid*mid:
+#             return mid
+#         elif x<mid*mid:
+#             right=mid-1
+#         else:
+#             left=mid+1
+#     return left-1
+
+# print(mySqrt(-98))  # 2
+
+
 # def yields(soap):
 #     for num in soap:
 #         yield num
