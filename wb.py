@@ -1,12 +1,38 @@
-def climbStairs(self, n: int) -> int:
-    # 2 = 2
-    # 3 = 3
-    # 4 = 5 ;;  1,1,1,1 ; 2,2 ; 1,1,2 ; 1,2,1 ; 2,1,1
-    # 5 = 8  ;;  1,1,1,1,1 ; 1,1,1,2 ; 1,1,2,1 ; 1,2,1,1 ; 2,1,1,1 ; 2,2,1 ; 2,1,2 ; 1,2,2
-    # 6 = 13  ;;  1,1,1,1,1,1 ; 1,1,1,1,2 ; 1,1,1,2,1 ; 1,1,2,1,1 ; 1,2,1,1,1 ; 2,1,1,1,1 ; 2,2,2 ; 2,2,1,1 ; 2,1,2,1 ; 1,2,2,1 ; 2,1,1,2 ;
-    return 
 
-print(climbStairs(5))
+
+
+# # Remove duplicates from sorted list
+# # Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+# class Solution:
+#     def deleteDuplicates(self, head):
+#         # head is the first node
+#         # while self, check if self.val == self.next.val and if so, remove self.next from list while connecting self.next.next to self...if self.next is None then finish loop
+#         curr = head
+#         while curr and curr.next:
+#             if curr.val == curr.next.val:
+#                 curr.next = curr.next.next
+#             else:
+#                 curr = curr.next
+#         return head
+
+
+# print(Solution().deleteDuplicates(ListNode(2)))
+
+
+# def climbStairs(n: int) -> int:
+#     # 2 = 2
+#     # 3 = 3
+#     # 4 = 5 ;;  1,1,1,1 ; 2,2 ; 1,1,2 ; 1,2,1 ; 2,1,1
+#     # 5 = 8  ;;  1,1,1,1,1 ; 1,1,1,2 ; 1,1,2,1 ; 1,2,1,1 ; 2,1,1,1 ; 2,2,1 ; 2,1,2 ; 1,2,2
+#     # 6 = 13  ;;  1,1,1,1,1,1 ; 1,1,1,1,2 ; 1,1,1,2,1 ; 1,1,2,1,1 ; 1,2,1,1,1 ; 2,1,1,1,1 ; 2,2,2 ; 2,2,1,1 ; 2,1,2,1 ; 1,2,2,1 ; 2,1,1,2 ;
+#     return
+
+# print(climbStairs(5))
+# print(round(5.432454,2))
 
 # def mySqrt(x):
 #     # return sqrt rounded down to the nearest integer. so 2.8 would be 2
