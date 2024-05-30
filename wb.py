@@ -1,15 +1,75 @@
-def merge(nums1: list[int], m: int, nums2: list[int], n: int) -> None:
-    """
-    Do not return anything, modify nums1 in-place instead.
-    """
-    for i in range(n):
-        nums1[m+i] = nums2[i]
-
-    nums1.sort()
-    print(nums1)
 
 
-print(merge([2,2,3,0,0,0], 3, [1,5,6], 3))
+
+# # binary tree sum
+# # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+# class Solution:
+#     def inorderTraversal(self, root) -> list[int]:
+#         # in-order seems to be from left-most to right-most
+#         # how do i create a list that persists through recursion?
+#         if not root:
+#             return 0
+
+#         return root.val + self.inorderTraversal(root.left) + self.inorderTraversal(root.right)
+
+
+# root = TreeNode(2)
+# root.left = TreeNode(3)
+# root.right = TreeNode(4)
+# root.left.left = TreeNode(5)
+# root.left.right = TreeNode(6)
+# print(Solution().inorderTraversal(root))
+
+
+
+# # binary tree inorder traversal
+# # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+# class Solution:
+#     def inorderTraversal(self, root) -> list[int]:
+#         # in-order seems to be from left-most to right-most
+#         # how do i create a list that persists through recursion?
+#         final = 0
+
+#         def inorder(root):
+#             if not root:
+#                 return 0
+
+#             inorder(root.left)
+#             final.append(root.val)
+#             inorder(root.right)
+
+#         inorder(root)
+#         return final
+
+
+# root = TreeNode(1)
+# root.right = TreeNode(2)
+# root.right.left = TreeNode(3)
+# print(Solution().inorderTraversal(root))
+
+
+# def merge(nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+#     """
+#     Do not return anything, modify nums1 in-place instead.
+#     """
+#     for i in range(n):
+#         nums1[m+i] = nums2[i]
+
+#     nums1.sort()
+#     print(nums1)
+
+
+# print(merge([2,2,3,0,0,0], 3, [1,5,6], 3))
 
 
 # # Remove duplicates from sorted list
