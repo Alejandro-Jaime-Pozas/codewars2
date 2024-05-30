@@ -38,18 +38,22 @@
 #     def inorderTraversal(self, root) -> list[int]:
 #         # in-order seems to be from left-most to right-most
 #         # how do i create a list that persists through recursion?
-#         final = 0
+#         if not root:
+#             return []
 
-#         def inorder(root):
-#             if not root:
-#                 return 0
+#         return self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)
+#         # final = 0
 
-#             inorder(root.left)
-#             final.append(root.val)
-#             inorder(root.right)
+#         # def inorder(root):
+#         #     if not root:
+#         #         return 0
 
-#         inorder(root)
-#         return final
+#         #     inorder(root.left)
+#         #     final.append(root.val)
+#         #     inorder(root.right)
+
+#         # inorder(root)
+#         # return final
 
 
 # root = TreeNode(1)
