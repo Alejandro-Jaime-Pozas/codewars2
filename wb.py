@@ -1,5 +1,35 @@
+# symmetric tree
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def isSymmetric(self, root) -> bool:
+        # basically, if you go down each side of the root, if there is a None value on one side and any none-None value on the other, it's False, else True
+        # need to somehow check each subtree's equivalent value on the other side.
+        def dfs(left, right):
+            if not left and not right:  # means both nodes are null, so true
+                return True
+            elif not left or not right:  # means one node is null, the other is not, false
+                return False
+            else:  # means both nodes have values, if values are equal then True else False
+                return (
+                    left.val == right.val and
+                    dfs(left.left, right.right) and
+                    dfs(left.right, right.left)
+                )
+        return dfs(root.left, root.right)
 
-
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(2)
+root.left.left = TreeNode(3)
+root.right.right = TreeNode(3)
+root.left.right = TreeNode(4)
+root.right.left = TreeNode(4)
+print(Solution().isSymmetric(root))
 
 # # binary tree sum
 # # Definition for a binary tree node.
