@@ -1,35 +1,55 @@
-# symmetric tree
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-class Solution:
-    def isSymmetric(self, root) -> bool:
-        # basically, if you go down each side of the root, if there is a None value on one side and any none-None value on the other, it's False, else True
-        # need to somehow check each subtree's equivalent value on the other side.
-        def dfs(left, right):
-            if not left and not right:  # means both nodes are null, so true
-                return True
-            elif not left or not right:  # means one node is null, the other is not, false
-                return False
-            else:  # means both nodes have values, if values are equal then True else False
-                return (
-                    left.val == right.val and
-                    dfs(left.left, right.right) and
-                    dfs(left.right, right.left)
-                )
-        return dfs(root.left, root.right)
 
-root = TreeNode(1)
-root.left = TreeNode(2)
-root.right = TreeNode(2)
-root.left.left = TreeNode(3)
-root.right.right = TreeNode(3)
-root.left.right = TreeNode(4)
-root.right.left = TreeNode(4)
-print(Solution().isSymmetric(root))
+
+
+# # return the fibonacci seq number at index i
+# def fib(i):
+#     # fib goes up..no way to no backward nums.
+#     if i <= 2:
+#         return 1
+#     return fib(i-1) + fib(i-2)
+
+# print(fib(6))
+
+
+# # create a factorial fn that takes in a positive int -> sum product of int - 1 until reaching base case which is 1
+# def factorial(num: int) -> int:
+#     """takes in a positive integer n and returns the product of all integers between n down to 1."""
+#     if num < 1:  # reached base case, return 1 since
+#         return 1
+#     return num * factorial(num - 1)
+
+
+# print(factorial(-6))
+
+
+# # symmetric tree
+# # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+# class Solution:
+#     def isSymmetric(self, root) -> bool:
+#         # basically, if you go down each side of the root, if there is a None value on one side and any none-None value on the other, it's False, else True
+#         # need to somehow check each subtree's equivalent value on the other side.
+#         def dfs(left, right):
+#             if not left and not right:  # means both nodes are null, so true
+#                 return True
+#             elif not left or not right:  # means one node is null, the other is not, false
+#                 return False
+#             elif left.val == right.val:  # means both nodes have values, if values are equal then True else False
+#                 return dfs(left.left, right.right) and dfs(left.right, right.left)
+#         return dfs(root.left, root.right)
+
+# root = TreeNode(1)
+# root.left = TreeNode(2)
+# root.right = TreeNode(2)
+# root.left.left = TreeNode(3)
+# root.right.right = TreeNode(3)
+# root.left.right = TreeNode(4)
+# root.right.left = TreeNode(4)
+# print(Solution().isSymmetric(root))
 
 # # binary tree sum
 # # Definition for a binary tree node.
