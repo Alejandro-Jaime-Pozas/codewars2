@@ -1,4 +1,12 @@
+def solution(n):
+    mappings = {
+        4: 7,
+        7: 4
+    }
 
+    return mappings.get(n, 0)
+
+print(solution(4))
 
 
 # # return the fibonacci seq number at index i
