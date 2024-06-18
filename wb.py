@@ -1,13 +1,38 @@
-def solution(n):
-    mappings = {
-        4: 7,
-        7: 4
-    }
 
-    return mappings.get(n, 0)
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def sortedArrayToBST(self, nums: list[int]):
+        # should take the midpoint and make it the root
+        # then all values to left will be root.left nodes
+        # all values to right root.right nodes
+        # this should keep at most 1 height difference
+        if not nums:
+            return None
 
-print(solution(4))
+        m = len(nums) // 2
+        root = TreeNode(nums[m])
+        root.left = self.sortedArrayToBST(nums[0:m])
+        root.right = self.sortedArrayToBST(nums[m+1:])
+        return root
 
+
+print(Solution().sortedArrayToBST([-10,-3,0,5,9]))  # always sorted asc
+
+
+# def solution(n):
+#     mappings = {
+#         4: 7,
+#         7: 4
+#     }
+
+#     return mappings.get(n, 0)
+
+# print(solution(4))
 
 # # return the fibonacci seq number at index i
 # def fib(i):
