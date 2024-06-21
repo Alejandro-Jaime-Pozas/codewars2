@@ -1,27 +1,48 @@
 
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-class Solution:
-    def sortedArrayToBST(self, nums: list[int]):
-        # should take the midpoint and make it the root
-        # then all values to left will be root.left nodes
-        # all values to right root.right nodes
-        # this should keep at most 1 height difference
-        if not nums:
-            return None
-
-        m = len(nums) // 2
-        root = TreeNode(nums[m])
-        root.left = self.sortedArrayToBST(nums[0:m])
-        root.right = self.sortedArrayToBST(nums[m+1:])
-        return root
 
 
-print(Solution().sortedArrayToBST([-10,-3,0,5,9]))  # always sorted asc
+# print('10101001'.count('1'))
+
+
+# def single_digit(n):
+
+#     def bin_sum(num):
+#         return sum(int(x) for x in format(num, 'b'))
+
+#     total = bin_sum(n)
+
+#     while total > 9:
+#         total = bin_sum(total)
+
+#     return total
+
+# print(single_digit(0))
+
+
+
+# # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+# class Solution:
+#     def sortedArrayToBST(self, nums: list[int]):
+#         # should take the midpoint and make it the root
+#         # then all values to left will be root.left nodes
+#         # all values to right root.right nodes
+#         # this should keep at most 1 height difference
+#         if not nums:
+#             return None
+
+#         m = len(nums) // 2
+#         root = TreeNode(nums[m])
+#         root.left = self.sortedArrayToBST(nums[0:m])
+#         root.right = self.sortedArrayToBST(nums[m+1:])
+#         return root
+
+
+# print(Solution().sortedArrayToBST([-10,-3,0,5,9]))  # always sorted asc
 
 
 # def solution(n):
