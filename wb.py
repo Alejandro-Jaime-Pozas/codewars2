@@ -1,7 +1,23 @@
+# balanced binary tree
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def isBalanced(self, root: TreeNode) -> bool:
+        # could try either recursive or perhaps easier with a stack/deque
+
+
+        return
 
 
 
-# print('10101001'.count('1'))
+root = TreeNode(1)
+root.left = TreeNode(3)
+print(Solution().isBalanced(root))
+
 
 
 # def single_digit(n):
