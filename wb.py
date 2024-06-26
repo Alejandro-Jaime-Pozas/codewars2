@@ -1,23 +1,38 @@
-# balanced binary tree
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-class Solution:
-    def isBalanced(self, root: TreeNode) -> bool:
-        # could try either recursive or perhaps easier with a stack/deque
+# # balanced binary tree
+# # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+# class Solution:
+#     def isBalanced(self, root: TreeNode) -> bool:
+#         # could try either recursive or perhaps easier with a stack/deque
 
 
-        return
+#         return
 
 
 
-root = TreeNode(1)
-root.left = TreeNode(3)
-print(Solution().isBalanced(root))
+# root = TreeNode(1)
+# root.left = TreeNode(3)
+# print(Solution().isBalanced(root))
 
+
+def largest_radial_sum(arr, d):
+    # len(arr) gives the total members
+    # d gives the members by group
+    # n / d gives the total number of groups to compare, which is also step size
+    # could check each iter for loop
+    groups = {}
+
+    for i in range(len(arr)):
+        key = i % (len(arr) // d)
+        groups[key] = groups.get(key, 0) + arr[i]
+
+    return max(groups.values())
+
+print(largest_radial_sum([1,2,3,4], 2))
 
 
 # def single_digit(n):
