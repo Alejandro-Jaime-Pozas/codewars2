@@ -13,26 +13,58 @@
 #         return
 
 
-
 # root = TreeNode(1)
 # root.left = TreeNode(3)
 # print(Solution().isBalanced(root))
 
 
-def largest_radial_sum(arr, d):
-    # len(arr) gives the total members
-    # d gives the members by group
-    # n / d gives the total number of groups to compare, which is also step size
-    # could check each iter for loop
-    groups = {}
+def string_constructing(a, s):
+    # need to start with an empty string
+    # the only two operations possible are appending the a string or deleting any char in new string
+    if not s: return 0
 
-    for i in range(len(arr)):
-        key = i % (len(arr) // d)
-        groups[key] = groups.get(key, 0) + arr[i]
+    final = a
+    count = 1
+    pointer = 0
 
-    return max(groups.values())
+    while final != s:
+        # can only append the string 'a'
+        # can remove any char from the final string
+        # basically, need to check if final str == s string up to certain index in final, and remove subsequent chars if they do not match and keep checking
+        # you remove when a char is not equal in both strings at same index
+        # you add when all chars in final == s
+        print('here')
+        if len(final) < len(s) and final == s[0:len(final)]:
+            print(final)
+            final += a
+            count += 1
+        elif len(final) > len(s) or final[pointer] != s[pointer]:
+            print(final)
+            final = final[0:pointer] + final[pointer+1:]
+            count += 1
+            pointer += 1
 
-print(largest_radial_sum([1,2,3,4], 2))
+
+    return count
+
+print(string_constructing('aba', 'abbabba'))
+
+
+
+# def largest_radial_sum(arr, d):
+#     # len(arr) gives the total members
+#     # d gives the members by group
+#     # n / d gives the total number of groups to compare, which is also step size
+#     # could check each iter for loop
+#     groups = {}
+
+#     for i in range(len(arr)):
+#         key = i % (len(arr) // d)
+#         groups[key] = groups.get(key, 0) + arr[i]
+
+#     return max(groups.values())
+
+# print(largest_radial_sum([1,2,3,4], 2))
 
 
 # def single_digit(n):
