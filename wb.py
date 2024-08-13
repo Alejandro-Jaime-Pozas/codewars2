@@ -1,53 +1,75 @@
-# # balanced binary tree
-# # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-# class Solution:
-#     def isBalanced(self, root: TreeNode) -> bool:
-#         # could try either recursive or perhaps easier with a stack/deque
+# Input: "gdfgdf234dg54gf*23oP42"
+# Output: "54929268" (because 23454*2342=54929268)
+
+# WAS MISSING THE '.' WHICH WAS FOR DECIMALS...always read problem (though sometimes it's badly redacted)
+def calculate_string(s):
+    # need to return only digits from left side of operator, by operator, by only digits on right side
+    # operator can be any of +-*/
+    # if there is a "." then ignore everything after for left and right. in case of left, just reset at the operator
+    # do need to iterate through entire str at least once
+    left = ''
+    right = ''
+    operator = ''
+    dot_found = False 
+    for c in s:
+        if not operator:  # add to left str, not right
+            if c in ('+-/*'):  # add operator to variable, reset dot found to false
+                operator = c 
+                dot_found = False 
+            elif c == ".":  # if '.' then ignore rest of left side
+                dot_found = True 
+            elif c.isnumeric() and not dot_found:  # add digits to left side
+                left += c 
+
+        elif operator:
+            if c == ".":  # if '.' then ignore rest of left side
+                break  # finish the loop
+            elif c.isnumeric():  # add digits to left side
+                right += c 
+
+    if operator == '+':
+        return str(round(int(left) + int(right)))
+    elif operator == '-':
+        return str(round(int(left) - int(right)))
+    elif operator == '*':
+        return str(round(int(left) * int(right)))
+    elif operator == '/':
+        return str(round(int(left) / int(right)))
+                
+
+print(calculate_string("gdfgdf23.4dg54gf/2.3oP42"))
 
 
-#         return
+# def string_constructing(a, s):
+#     # need to start with an empty string
+#     # the only two operations possible are appending the a string or deleting any char in new string
+#     if not s: return 0
+
+#     final = a
+#     count = 1
+#     pointer = 0
+
+#     while final != s:
+#         # can only append the string 'a'
+#         # can remove any char from the final string
+#         # basically, need to check if final str == s string up to certain index in final, and remove subsequent chars if they do not match and keep checking
+#         # you remove when a char is not equal in both strings at same index
+#         # you add when all chars in final == s
+#         print('here')
+#         if len(final) < len(s) and final == s[0:len(final)]:
+#             print(final)
+#             final += a
+#             count += 1
+#         elif len(final) > len(s) or final[pointer] != s[pointer]:
+#             print(final)
+#             final = final[0:pointer] + final[pointer+1:]
+#             count += 1
+#             pointer += 1
 
 
-# root = TreeNode(1)
-# root.left = TreeNode(3)
-# print(Solution().isBalanced(root))
+#     return count
 
-
-def string_constructing(a, s):
-    # need to start with an empty string
-    # the only two operations possible are appending the a string or deleting any char in new string
-    if not s: return 0
-
-    final = a
-    count = 1
-    pointer = 0
-
-    while final != s:
-        # can only append the string 'a'
-        # can remove any char from the final string
-        # basically, need to check if final str == s string up to certain index in final, and remove subsequent chars if they do not match and keep checking
-        # you remove when a char is not equal in both strings at same index
-        # you add when all chars in final == s
-        print('here')
-        if len(final) < len(s) and final == s[0:len(final)]:
-            print(final)
-            final += a
-            count += 1
-        elif len(final) > len(s) or final[pointer] != s[pointer]:
-            print(final)
-            final = final[0:pointer] + final[pointer+1:]
-            count += 1
-            pointer += 1
-
-
-    return count
-
-print(string_constructing('aba', 'abbabba'))
+# print(string_constructing('aba', 'abbabba'))
 
 
 
