@@ -1,29 +1,36 @@
-def format_words(words):
-    # correct format
-    # if 1 non-null str then just that word
-    # if 2 non-null str, then join w/ 'and'
-    # if 3+ non-null str, then all but last two words joined with ','
-    # may edge cases: empty string in any position
-    # need to clean out null values first to know how many words and then be able to join those words with commas and 'and'
-    final = ''
-    if not words:
-        return final 
-    
-    words = tuple(filter(None, words))
-    # if len(words) == 1, then just word, if == 2 then just and, if > 2 then comma all before and...
-    # use ',' and 'and' depending on len
-    for i, word in enumerate(words):
-        # if i is two or less than len(words), join with ','
-        if len(words) - i > 2:
-            final += word + ', '
-        # if i is one less than len(words), join with ' and '
-        elif len(words) - i == 2:
-            final += word + ' and '
-        elif i == len(words)-1:
-            final += word 
-    return final 
+def vowel_shift(text, n):
 
-print(format_words(['', 'one', '', 'two', 'three', '']))
+    return 
+
+print(vowel_shift('This is a test!', 3))
+https://www.codewars.com/kata/577e277c9fb2a5511c00001d/train/python
+
+# def format_words(words):
+#     # correct format
+#     # if 1 non-null str then just that word
+#     # if 2 non-null str, then join w/ 'and'
+#     # if 3+ non-null str, then all but last two words joined with ','
+#     # may edge cases: empty string in any position
+#     # need to clean out null values first to know how many words and then be able to join those words with commas and 'and'
+#     final = ''
+#     if not words:
+#         return final 
+    
+#     words = tuple(filter(None, words))
+#     # if len(words) == 1, then just word, if == 2 then just and, if > 2 then comma all before and...
+#     # use ',' and 'and' depending on len
+#     for i, word in enumerate(words):
+#         # if i is two or less than len(words), join with ','
+#         if len(words) - i > 2:
+#             final += word + ', '
+#         # if i is one less than len(words), join with ' and '
+#         elif len(words) - i == 2:
+#             final += word + ' and '
+#         elif i == len(words)-1:
+#             final += word 
+#     return final 
+
+# print(format_words(['', 'one', '', 'two', 'three', '']))
 
 
 
