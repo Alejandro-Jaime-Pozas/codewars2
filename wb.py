@@ -1,8 +1,17 @@
 # https://www.codewars.com/kata/577e277c9fb2a5511c00001d/train/python
 def vowel_shift(text, n):
     # need to somehow store the ref to each vowel index. then move each of those according to n
-    
-    return 
+    # could create a list and a dict. list to trace index position of vowels to use when mapping changes with n, dict to store the vowel at a particular index position.
+    list_idx = []
+    dict_vowels = {}
+    for vowel_i, c in enumerate(text):
+        if c in 'aeiou':
+            list_idx.append(vowel_i)
+            dict_vowels[vowel_i] = c 
+    return 13 % 3
+
+# [2, 5, 8, 11, 15]
+# {2: 'i', 5: 'i', 8: 'a', 11: 'e'}
 
 print(vowel_shift('This is a test!', 3))
 
