@@ -1,9 +1,10 @@
+# https://www.codewars.com/kata/577e277c9fb2a5511c00001d/train/python
 def vowel_shift(text, n):
-
+    # need to somehow store the ref to each vowel index. then move each of those according to n
+    
     return 
 
 print(vowel_shift('This is a test!', 3))
-https://www.codewars.com/kata/577e277c9fb2a5511c00001d/train/python
 
 # def format_words(words):
 #     # correct format
