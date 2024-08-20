@@ -2,7 +2,7 @@ import pyautogui
 import time
 
 # Define the interval (in seconds)
-interval = 5
+interval = 2
 
 try:
     count = 0

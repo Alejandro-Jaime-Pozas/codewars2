@@ -1,19 +1,37 @@
-# https://www.codewars.com/kata/577e277c9fb2a5511c00001d/train/python
-def vowel_shift(text, n):
-    # need to somehow store the ref to each vowel index. then move each of those according to n
-    # could create a list and a dict. list to trace index position of vowels to use when mapping changes with n, dict to store the vowel at a particular index position.
-    list_idx = []
-    dict_vowels = {}
-    for vowel_i, c in enumerate(text):
-        if c in 'aeiou':
-            list_idx.append(vowel_i)
-            dict_vowels[vowel_i] = c 
-    return 13 % 3
 
-# [2, 5, 8, 11, 15]
-# {2: 'i', 5: 'i', 8: 'a', 11: 'e'}
 
-print(vowel_shift('This is a test!', 3))
+# # math problem
+# def zeros(n: int) -> int:
+#     if n == 0: return 0
+#     elif n == 1: return 2
+#     # for anything greater than len 2, always first number is 1. so all possible combinations of n-1 for 0 and 1. 
+#     # 3: 100, 101, 110, 111. =4. 4 - 1. 
+#     # 4: 1000, 1001, 1010, 1100, 1011, 1110, 1101, 1111. =8. 8 - 3. 
+#     # 5: =16. 10000, 10010, 10011, 10001, 11001, 11100, 11000, 10100
+#     # raw answer should be 2 ** n-1. but need to remove any nums with consecutive zeroes. should be a way to calculate how many of those. 
+#     # return 2 ** (n - 1)
+#     # pattern 2=4-1, 3=8-3, 4=16-7, 5=32-15, 6=64-31, 7=128-63
+#     # recursive
+#     return 8 * .375
+# print(zeros(4))
+
+
+# # https://www.codewars.com/kata/577e277c9fb2a5511c00001d/train/python
+# def vowel_shift(text, n):
+#     # need to somehow store the ref to each vowel index. then move each of those according to n
+#     # could create a list and a dict. list to trace index position of vowels to use when mapping changes with n, dict to store the vowel at a particular index position.
+#     list_idx = []
+#     dict_vowels = {}
+#     for vowel_i, c in enumerate(text):
+#         if c in 'aeiou':
+#             list_idx.append(vowel_i)
+#             dict_vowels[vowel_i] = c 
+#     return 13 % 3
+
+# # [2, 5, 8, 11, 15]
+# # {2: 'i', 5: 'i', 8: 'a', 11: 'e'}
+
+# print(vowel_shift('This is a test!', 3))
 
 # def format_words(words):
 #     # correct format
