@@ -1,4 +1,35 @@
+def is_age_diverse(lst): 
 
+    if len(lst) < 10: return False 
+
+    seen = set()
+
+    for p in lst:
+        age = p.get('age')
+        # if value between 100 and 200, set as 10 in seen if not in seen
+        if 100 <= age < 200:
+            seen.add(10)
+        # elif value between 10 and 99, set as // 10 in seen if not in seen
+        elif 10 <= age < 100:
+            seen.add(age // 10)
+        # else return false
+
+    return all(num in seen for num in range(1,10))
+
+list1 = [
+  { 'firstName': 'Harry', 'lastName': 'K.', 'country': 'Brazil', 'continent': 'Americas', 'age': 29, 'language': 'Python' },
+  { 'firstName': 'Kseniya', 'lastName': 'T.', 'country': 'Belarus', 'continent': 'Europe', 'age': 29, 'language': 'JavaScript' },
+  { 'firstName': 'Jing', 'lastName': 'X.', 'country': 'China', 'continent': 'Asia', 'age': 39, 'language': 'Ruby' },
+  { 'firstName': 'Noa', 'lastName': 'A.', 'country': 'Israel', 'continent': 'Asia', 'age': 40, 'language': 'Ruby' },
+  { 'firstName': 'Andrei', 'lastName': 'E.', 'country': 'Romania', 'continent': 'Europe', 'age': 59, 'language': 'C' },
+  { 'firstName': 'Maria', 'lastName': 'S.', 'country': 'Peru', 'continent': 'Americas', 'age': 60, 'language': 'C' },
+  { 'firstName': 'Lukas', 'lastName': 'X.', 'country': 'Croatia', 'continent': 'Europe', 'age': 75, 'language': 'Python' },
+  { 'firstName': 'Chloe', 'lastName': 'K.', 'country': 'Guernsey', 'continent': 'Europe', 'age': 88, 'language': 'Ruby' },
+  { 'firstName': 'Viktoria', 'lastName': 'W.', 'country': 'Bulgaria', 'continent': 'Europe', 'age': 98, 'language': 'PHP' },
+  { 'firstName': 'Piotr', 'lastName': 'B.', 'country': 'Poland', 'continent': 'Europe', 'age': 128, 'language': 'JavaScript' }
+]
+
+print(is_age_diverse(list1))
 
 # # math problem
 # def zeros(n: int) -> int:
