@@ -1,35 +1,62 @@
-def is_age_diverse(lst): 
+# Balanced binary tree
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
-    if len(lst) < 10: return False 
+class Solution:
+    def isBalanced(self, root) -> bool:
+        # A height-balanced binary tree is a binary tree in which the depth of the two subtrees of every node never differs by more than one.
+        # somehow need to go through each node's left/right nodes and keep track of how many levels we're going down and trace that back to the top (if recursion)
+        # perhaps best approach is deque/stack type approach. need to check for every node its 2 subtrees and make sure they differ max by height of 1.
+        # either stack type solution or new function
+        if not root.left and not root.right:
+            return 1
 
-    seen = set()
 
-    for p in lst:
-        age = p.get('age')
-        # if value between 100 and 200, set as 10 in seen if not in seen
-        if 100 <= age < 200:
-            seen.add(10)
-        # elif value between 10 and 99, set as // 10 in seen if not in seen
-        elif 10 <= age < 100:
-            seen.add(age // 10)
-        # else return false
 
-    return all(num in seen for num in range(1,10))
+root = TreeNode(3)
+root.left = TreeNode(9)
+root.right = TreeNode(20)
+root.right.left = TreeNode(15)
+root.right.right = TreeNode(7)
+print(Solution().isBalanced())
 
-list1 = [
-  { 'firstName': 'Harry', 'lastName': 'K.', 'country': 'Brazil', 'continent': 'Americas', 'age': 29, 'language': 'Python' },
-  { 'firstName': 'Kseniya', 'lastName': 'T.', 'country': 'Belarus', 'continent': 'Europe', 'age': 29, 'language': 'JavaScript' },
-  { 'firstName': 'Jing', 'lastName': 'X.', 'country': 'China', 'continent': 'Asia', 'age': 39, 'language': 'Ruby' },
-  { 'firstName': 'Noa', 'lastName': 'A.', 'country': 'Israel', 'continent': 'Asia', 'age': 40, 'language': 'Ruby' },
-  { 'firstName': 'Andrei', 'lastName': 'E.', 'country': 'Romania', 'continent': 'Europe', 'age': 59, 'language': 'C' },
-  { 'firstName': 'Maria', 'lastName': 'S.', 'country': 'Peru', 'continent': 'Americas', 'age': 60, 'language': 'C' },
-  { 'firstName': 'Lukas', 'lastName': 'X.', 'country': 'Croatia', 'continent': 'Europe', 'age': 75, 'language': 'Python' },
-  { 'firstName': 'Chloe', 'lastName': 'K.', 'country': 'Guernsey', 'continent': 'Europe', 'age': 88, 'language': 'Ruby' },
-  { 'firstName': 'Viktoria', 'lastName': 'W.', 'country': 'Bulgaria', 'continent': 'Europe', 'age': 98, 'language': 'PHP' },
-  { 'firstName': 'Piotr', 'lastName': 'B.', 'country': 'Poland', 'continent': 'Europe', 'age': 128, 'language': 'JavaScript' }
-]
 
-print(is_age_diverse(list1))
+# def is_age_diverse(lst): 
+
+#     if len(lst) < 10: return False 
+
+#     seen = set()
+
+#     for p in lst:
+#         age = p.get('age')
+#         # if value between 100 and 200, set as 10 in seen if not in seen
+#         if 100 <= age < 200:
+#             seen.add(10)
+#         # elif value between 10 and 99, set as // 10 in seen if not in seen
+#         elif 10 <= age < 100:
+#             seen.add(age // 10)
+#         # else return false
+
+#     return all(num in seen for num in range(1,10))
+
+# list1 = [
+#   { 'firstName': 'Harry', 'lastName': 'K.', 'country': 'Brazil', 'continent': 'Americas', 'age': 29, 'language': 'Python' },
+#   { 'firstName': 'Kseniya', 'lastName': 'T.', 'country': 'Belarus', 'continent': 'Europe', 'age': 29, 'language': 'JavaScript' },
+#   { 'firstName': 'Jing', 'lastName': 'X.', 'country': 'China', 'continent': 'Asia', 'age': 39, 'language': 'Ruby' },
+#   { 'firstName': 'Noa', 'lastName': 'A.', 'country': 'Israel', 'continent': 'Asia', 'age': 40, 'language': 'Ruby' },
+#   { 'firstName': 'Andrei', 'lastName': 'E.', 'country': 'Romania', 'continent': 'Europe', 'age': 59, 'language': 'C' },
+#   { 'firstName': 'Maria', 'lastName': 'S.', 'country': 'Peru', 'continent': 'Americas', 'age': 60, 'language': 'C' },
+#   { 'firstName': 'Lukas', 'lastName': 'X.', 'country': 'Croatia', 'continent': 'Europe', 'age': 75, 'language': 'Python' },
+#   { 'firstName': 'Chloe', 'lastName': 'K.', 'country': 'Guernsey', 'continent': 'Europe', 'age': 88, 'language': 'Ruby' },
+#   { 'firstName': 'Viktoria', 'lastName': 'W.', 'country': 'Bulgaria', 'continent': 'Europe', 'age': 98, 'language': 'PHP' },
+#   { 'firstName': 'Piotr', 'lastName': 'B.', 'country': 'Poland', 'continent': 'Europe', 'age': 128, 'language': 'JavaScript' }
+# ]
+
+# print(is_age_diverse(list1))
 
 # # math problem
 # def zeros(n: int) -> int:
