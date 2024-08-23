@@ -12,8 +12,12 @@ class Solution:
         # somehow need to go through each node's left/right nodes and keep track of how many levels we're going down and trace that back to the top (if recursion)
         # perhaps best approach is deque/stack type approach. need to check for every node its 2 subtrees and make sure they differ max by height of 1.
         # either stack type solution or new function
-        if not root.left and not root.right:
-            return 1
+        if not root or (not root.left and not root.right):
+            return 1  # means last node, so return 1 for height
+        # else traverse left and right to check and compare their heights, return False if height comparison differs by more than 1
+        left = self.isBalanced(root.left)  # should return int of height of left subtree
+        right = self.isBalanced(root.right)
+        return -1 <= left - right <= 1
 
 
 
@@ -22,7 +26,8 @@ root.left = TreeNode(9)
 root.right = TreeNode(20)
 root.right.left = TreeNode(15)
 root.right.right = TreeNode(7)
-print(Solution().isBalanced())
+root.right.right.right = TreeNode(7)
+print(Solution().isBalanced(root))
 
 
 # def is_age_diverse(lst): 
