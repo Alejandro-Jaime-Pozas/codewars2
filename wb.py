@@ -9,15 +9,14 @@ class TreeNode:
 class Solution:
     def isBalanced(self, root) -> bool:
         # A height-balanced binary tree is a binary tree in which the depth of the two subtrees of every node never differs by more than one.
-        # somehow need to go through each node's left/right nodes and keep track of how many levels we're going down and trace that back to the top (if recursion)
-        # perhaps best approach is deque/stack type approach. need to check for every node its 2 subtrees and make sure they differ max by height of 1.
-        # either stack type solution or new function
-        if not root or (not root.left and not root.right):
-            return 1  # means last node, so return 1 for height
-        # else traverse left and right to check and compare their heights, return False if height comparison differs by more than 1
-        left = self.isBalanced(root.left)  # should return int of height of left subtree
-        right = self.isBalanced(root.right)
-        return -1 <= left - right <= 1
+        def dfs(root):
+            # need to check for both if the subtree is balanced and for its height
+            if not root: return [True, 0]
+            left, right = dfs(root.left), dfs(root.right)
+            # check if this node's left and right subtrees are balanced, return True if so
+            balanced = left[0] and right[0] and abs(left[1] - right[1]) <= 1
+            return [balanced, 1 + max(left[1], right[1])]
+        return dfs(root)[0]
 
 
 
