@@ -1,3 +1,49 @@
+var obj_names = [
+    'GLOBAL_PRODUCTS_STAGE.CUSTOMER_S',
+    'GLOBAL_PRODUCTS_STAGE.ERP_ACCOUNT_S_V',
+    // -- ADD OTHER VIEWS/TABLES LATER
+];
+
+// Loop through each obj name
+for (let obj_name of obj_names) {
+
+    // rule that removes right chars if right chars = '_S_V' or '_S' or '_V'
+    chars_to_remove = [
+        '_S_V',
+        '_V',
+        '_S',
+    ];
+    for (let pattern of chars_to_remove) {
+        if (obj_name.endsWith(pattern)) {
+            var clean_obj_name = obj_name.slice(0, -pattern.length)
+            console.log(clean_obj_name);
+            break;
+        };
+    };
+
+    // Construct the CREATE OR REPLACE VIEW statement
+    var sql_command = `
+        USE DATABASE GLOBAL_PRODUCTS_ANALYTICS_PROD
+        CREATE OR REPLACE VIEW ${clean_obj_name}_F_V AS
+            SELECT * FROM ${obj_name};
+    `;
+}
+
+
+// function removeCharsFromEnd(str, chars_to_remove) {
+//     for (let pattern of chars_to_remove) {
+//         if (str.endsWith(pattern)) {
+//             return str.slice(0, -pattern.length);
+//         }
+//     }
+//     return str; // Return the original string if no pattern matches
+// }
+
+// let str = "example_S_V";
+// let chars_to_remove = ['_S_V', '_S', '_V'];
+
+// let result = removeCharsFromEnd(str, chars_to_remove);
+// console.log(result); // Outputs: "example"
 
 
 
