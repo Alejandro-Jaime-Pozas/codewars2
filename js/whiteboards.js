@@ -1,33 +1,55 @@
-var obj_names = [
-    'GLOBAL_PRODUCTS_STAGE.CUSTOMER_S',
-    'GLOBAL_PRODUCTS_STAGE.ERP_ACCOUNT_S_V',
-    // -- ADD OTHER VIEWS/TABLES LATER
-];
-
-// Loop through each obj name
-for (let obj_name of obj_names) {
-
-    // rule that removes right chars if right chars = '_S_V' or '_S' or '_V'
-    chars_to_remove = [
-        '_S_V',
-        '_V',
-        '_S',
+    // Include the applicable tables/views as a list
+    var obj_names = [
+        'GLOBAL_PRODUCTS_STAGE.CUSTOMER_S',
+        'GLOBAL_PRODUCTS_STAGE.ERP_ACCOUNT_S_V',
+        'GPCRM.ACCOUNT_V',
+        'GPCRM.CONTACT_V',
+        'GPCRM.OPPORTUNITY_V',
+        'GPCRM.USERS_V',
+        // all GETPAID views will have the prefix GETPAID_ in final schema
+        'GETPAID.ACTIVITY_S',
+        'GETPAID.CUSTOMER_S',
+        'GETPAID.DISPUTES_S',
+        'GETPAID.INVOICE_FACT_S',
+        // add more tables/views here
     ];
-    for (let pattern of chars_to_remove) {
-        if (obj_name.endsWith(pattern)) {
-            var clean_obj_name = obj_name.slice(0, -pattern.length)
-            console.log(clean_obj_name);
-            break;
-        };
+    
+    // Loop through each obj name
+    for (let obj_name of obj_names) {
+    
+        // add patterns at end of tables/views that we want to replace with _F_V
+        var chars_to_remove = [
+            '_S_V',
+            '_S',
+            '_V',
+        ];
+
+        var clean_obj_name = obj_name.split('.')[1]
+        
+        if (obj_name.startsWith('GETPAID')) {
+            clean_obj_name = `GETPAID_${clean_obj_name}`
+        }
+        
+        // remove string chars if there is a pattern match
+        for (let pattern of chars_to_remove) {
+            if (clean_obj_name.endsWith(pattern)) {
+                clean_obj_name = clean_obj_name.slice(0, -pattern.length);
+                console.log(clean_obj_name);
+                break;
+            }
+        }
+    
+        // Construct the CREATE OR REPLACE VIEW statement
+        var sql_command = `
+            CREATE OR REPLACE VIEW GLOBAL_PRODUCTS_FINAL.${clean_obj_name}_F_V AS
+                SELECT * FROM ${obj_name};
+        `;
+        
+        // Execute the SQL command
+        snowflake.execute({sqlText: sql_command});
     };
 
-    // Construct the CREATE OR REPLACE VIEW statement
-    var sql_command = `
-        USE DATABASE GLOBAL_PRODUCTS_ANALYTICS_PROD
-        CREATE OR REPLACE VIEW ${clean_obj_name}_F_V AS
-            SELECT * FROM ${obj_name};
-    `;
-}
+
 
 
 // function removeCharsFromEnd(str, chars_to_remove) {
