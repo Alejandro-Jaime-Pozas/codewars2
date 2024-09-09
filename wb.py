@@ -17,17 +17,14 @@ class Solution:
             return 0
         left, right = self.minDepth(root.left), self.minDepth(root.right)
         # if this is leaf node, return 1 level to upper fn
-        if not root.left and not root.right:
-            return 1
         # else means not leaf node, 
         # should return minimum of left and right, as long as they're not null nodes.
         # if either is a null node, ignore it and continue with other side to obtain min
-        elif not root.left:
+        if not root.left:
             return 1 + right 
         elif not root.right:
             return 1 + left 
-        elif root.left and root.right:
-            return 1 + min(left, right) 
+        return 1 + min(left, right) 
         
 
 root = TreeNode(1)
