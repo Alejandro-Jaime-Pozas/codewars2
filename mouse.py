@@ -10,7 +10,7 @@ def switch_window():
 # Loop to continuously switch windows
 while True:
     switch_window()          # Switch to the next window
-    time.sleep(10)            # Wait for 2 seconds before switching again
+    time.sleep(15)            # Wait for 2 seconds before switching again
 
 
 

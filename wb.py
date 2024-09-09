@@ -1,32 +1,73 @@
-# Balanced binary tree
+from typing import Optional
+
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
-
 class Solution:
-    def isBalanced(self, root) -> bool:
-        # A height-balanced binary tree is a binary tree in which the depth of the two subtrees of every node never differs by more than one.
-        def dfs(root):
-            # need to check for both if the subtree is balanced and for its height
-            if not root: return [True, 0]
-            left, right = dfs(root.left), dfs(root.right)
-            # check if this node's left and right subtrees are balanced, return True if so
-            balanced = left[0] and right[0] and abs(left[1] - right[1]) <= 1
-            return [balanced, 1 + max(left[1], right[1])]
-        return dfs(root)[0]
+    def minDepth(self, root) -> int:
+        # most efficient way would exit as soon as finding the shortest node
+        # need to compare to other nodes to find shortest
+        # recursive fn by its definition not sure if can do the exit
+        # normal recursive fn will run through every node then return values
+        # there is a special case if a node has either left or right, then don't take min
+        if not root:
+            return 0
+        left, right = self.minDepth(root.left), self.minDepth(root.right)
+        # if this is leaf node, return 1 level to upper fn
+        if not root.left and not root.right:
+            return 1
+        # else means not leaf node, 
+        # should return minimum of left and right, as long as they're not null nodes.
+        # if either is a null node, ignore it and continue with other side to obtain min
+        elif not root.left:
+            return 1 + right 
+        elif not root.right:
+            return 1 + left 
+        elif root.left and root.right:
+            return 1 + min(left, right) 
+        
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.right.left = TreeNode(4)
+# print(Solution)
+print(Solution().minDepth(root))
 
 
 
-root = TreeNode(3)
-root.left = TreeNode(9)
-root.right = TreeNode(20)
-root.right.left = TreeNode(15)
-root.right.right = TreeNode(7)
-root.right.right.right = TreeNode(7)
-print(Solution().isBalanced(root))
+# # Balanced binary tree
+# # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+# class Solution:
+#     def isBalanced(self, root) -> bool:
+#         # A height-balanced binary tree is a binary tree in which the depth of the two subtrees of every node never differs by more than one.
+#         def dfs(root):
+#             # need to check for both if the subtree is balanced and for its height
+#             if not root: return [True, 0]
+#             left, right = dfs(root.left), dfs(root.right)
+#             # check if this node's left and right subtrees are balanced, return True if so
+#             balanced = left[0] and right[0] and abs(left[1] - right[1]) <= 1
+#             return [balanced, 1 + max(left[1], right[1])]
+#         return dfs(root)[0]
+
+
+
+# root = TreeNode(3)
+# root.left = TreeNode(9)
+# root.right = TreeNode(20)
+# root.right.left = TreeNode(15)
+# root.right.right = TreeNode(7)
+# root.right.right.right = TreeNode(7)
+# print(Solution().isBalanced(root))
 
 
 # def is_age_diverse(lst): 
