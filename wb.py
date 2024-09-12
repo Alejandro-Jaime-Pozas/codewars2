@@ -1,3 +1,4 @@
+# INCLUDE THIS ALWAYS!!!
 from typing import Optional
 
 # Definition for a binary tree node.
@@ -7,32 +8,53 @@ class TreeNode:
         self.left = left
         self.right = right
 class Solution:
-    def minDepth(self, root) -> int:
-        # most efficient way would exit as soon as finding the shortest node
-        # need to compare to other nodes to find shortest
-        # recursive fn by its definition not sure if can do the exit
-        # normal recursive fn will run through every node then return values
-        # there is a special case if a node has either left or right, then don't take min
-        if not root:
-            return 0
-        left, right = self.minDepth(root.left), self.minDepth(root.right)
-        # if this is leaf node, return 1 level to upper fn
-        # else means not leaf node, 
-        # should return minimum of left and right, as long as they're not null nodes.
-        # if either is a null node, ignore it and continue with other side to obtain min
-        if not root.left:
-            return 1 + right 
-        elif not root.right:
-            return 1 + left 
-        return 1 + min(left, right) 
-        
+    def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
+        pass
+
+
 
 root = TreeNode(1)
 root.left = TreeNode(2)
 root.right = TreeNode(3)
 root.right.left = TreeNode(4)
-# print(Solution)
 print(Solution().minDepth(root))
+
+
+
+
+# # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+# class Solution:
+#     def minDepth(self, root) -> int:
+#         # most efficient way would exit as soon as finding the shortest node
+#         # need to compare to other nodes to find shortest
+#         # recursive fn by its definition not sure if can do the exit
+#         # normal recursive fn will run through every node then return values
+#         # there is a special case if a node has either left or right, then don't take min
+#         if not root:
+#             return 0
+#         left, right = self.minDepth(root.left), self.minDepth(root.right)
+#         # if this is leaf node, return 1 level to upper fn
+#         # else means not leaf node, 
+#         # should return minimum of left and right, as long as they're not null nodes.
+#         # if either is a null node, ignore it and continue with other side to obtain min
+#         if not root.left:
+#             return 1 + right 
+#         elif not root.right:
+#             return 1 + left 
+#         return 1 + min(left, right) 
+        
+
+# root = TreeNode(1)
+# root.left = TreeNode(2)
+# root.right = TreeNode(3)
+# root.right.left = TreeNode(4)
+# # print(Solution)
+# print(Solution().minDepth(root))
 
 
 
