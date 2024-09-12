@@ -1,41 +1,44 @@
-# INCLUDE THIS ALWAYS!!!
-from typing import Optional
 
 
 
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-class Solution:
-    def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
-        # need to check every possible root to leaf node combination until finding the sum then could exit traversal (or not finding sum, which means complete traversal)
-        # for every leaf node, check its upstream values vs the targetSum
-        # would maybe need 2 same level fns or nested fn
-        return self.improved(root, targetSum, 0)
-
-        # SOLUTION: sum each node, pass that sum to children, when reaching base case/leaf node, if sum = targetSum, return True, if any leaf is True, final output is True else False
-    def improved(self, root, targetSum, accSum):
-        if not root: return False 
-        elif not root.left and not root.right:  # means this is a leaf node
-            return accSum + root.val == targetSum
-        # now the main recursive code
-        left = self.improved(root.left, targetSum, accSum + root.val)
-        right = self.improved(root.right, targetSum, accSum + root.val)
-        # print(f'node: {root.val}, {left}, {right}')
-        return left or right 
+# # INCLUDE THIS ALWAYS!!!
+# from typing import Optional
 
 
 
+# # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+# class Solution:
+#     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
+#         # need to check every possible root to leaf node combination until finding the sum then could exit traversal (or not finding sum, which means complete traversal)
+#         # for every leaf node, check its upstream values vs the targetSum
+#         # would maybe need 2 same level fns or nested fn
+#         return self.improved(root, targetSum, 0)
 
-root = TreeNode(1)
-root.left = TreeNode(2)
-root.right = TreeNode(3)
-root.right.left = TreeNode(4)
-root.right.right = TreeNode(6)
-print(Solution().hasPathSum(root, 3))
+#         # SOLUTION: sum each node, pass that sum to children, when reaching base case/leaf node, if sum = targetSum, return True, if any leaf is True, final output is True else False
+#     def improved(self, root, targetSum, accSum):
+#         if not root: return False 
+#         elif not root.left and not root.right:  # means this is a leaf node
+#             return accSum + root.val == targetSum
+#         # now the main recursive code
+#         left = self.improved(root.left, targetSum, accSum + root.val)
+#         right = self.improved(root.right, targetSum, accSum + root.val)
+#         # print(f'node: {root.val}, {left}, {right}')
+#         return left or right 
+
+
+
+
+# root = TreeNode(1)
+# root.left = TreeNode(2)
+# root.right = TreeNode(3)
+# root.right.left = TreeNode(4)
+# root.right.right = TreeNode(6)
+# print(Solution().hasPathSum(root, 3))
 
 
 
