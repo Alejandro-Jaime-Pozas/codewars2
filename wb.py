@@ -6,32 +6,35 @@ from typing import Optional, List
 
 
 
-class Solution:
-    def generate(self, numRows: int) -> List[List[int]]:
-        # should return list of numRows items, starting with [1], [1,1]
-        # pattern is all outer nums will always be 1, what changes is nums within starting with 3rd item
-        # each subsequent item has an additional num in its list, so 1,2,3,4,5,... items
 
-        # base case
-        if numRows == 1:
-            return [[1]]
-        elif numRows == 2:
-            return [[1], [1,1]]
+
+
+# class Solution:
+#     def generate(self, numRows: int) -> List[List[int]]:
+#         # should return list of numRows items, starting with [1], [1,1]
+#         # pattern is all outer nums will always be 1, what changes is nums within starting with 3rd item
+#         # each subsequent item has an additional num in its list, so 1,2,3,4,5,... items
+
+#         # base case
+#         if numRows == 1:
+#             return [[1]]
+#         elif numRows == 2:
+#             return [[1], [1,1]]
         
-        final = [[1], [1,1]]  # acct for this later
-        for i in range(numRows-2):
-            # pattern is add 1 list item to past list, add all consecutive pairs from past list, outer nums always equal 1
-            item = [1]  # always 1 at start of item
-            for i in range(len(final[-1])-1):
-                item.append(final[-1][i] + final[-1][i+1])
-            item.append(1)  # always 1 at the end of item
-            final.append(item)
+#         final = [[1], [1,1]]  # acct for this later
+#         for i in range(numRows-2):
+#             # pattern is add 1 list item to past list, add all consecutive pairs from past list, outer nums always equal 1
+#             item = [1]  # always 1 at start of item
+#             for i in range(len(final[-1])-1):
+#                 item.append(final[-1][i] + final[-1][i+1])
+#             item.append(1)  # always 1 at the end of item
+#             final.append(item)
 
-        return final 
+#         return final 
 
 
 
-print(Solution().generate(30))
+# print(Solution().generate(30))
 
 
 # # Definition for a binary tree node.
