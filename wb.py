@@ -5,10 +5,27 @@ from typing import Optional, List
 
 
 
+# Pascals triangle 2
+class Solution:
+    def getRow(self, rowIndex: int) -> List[int]:
+        if rowIndex == 0:
+            return [1]
+        elif rowIndex == 1:
+            return [1,1]
+        
+        prev = [1,1]  # acct for this later
+        for i in range(rowIndex-1):
+            # pattern is add 1 list item to past list, add all consecutive pairs from past list, outer nums always equal 1
+            item = [1]  # always 1 at start of item
+            for i in range(len(prev)-1):
+                item.append(prev[i] + prev[i+1])
+            item.append(1)  # always 1 at the end of item
+            prev = item
+
+        return item
 
 
-
-
+# Pascals triangle
 # class Solution:
 #     def generate(self, numRows: int) -> List[List[int]]:
 #         # should return list of numRows items, starting with [1], [1,1]
