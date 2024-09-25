@@ -1,9 +1,14 @@
-# 
-d = {
-    0: '1',
-    1: '2'
-}
-print(d)
+print(
+    {1: 2, 3: 4} * 3
+)
+
+
+# # 
+# d = {
+#     0: '1',
+#     1: '2'
+# }
+# print(d)
 
 # def count_up_to(max_value):
 #     current = 1
