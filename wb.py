@@ -3,51 +3,65 @@ from typing import Optional, List
 
 
 
-
-
-# Pascals triangle 2
+# Triangle
 class Solution:
-    def getRow(self, rowIndex: int) -> List[int]:
-        if rowIndex == 0:
-            return [1]
-        elif rowIndex == 1:
-            return [1,1]
-        
-        prev = [1,1]  # acct for this later
-        for i in range(rowIndex-1):
-            # pattern is add 1 list item to past list, add all consecutive pairs from past list, outer nums always equal 1
-            item = [1]  # always 1 at start of item
-            for i in range(len(prev)-1):
-                item.append(prev[i] + prev[i+1])
-            item.append(1)  # always 1 at the end of item
-            prev = item
+    def minimumTotal(self, triangle: List[List[int]]) -> int:
+        # len of triangle is the total num of rows
+        # so you can only move to the row below's same index or index + 1 and that's it
+        # how can you check min path on first glance? impossible need to iterate through all possibilities
+        # could try the inefficient route, all possible options
+        # not straightfwd algorithm. 
+        return
 
-        return item
+
+print(Solution().minimumTotal([[2],[3,4],[6,5,7],[4,1,8,3]]))
+
+
+
+
+# # Pascals triangle 2
+# class Solution:
+#     def getRow(self, rowIndex: int) -> List[int]:
+#         if rowIndex == 0:
+#             return [1]
+#         elif rowIndex == 1:
+#             return [1,1]
+        
+#         prev = [1,1]  # acct for this later
+#         for i in range(rowIndex-1):
+#             # pattern is add 1 list item to past list, add all consecutive pairs from past list, outer nums always equal 1
+#             item = [1]  # always 1 at start of item
+#             for i in range(len(prev)-1):
+#                 item.append(prev[i] + prev[i+1])
+#             item.append(1)  # always 1 at the end of item
+#             prev = item
+
+#         return item
 
 
 # Pascals triangle
-# class Solution:
-#     def generate(self, numRows: int) -> List[List[int]]:
-#         # should return list of numRows items, starting with [1], [1,1]
-#         # pattern is all outer nums will always be 1, what changes is nums within starting with 3rd item
-#         # each subsequent item has an additional num in its list, so 1,2,3,4,5,... items
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        # should return list of numRows items, starting with [1], [1,1]
+        # pattern is all outer nums will always be 1, what changes is nums within starting with 3rd item
+        # each subsequent item has an additional num in its list, so 1,2,3,4,5,... items
 
-#         # base case
-#         if numRows == 1:
-#             return [[1]]
-#         elif numRows == 2:
-#             return [[1], [1,1]]
+        # base case
+        if numRows == 1:
+            return [[1]]
+        elif numRows == 2:
+            return [[1], [1,1]]
         
-#         final = [[1], [1,1]]  # acct for this later
-#         for i in range(numRows-2):
-#             # pattern is add 1 list item to past list, add all consecutive pairs from past list, outer nums always equal 1
-#             item = [1]  # always 1 at start of item
-#             for i in range(len(final[-1])-1):
-#                 item.append(final[-1][i] + final[-1][i+1])
-#             item.append(1)  # always 1 at the end of item
-#             final.append(item)
+        final = [[1], [1,1]]  # acct for this later
+        for i in range(numRows-2):
+            # pattern is add 1 list item to past list, add all consecutive pairs from past list, outer nums always equal 1
+            item = [1]  # always 1 at start of item
+            for i in range(len(final[-1])-1):
+                item.append(final[-1][i] + final[-1][i+1])
+            item.append(1)  # always 1 at the end of item
+            final.append(item)
 
-#         return final 
+        return final 
 
 
 
