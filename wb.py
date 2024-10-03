@@ -3,18 +3,44 @@ from typing import Optional, List
 
 
 
-# Triangle
 class Solution:
-    def minimumTotal(self, triangle: List[List[int]]) -> int:
-        # len of triangle is the total num of rows
-        # so you can only move to the row below's same index or index + 1 and that's it
-        # how can you check min path on first glance? impossible need to iterate through all possibilities
-        # could try the inefficient route, all possible options
-        # not straightfwd algorithm. 
-        return
+    def maxProfit(self, prices: List[int]) -> int:
+        # grabbing min/max doesn't achieve anything since depends on placement
+        # could sort numbers, do a two pointers to check
+        # most obvious is n^2 solution go through each...
+        # is there o of n solution?
+        # 
+        if len(prices) < 2: return 0
+
+        max_profit = 0
+        curr_min = prices[0]
+
+        for i in range(1, len(prices)):
+            if prices[i] < curr_min:
+                curr_min = prices[i]
+                continue
+            if prices[i] - curr_min > max_profit:
+                max_profit = prices[i] - curr_min 
+                
+        return max_profit 
+    
+
+print(Solution().maxProfit([99,100,4,6,1,2]))
 
 
-print(Solution().minimumTotal([[2],[3,4],[6,5,7],[4,1,8,3]]))
+
+# # Triangle
+# class Solution:
+#     def minimumTotal(self, triangle: List[List[int]]) -> int:
+#         # len of triangle is the total num of rows
+#         # so you can only move to the row below's same index or index + 1 and that's it
+#         # how can you check min path on first glance? impossible need to iterate through all possibilities
+#         # could try the inefficient route, all possible options
+#         # not straightfwd algorithm. 
+#         return
+
+
+# print(Solution().minimumTotal([[2],[3,4],[6,5,7],[4,1,8,3]]))
 
 
 
