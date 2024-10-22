@@ -1,31 +1,35 @@
 # INCLUDE THIS ALWAYS!!!
 from typing import Optional, List
+# INCLUDE THIS ALWAYS!!!
 
 
 
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        # grabbing min/max doesn't achieve anything since depends on placement
-        # could sort numbers, do a two pointers to check
-        # most obvious is n^2 solution go through each...
-        # is there o of n solution?
-        # 
-        if len(prices) < 2: return 0
 
-        max_profit = 0
-        curr_min = prices[0]
 
-        for i in range(1, len(prices)):
-            if prices[i] < curr_min:
-                curr_min = prices[i]
-                continue
-            if prices[i] - curr_min > max_profit:
-                max_profit = prices[i] - curr_min 
+
+# class Solution:
+#     def maxProfit(self, prices: List[int]) -> int:
+#         # grabbing min/max doesn't achieve anything since depends on placement
+#         # could sort numbers, do a two pointers to check
+#         # most obvious is n^2 solution go through each...
+#         # is there o of n solution?
+#         # 
+#         if len(prices) < 2: return 0
+
+#         max_profit = 0
+#         curr_min = prices[0]
+
+#         for i in range(1, len(prices)):
+#             if prices[i] < curr_min:
+#                 curr_min = prices[i]
+#                 continue
+#             if prices[i] - curr_min > max_profit:
+#                 max_profit = prices[i] - curr_min 
                 
-        return max_profit 
-    
+#         return max_profit 
 
-print(Solution().maxProfit([99,100,4,6,1,2]))
+
+# print(Solution().maxProfit([99,100,4,6,1,2]))
 
 
 
