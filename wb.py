@@ -4,9 +4,36 @@ from typing import Optional, List
 
 
 
+# best time to buy and sell stock II
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        # common sense: should only buy when very low compared to future values
+        # should only sell when high compared to future values..
+        # always need to check if holding 1 share or not, start w/o share
+        # pattern: check next value, only buy if NOT holding and next is lower
+        # only sell if holding and next is higher
+        # not enough, need to check consecutive values
+        # could run through list once, check peaks and troughs, add index of those to 2 lists, then in final check if index to buy or sell based on peaks and troughs
+        # you can buy and sell on same day. either buy and sell or sell and buy
+        profit = 0
+        holding = False
+        last_value = 0
+        prices += [0]
+        for i in range(len(prices)-1):
+            # always sell if you're holding no matter price
+            if holding:  # means prev price was lower so sell
+                holding = False
+                profit += prices[i] - last_value 
+            # if not holding, only buy if next price is higher
+            if prices[i+1] > prices[i]:
+                last_value = prices[i]
+                holding = True 
+        return profit
+
+print(Solution().maxProfit([7,5,1,3,6,10,1,200,1]))
 
 
-
+# best time to buy and sell stock
 # class Solution:
 #     def maxProfit(self, prices: List[int]) -> int:
 #         # grabbing min/max doesn't achieve anything since depends on placement
